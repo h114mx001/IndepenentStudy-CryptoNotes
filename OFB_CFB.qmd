@@ -1,0 +1,43 @@
+# OFB & CFB {#sec-Symmetric}
+
+The next modes will convert our block cipher into stream cipher, with the key point is XOR the plaintext with unpredictable (to our advisaries). 
+
+## OFB 
+
+Output Feedback (OFB) encrypts the Initialization Vector for the first time, and the previous encrypted version of it as the first XOR block. then, the plaintext block will be XOR-ed with this one. 
+
+![OFB](/images/OFB.png)
+
+We can formulate the process as: 
+
+If "XOR block" is $O$, plaintext is $P$, ciphertext is $C$:
+
+$$
+\displaylines{O_0 = IV \\ O_i = E(O_{i-1}) \\ C_i = P_i \oplus O_i \\ P_i = C_i \oplus O_I}
+$$
+
+As you can see, the ciphertext and plaintext are symmetric, due to symmetry properties of OFB. 
+
+::: {.callout-note}
+## Spot
+Can you spot a weakness if the advisery know the ciphertext and the IV used in this ciphertext?
+:::
+
+## CFB 
+
+Cipher Feedback (CFB) is quite not the same with OFB, except it uses the ciphertext of previous block as input of current block. (In OFB, we use the previous block cipher output)
+
+![CFB_enc](/images/CFB_enc.png)
+
+![CFB_dec](/images/CFB_dec.png)
+
+Again, we can formulate the process as: 
+
+
+$$
+\displaylines{C_0 = IV \\ C_i = P_i \oplus E(C_{i-1}) \\ P_i = C_i \oplus E(C_{i-1})}
+$$
+
+::: {.callout-tip}
+Can you try this version by yourself, using the snipset in two part above?
+:::

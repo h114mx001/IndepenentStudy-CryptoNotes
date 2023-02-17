@@ -1,0 +1,93 @@
+# Encoding {#sec-Foundations}
+
+## Introductions 
+
+As a two-year (or more) CTF players, I have not see any challenges that works too much on the encoding (As they are standardized). Some may appear in challenges of Web or Pwn, where the format of the data matters. In this section, I will introduce several common types of encoding for you!
+
+## ASCII
+
+ASCII is 7-bit encoding standard, where each letter is assigned with a number from 0-127. Besides this ASCII table, we also have an extended ASCII, where 256 characters are encoded. You can have a look at [ASCII Table](https://www.asciitable.com/) to see it clearer. 
+
+```Python
+s = "Hello World"
+print([ord(c) for c in s])
+```
+```{sagemath}
+s = "Hello World"
+print([ord(c) for c in s])
+```
+
+## Hex 
+
+Hex stands for Hexadecimal, i.e. base 16. Basically, you can understand Hex as a version of ASCII but in hexadecimal rather than decimal. 
+
+```Python
+s = "Hello World"
+print([hex(ord(c)) for c in s])
+print(bytes(s, encoding='utf-8').hex())
+```
+```{sagemath}
+s = "Hello World"
+print([hex(ord(c)) for c in s])
+print(bytes(s, encoding='utf-8').hex())
+```
+
+## Base64
+
+Using Base64 encoding, you can represent binary data as ASCII string, with an alphabet of 64 characters. Some other versions of Base64, like Base58 (Using in Bitcoin, remove some 'look-the-same' character like l (normalcase l) and I (uppercase i)) are alse used widely. 
+
+In Python, you can use the library `base64` for working with this encoding.
+
+```Python
+s = "Hello World"
+import base64
+b64enc = base64.b64encode(s)
+print(b64enc)
+print(base64.b64decode(b64enc))
+```
+```{sagemath}
+s = b"Hello World"
+import base64
+b64enc = base64.b64encode(s)
+print(b64enc)
+print(base64.b64decode(b64enc))
+```
+
+## Bignum and Bytes
+
+If you want to encrypt a word ("HELLO", for example); most of the case, you can't apply encryption directly on it. A solution is that: concatenate the hex value of each characters. For example:
+
+```
+message: HELLO
+ascii bytes: [72, 69, 76, 76, 79]
+hex bytes: [0x48, 0x45, 0x4c, 0x4c, 0x4f]
+base-16: 0x48454c4c4f
+base-10: 310400273487 
+```
+
+When working with these bignums, a Python library [PyCryptodome](https://pypi.org/project/pycryptodome/) provides two functions to convert back and forth: 
+
+
+```Python
+s = b"Hello World"
+print(s.hex())
+from Crypto.Util.number import long_to_bytes, bytes_to_long
+# The usage of command
+print(bytes_to_long(s))
+
+# Compare with the hex value
+print(hex(bytes_to_long(s)))
+
+# Decoding
+print(long_to_bytes(bytes_to_long(s)))
+```
+```{sagemath}
+s = b"Hello World"
+print(s.hex())
+from Crypto.Util.number import long_to_bytes, bytes_to_long
+print(bytes_to_long(s))
+print(hex(bytes_to_long(s)))
+print(long_to_bytes(bytes_to_long(s)))
+```
+
+Also, there are some forms of encoding like **URL Encoding**, which uses a lot in our hyperlinks. You can always search them, when you need it xD.

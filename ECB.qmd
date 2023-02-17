@@ -1,0 +1,54 @@
+# Modes of operations & ECB {#sec-Symmetric}
+
+Before working on the modes of operations, you can think now, there is a machine that can encrypt/decrypt every single small blocks. (as it is the core idea of block cipher)
+
+## ECB 
+
+Electronic Code Book is the simplest mode of operation, where each block of plaintext is independently encrypted/decrypted. 
+
+![ECB](/images/ECB.png)
+
+Indeed, besides its simplicity, ECB can bring lots of hazards. According to the independent process between each block, the data pattern is not well-hidden with ECB, with this example below: 
+
+![Tux_ECB](/images/tux_ecb.png)
+
+You can try ECB encryption process with the library `PyCryptodome` with this example:
+
+```Python
+from Crypto.Cipher import AES
+from Crypto.Util.Padding import pad, unpad
+
+
+key = b'sixteen byte key' # should be 16-byte key
+AESMachine = AES.new(key, AES.MODE_ECB)
+data = b'I am b1b1 s4y 0h y3@h!'
+# remember to pad the data!
+cipher = AESMachine.encrypt(pad(data, 16))
+decrypt = AESMachine.decrypt(cipher)
+
+print(cipher)
+print(decrypt)
+```
+```{sagemath}
+from Crypto.Cipher import AES
+from Crypto.Util.Padding import pad, unpad
+
+key = b'sixteen byte key' # should be 16-byte key
+AESMachine = AES.new(key, AES.MODE_ECB)
+data = b'I am b1b1 s4y 0h y3@h!'
+
+cipher = AESMachine.encrypt(pad(data, 16))
+decrypt = AESMachine.decrypt(cipher)
+
+print(cipher)
+print(decrypt)
+```
+
+::: {.callout-important}
+In most of AES modes of operations, we need to pad the data with proper size. As you see in some next chapters, AES will encrypt each 16-byte block of the message at one time; therefore, we need to pad the data as 16-byte block. The function `pad(data, 16)` as you see in the code is one very good padding scheme, [PKCS7](https://en.wikipedia.org/wiki/PKCS_7).
+:::
+
+::: {.callout-note}
+## Recommended challenges: 
++ [ECB Oracle](https://aes.cryptohack.org/ecboracle)
+:::

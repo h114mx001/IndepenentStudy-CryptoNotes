@@ -1,0 +1,100 @@
+# Mathematical Notation {#sec-MathBG}
+
+As I cannot (and also do not need) to cover every single mathematical notations in this book, I will only listed some related to structures and its command in SageMath.
+
+## Special sets 
+
++ $\mathbb{C}$: Complex numbers 
++ $\mathbb{R}$: Real numbers 
++ $\mathbb{Z}$: Integers 
++ $\mathbb{Q}$: Rational numbers 
++ $\mathbb{N}$: Natural numbers 
++ $\mathbb{Z}/n\mathbb{Z}$: Set of integers mod $n$
+
+An example of SageMath on these guys: 
+
+```Python
+"""
+The following SageMath commands to call a set: 
+"""
+CC # Complex numbers with 53-bit of precision.
+RR # Real numbers with 53-bit of precision.
+ZZ # Integer Ring. 
+QQ # Rational Field.
+NN # Non-negative integer semi-ring.
+Zmod(11) # aka Integers(11) or `IntegerModRing(11)`: Ring of modulo 11
+```
+
++ The unit groups: $R^{\times}$ or $R^{*}$
++ Finite fields with $q$ elements: $\mathbb{F}_q$
++ General field: $k$
++ Algebraic closure of a field: $\bar{k}$
+
+Example of SageMath codes:
+
+```Python
+GF(11)
+```
+```{sagemath}
+GF(11)
+```
+
+```Python
+GF(11).algebraic_closure()
+```
+
+```{sagemath}
+GF(11).algebraic_closure()
+```
+
+Some interesting function for you to play with:
+
+```Python
+"""
+`.parent()`: finding which field an element belongs to
+"""
+x = 7
+print(x.parent())
+
+x = 3.5
+print(x.parent())
+```
+
+```{sagemath}
+x = 7
+print(x.parent())
+
+x = 3.5
+print(x.parent())
+```
+
+```Python
+"""
+`.lift()`: Lift an element from its parent to its... grandparent?
+e.g: from quotient ring Q (R/I) -> R
+"""
+R = ZZ 
+RI = Zmod(11)
+x = RI(5)
+
+print(x.parent())
+
+y = x.lift()
+print(y.parent())
+
+print(y in R)
+```
+
+```{sagemath}
+R = ZZ 
+RI = Zmod(11)
+x = RI(5)
+print(x.parent())
+
+y = x.lift()
+print(y.parent())
+print(y in R)
+```
+
+## Other important ones
++ $Pr(A)$ means the probability of an event $A$ to happen. Sometimes, you may see the notation $Pr[A]$ and $P(A)$ also. 

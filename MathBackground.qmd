@@ -1,0 +1,34 @@
+# Mathematical Background {#sec-MathBG .unnumbered}
+
+Welcome to the start of our (actual) journey! Throughout the book, there will be more mathematical stuffs will be delivered, with many symbols and notations. Some of you may find it clear but if you not, a bookmark for this book (or any cheatsheet of SageMath) is my recommendation. 
+
+## Note on code execution 
+
+As this book uses SageMath as its main environment, I suggest you start with installing the tool first. The complete guide is available in their [website](https://www.sagemath.org/).
+
+If you are using Windows, you should install [Windows Subsystem Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/install), and then install inside your WSL system. As SageMath stops release the binary for Windows, your version of SageMath will not be updated if you choose this way.
+
+As some limit of Quarto don't allow us to both execute the SageMath code and syntax highlighting them (or I have not figured how to do it), you can see this example:
+
+```Python
+"""
+    A test program on SageMath. NOTE: same syntax 
+    with Python ;)
+"""
+print("Hello World")
+for i in range(0, 10):
+    print(i)
+```
+
+```{sagemath}
+print("Hello World")
+for i in range(0, 10):
+    print(i)
+```
+
+Some lines after the code are the output.
+
+## In this chapter
+
+1. [Mathematical Notations](/Maths_Notation.qmd)
+

@@ -1,0 +1,38 @@
+# Summary {.unnumbered}
+
+## Some words before going
+
+**"Have you used Cryptography?"** I have asked this question to several of my friends and some of them would say, no. But look around, the website you love has a way to secretly communicate with you everyday, through some web protocols with cryptography. You may reveal everything to the hacker with only one tap of your credit card when you do some shopping without the magic of Cryptography. Some latest trend, Blockchain: Cryptocurrency, NFTs, Distributed stuffs, etc.; have its cores are cryptographic protocols to preserve the integrity. Even somethings does not seems to need Cryptography, like AI, recently have some usage of it to preserve the privacy in training dataset. 
+
+Therefore, I would really appreciate that you choose me and my document as a first playground for your crypto knowledge!!!
+
+## Brief summary
+
+A brief summary of the books: 
+
++ **"Why crypto?"**. Where I will try my best to 'convince' you to at least read some next chapters. How cryptography has been used along the time, what are the current challenges for cryptographers, etc. And most important, what are the most general catalogue for crypto fields (made by me).
+ 
++ **"Mathematical Background"**. As any cross-field of Mathematics and Computer Science, you need some basic bricks to start building your Cryptography skills. In here, you will meet some secondary mathematics like modulo, to some crazy 'variants' of them. 
+
++ **"Symmetric Cryptography"**: As its name, we will have a walkthrough some fields of Symmetric Cryptography from the very historical (and completely) broken to the newest that are used in your daily Internet surfing. 
+
++ **"Asymmetric Cryptography"**: This part will look into the constructions of many famous cryptography scheme that is also the deliverer for your symmetric cryptography and validation. !!! Warning: Many Maths!
+
++ **"Hash functions"**: Integrity will mostly mention in this field, and some examples of how to playing with some hacks to break the integrity! 
+
++ **"Appendices"**: Some other tools/guides for you to playing with the material of the book and also further games. 
+
+## Philosophy 
+
+The aim of this book is **guilding** you to start with crypto, rather than a cheatsheet for you to copy the snipset into any cryptography challenges in CTFs. Therefore, the basics of SageMath/Python will be mentioned in the book, but not the all attacks' implementations. I know that there are many available samples on GitHub; however, gaining experiences by playing around with debugging, 'math'-ing, and programming is better, rights?
+
+However, do not afraid about the hard problems. At any point of this book, you will find some exercises (that I find it should work for gaining your skills) to practice with. Also, do not afraid to contact me via social medias 😎!
+
+::: {.callout-tip}
+
+Let's write something (as clear as you can) about what you want to learn or love about Cryptography and what do you expect this book has. 100% I can give you all the stuff you need, but I am sure you will find them out if you **REALLY** want to finish (and extend) your checklist!
+
+:::
+
+That's enough for the text! Let's gooooo!!!!.
+

@@ -1,0 +1,62 @@
+# Toddlers' Mathematics for PKC {#sec-Asymmetric}
+
+In this chapter, we will have a small walkthrough on some simple concepts of modular arithmetic that we needs for RSA and Diffie-Hellman. If you are good with these, feel free to continue. 
+
+
+:::{.callout-note}
+
+## Assumption
+The material here will assume that you have basic knowledge about modular arithmetic, how to do GCD and Extended GCD (via Euclidean and Extended Euclidean algorithm)
+
+:::
+
+## Euler's Phi Totient 
+
+::: {.callout-note}
+
+Given a number $n$, Euler's Phi Totient number defines the numbers of natural numbers $i$ ($1 \le i \lt n$) that $GCD(i, n) = 1$
+
+This function is denoted as $\phi(n)$.
+:::  
+
+**Example: ** $\phi(20) = 8$, $\phi(4) = 2, \phi(5) = 4$
+
+This totient has some important properties that is useful with RSA:
+
+::: {.callout-note}
+
+## Important Euler's Phi Totient Properties:
+
++ If $p$ is a prime, then $\phi(p) = p - 1$ 
++ If $GCD(a, b) = 1$, then $\phi(a\cdot b) = \phi(a) \cdot \phi(b)$
++ Given two numbers $a, n$ where $GCD(a, n) == 1$, then:
+$$
+a^{\phi(n)} \equiv 1 \pmod n
+$$
+:::
+
+## Inverse modulo 
+
+::: {.callout-note}
+
+## Inverse modulo n
+
+Given a number $a$, the inverse modulo $n$ of $a$ is the number $x$ where: 
+
+$$
+ax \equiv 1 \pmod{n}
+$$
+
+This inverse should exist if $GCD(a, n) = 1$
+:::
+
+## Discrete Logarithm 
+
+Given $a, h, n$ where there exists a number $x$ that $a^x \equiv h \pmod{n}$, the discrete logarithm problem is the process of finding the suitable number $x$ in $\mathbb{Z}_n$.
+
+## Some Abstract Algebra
+
+In here, I will introduce several simple concepts of group, generator, order of a group and order of a member of the group. Remember, these definitions are not formal, and it is written for more easily understanding. 
+
+### Group
+

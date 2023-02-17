@@ -1,0 +1,9 @@
+# CTR {#sec-Symmetric}
+
+The final mode of operation we will introduce will have a little bit different. While every other mode will have a fixed ciphertext for each plaintext, CTR will provide a different one every time we create new ciphers. This can be done because of the mechanism of `nonce` and `counter` (the name Counter Mode of CTR said it all).
+
+In CTR, the nonce acts the same as IV in other modes, while the counter will be altered each time new message is required. 
+
+![](/images/CTR_enc.png)
+
+![](/images/CTR_dec.png)

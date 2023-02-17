@@ -1,0 +1,11 @@
+# Welcome {.unnumbered}
+
+This **'CryptoBook for n00b1es'** is a beginner guide, with the main purpose is for any beginners who want to poke around with Cryptography in a practical way. This book is released as a result of an Independent Study course about basic Cryptography, conducted by **Nguyen Tuan Anh** ([h114mx001](https://github.com/h114mx001), supervised by Professor [**Wray Buntine**](https://vinuni.edu.vn/people/wray-buntine-phd/)); from College of Engineering and Computer Science, VinUniversity. 
+
+This book targets the newcomers to Cryptography field, from guiding you from basic implementation of some cryptography schemes, to some more advance and popular ones. From perspectives of a crypto learner, I included a lot of practical work (implementations, explanation, etc.) about how to work and/or break some usual cryptosystems. Also, you will find yourself more familiar with some most useful tools in your cryptography work (in this book, I choose Python and a CAS build on it, SageMath as main tools). 
+
+This website and book will always be free to access, licensed under the [CC BY-NC-ND 3.0 license](https://creativecommons.org/licenses/by-nc-nd/3.0/us/). Currently, the only way for you to get a physical copy of this document is print my website out.
+
+Indeed, this book will not end here, updated version will continue (based on my skills and your demands too!). After this (final) version, you can expect next versions of the document. 
+
+## Acknowledgements

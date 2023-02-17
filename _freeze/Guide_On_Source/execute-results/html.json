@@ -1,0 +1,11 @@
+{
+  "hash": "14eb8dab9de0ad3a273937517a0e9052",
+  "result": {
+    "markdown": "# Guide on Mathematics sources {#sec-MathBG}\n\n## Introduction \n\nWhen playing with ciphertext, most of the times, crypto guys would want to make it digital version: with numbers, computations, etc. Then, you need to face with number theory stuffs most of the time. \n\nThis chapter expects you could have a shot of basic number theory. Of course, this cannot replace a whole course about the topic. `Discrete Mathematics` from professor Wray Buntine is my suggestion.\n\n::: {.callout-tip}\nDon't worry if something makes you struggle with. Take a step back and take it slow to understand the concepts.\n:::\n\n## Division \n\nLet $\\mathbb{Z}$ be the integers $\\{\\ldots, -1, 0, 1, 2, \\ldots \\}$\n\n::: {.callout-note}\n### Definition - Divisibility\n\n+ For $a, b \\in \\mathbb{Z}$, we say that $a$ divides $b$ if there is a $k \\in \\mathbb{Z}$ such that $a \\cdot k = b$. \n\n+ Notation: $a \\mid b$.\n:::\n\n**Example**: $2 \\mid 6$, as $2 \\cdot 3 = 6$.\n\nThere are some important properties:\n\n::: {.callout-tip}\n### Properties\n+ $a \\mid a$, $1 \\mid a$, $a \\mid 0$\n+ $a \\mid b$, $b \\mid c \\rightarrow a \\mid (bu+cv) \\quad \\forall u, v \\in \\mathbb{Z}$ \n+ $a \\mid b$, $b \\mid c \\rightarrow a \\mid c$ \n:::\n\n::: {.callout-note}\n### Definition - Division with remainder \nLet $a, b \\in \\mathbb{Z}$, $b \\geq 1$\nThen, there exists **unique** $q, r \\in \\mathbb{Z}$ such that \n$a = bq + r$ and $0 \\le r \\lt b$.\n\n$q$ is **quotient** and $b$ is **remainder**.\n:::\n\nTo find quotients and remainder in Python, you can use either `//` and `%` for div and mod, or `divmod()`.\n\n```Python\nq, r = divmod(6, 2)\nprint(q, r)\nq = 11 // 3\nr = 11 % 3\nprint(q, r)\n```\n\n::: {.cell execution_count=1}\n\n::: {.cell-output .cell-output-stdout}\n```\n3 0\n3 2\n```\n:::\n:::\n\n\n",
+    "supporting": [
+      "Guide_On_Source_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "hash": "ff587d57d5a5e46e440c7a5c00f7e7db",
+  "result": {
+    "markdown": "# Modes of operations & ECB {#sec-Symmetric}\n\nBefore working on the modes of operations, you can think now, there is a machine that can encrypt/decrypt every single small blocks. (as it is the core idea of block cipher)\n\n## ECB \n\nElectronic Code Book is the simplest mode of operation, where each block of plaintext is independently encrypted/decrypted. \n\n![ECB](/images/ECB.png)\n\nIndeed, besides its simplicity, ECB can bring lots of hazards. According to the independent process between each block, the data pattern is not well-hidden with ECB, with this example below: \n\n![Tux_ECB](/images/tux_ecb.png)\n\nYou can try ECB encryption process with the library `PyCryptodome` with this example:\n\n```Python\nfrom Crypto.Cipher import AES\nfrom Crypto.Util.Padding import pad, unpad\n\n\nkey = b'sixteen byte key' # should be 16-byte key\nAESMachine = AES.new(key, AES.MODE_ECB)\ndata = b'I am b1b1 s4y 0h y3@h!'\n# remember to pad the data!\ncipher = AESMachine.encrypt(pad(data, 16))\ndecrypt = AESMachine.decrypt(cipher)\n\nprint(cipher)\nprint(decrypt)\n```\n\n::: {.cell execution_count=1}\n\n::: {.cell-output .cell-output-stdout}\n```\nb\"\\x1a\\xcbv]y\\x7f\\xe6\\x9c\\xe3I'F\\xe5e)\\xef;\\xbb#>w_\\x97\\x0f\\x8a\\xfff\\xbd\\x88\\xb3n\\xcb\"\nb'I am b1b1 s4y 0h y3@h!\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n'\n```\n:::\n:::\n\n\n::: {.callout-important}\nIn most of AES modes of operations, we need to pad the data with proper size. As you see in some next chapters, AES will encrypt each 16-byte block of the message at one time; therefore, we need to pad the data as 16-byte block. The function `pad(data, 16)` as you see in the code is one very good padding scheme, [PKCS7](https://en.wikipedia.org/wiki/PKCS_7)\n:::\n\n",
+    "supporting": [
+      "ECB_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

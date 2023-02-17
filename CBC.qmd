@@ -1,0 +1,63 @@
+# CBC {#sec-Symmetric}
+
+From now on, every mode of operations we see will make our blocks dependant to each other, by some ways.
+
+The Cipher Block Chaining mode will make every block encrypted after it has been XORed with its preceding cipher block. With the first block, we add in a `Initialization vector (IV)` to work as its preceding block. 
+
+![CBC Encryption](/images/CBC_enc.png)
+
+Then, the decryption will be reversed:
+
+![CBC Decryption](/images/CBC_dec.png)
+
+We can formulate the above processes as: 
+
+With $C_0 = IV$
+$$
+\displaylines{C_i = E(P_i \oplus C_{i-1})\\P_i = D(C_i) \oplus C_{i-1}}
+$$
+
+
+Indeed, it does not (and also never) means we use CBC then our cipher is good. 
+
+You can try AES CBC by this piece of code:
+```Python
+from Crypto.Cipher import AES 
+from Crypto.Util.Padding import pad, unpad 
+
+key = b'a'*16
+data = b'hello world this is bibi' 
+iv = b'yellow submarine'
+
+AESMachine = AES.new(key, AES.MODE_CBC, iv)
+cipher = AESMachine.encrypt(pad(data, 16))
+print(cipher)
+
+AESMachine = AES.new(key, AES.MODE_CBC, iv)
+decrypt = AESMachine.decrypt(cipher)
+print(decrypt)
+```
+```{sagemath}
+from Crypto.Cipher import AES 
+from Crypto.Util.Padding import pad, unpad 
+
+key = b'a'*16
+data = b'hello world this is bibi' 
+iv = b'yellow submarine'
+
+AESMachine = AES.new(key, AES.MODE_CBC, iv)
+cipher = AESMachine.encrypt(pad(data, 16))
+print(cipher)
+
+AESMachine = AES.new(key, AES.MODE_CBC, iv)
+decrypt = AESMachine.decrypt(cipher)
+print(decrypt)
+```
+
+::: {.callout-note}
+## Recommended challenges: 
++ [Lazy CBC](https://cryptohack.org/challenges/lazy_cbc)
++ [Flipping Cookies](https://aes.cryptohack.org/flipping_cookie/)
++ [ECB CBC WTF](https://aes.cryptohack.org/ecbcbcwtf)
+
+:::

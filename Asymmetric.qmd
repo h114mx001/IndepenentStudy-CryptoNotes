@@ -1,0 +1,21 @@
+# Asymmetric Cryptography {#sec-asymmetric .unnumbered}
+
+Welcome to the second part of this guide! With the previous part, we have a quick walkthrough for every part of symmetric cryptography. As you may recognize, the main uncomfortable thing of symmetric cryptography is that both party need to have an agreement on a same key. During the 1970s, some first attempts to remove this barrier has been successful. Since then, two party can use secured protection over their conversations. 
+
+Two main applications of asymmetric cryptography is:
+
++ **Public key encryption**: where Alice will use a public key to allow other people send messages to her, and another private key for her to read the ciphertext.
+
+![](/images/PKC.png){width="50%" fig-align="center"}
+
++ **Digital signature**: when Alice create some document, she can 'sign' into the document to verify her as the true owner. Any other people can verify it easily, just by some simple calculations.
+
+![](/images/DigitalSignature.png){width="50%" fig-align="center"}
+
+More than that, Asymmetric cryptography can be used as a key sharing scheme (like Diffie-Hellman) that can be used in sharing the common key for the Symmetric Cryptography.
+
+![](/images/DH.png){width="50%" fig-align="center"}
+
+The anatomy of Asymmetric Cryptography is just like that. During this part, three significants cryptosystem will be demonstrated: **RSA**, **Diffie-Hellman Key Exchange** and a little bit on simple digital signature. 
+
+In the last chapters, the mechanism of Elliptic Curve Cryptography will also be included. 

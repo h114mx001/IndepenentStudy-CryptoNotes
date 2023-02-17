@@ -1,0 +1,6 @@
+# Foundations {#sec-Foundations .unnumbered}
+
+Most of the cases, you do not want to look at a piece where every single letters are abstract digits and numbers but images, videos or at least readable text. However, cryptography does not work quite well with the ordinary letters themselves; therefore, we need **encoding** to change our letter to some computable forms (like binary, decimal, etc.)
+
+In this part, we will have a look at some topics:
+

@@ -1,0 +1,65 @@
+project:
+  type: book
+
+book:
+  title: "CryptoBook"
+  author: "Nguyen Tuan Anh"
+  date: "19/02/2023"
+  chapters:
+    - index.qmd
+    - Preface.qmd
+    - part: MathBackground.qmd
+      chapters:
+        - Maths_Notation.qmd
+        - GuideOnSource.qmd
+    - part: Foundations.qmd
+      chapters:
+        - Encoding.qmd
+    - part: Symmetric.qmd
+      chapters:
+        - ECB.qmd
+        - CBC.qmd
+        - OFB_CFB.qmd
+        - CTR.qmd
+        - AESBasic.qmd
+    - part: Asymmetric.qmd
+      chapters:
+        - UsefulMaths.qmd
+        - RSA.qmd 
+        - Attacks_RSA.qmd
+        - DiffieHellman.qmd
+        - Attacks_DH.qmd
+        - Elliptic_Curve.qmd
+        - ECC_ECDH.qmd
+    - part: Miscellaneous.qmd
+      chapters:
+        - HashFunctions.qmd    
+  reader-mode: true 
+  page-footer:
+    left: | 
+      **CryptoBook for the n00b1es** was written by Nguyen Tuan Anh, under supervision of Professor Wray Buntine, CECS, VinUniversity.
+    right: |
+      This book was built with <a href="https://quarto.org/">Quarto</a>
+  favicon: cover.png 
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  # pdf:
+  #   documentclass: scrreprt
+
+jupyter: 
+  kernelspec: 
+      name: "sagemath"
+      language: "sagemath"
+      display_name: "SageMath 9.6"
+
+execute: 
+  output: true
+  freeze: true
+  echo: false 
+  
+editor:
+  render-on-save: true

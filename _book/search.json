@@ -1,0 +1,366 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "CryptoBook",
+    "section": "",
+    "text": "Welcome\nThis ‘CryptoBook for n00b1es’ is a beginner guide, with the main purpose is for any beginners who want to poke around with Cryptography in a practical way. This book is released as a result of an Independent Study course about basic Cryptography, conducted by Nguyen Tuan Anh (h114mx001, supervised by Professor Wray Buntine); from College of Engineering and Computer Science, VinUniversity.\nThis book targets the newcomers to Cryptography field, from guiding you from basic implementation of some cryptography schemes, to some more advance and popular ones. From perspectives of a crypto learner, I included a lot of practical work (implementations, explanation, etc.) about how to work and/or break some usual cryptosystems. Also, you will find yourself more familiar with some most useful tools in your cryptography work (in this book, I choose Python and a CAS build on it, SageMath as main tools).\nThis website and book will always be free to access, licensed under the CC BY-NC-ND 3.0 license. Currently, the only way for you to get a physical copy of this document is print my website out.\nIndeed, this book will not end here, updated version will continue (based on my skills and your demands too!). After this (final) version, you can expect next versions of the document."
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "2  Introduction",
+    "section": "",
+    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "2  Summary",
+    "section": "",
+    "text": "“Do you use Cryptography?” I have asked this question to several of my friends and some of them would say, no. But look around, the website you love has a way to secretly communicate with you everyday, through some web protocols with cryptography. You may reveal everything to the hacker with only one tap of your credit card when you do some shopping without the magic of Cryptography. Some latest trend, Blockchain: Cryptocurrency, NFTs, Distributed, etc.; have its cores are cryptographic protocols to preserve the integrity. Even somethings does not seems to need Cryptography, like AI, recently have some usage of it to preserve the privacy in training dataset."
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+  },
+  {
+    "objectID": "AboutThisVersion.html",
+    "href": "AboutThisVersion.html",
+    "title": "About this version",
+    "section": "",
+    "text": "This ‘CryptoBook for n00b1es’ is a beginner guide, with the main purpose is for any beginners who want to poke around with Cryptography in a practical way. This book is released as a result of an Independent Study course about basic Cryptography, conducted by Nguyen Tuan Anh, supervised by Professor Wray Buntine.\nFrom perspectives of a crypto learner, I included a lot of practical work (implementations, explanation, etc.) about how to work and/or break some usual cryptosystems. Also, you will find yourself more familiar with some most useful tools in your cryptography work (in this book, I choose Python and a CAS build on it, SageMath as main tools)."
+  },
+  {
+    "objectID": "AboutThisVersion.html#acknowledgements",
+    "href": "AboutThisVersion.html#acknowledgements",
+    "title": "About this version",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements"
+  },
+  {
+    "objectID": "Preface.html",
+    "href": "Preface.html",
+    "title": "Summary",
+    "section": "",
+    "text": "“Do you use Cryptography?” I have asked this question to several of my friends and some of them would say, no. But look around, the website you love has a way to secretly communicate with you everyday, through some web protocols with cryptography. You may reveal everything to the hacker with only one tap of your credit card when you do some shopping without the magic of Cryptography. Some latest trend, Blockchain: Cryptocurrency, NFTs, Distributed stuffs, etc.; have its cores are cryptographic protocols to preserve the integrity. Even somethings does not seems to need Cryptography, like AI, recently have some usage of it to preserve the privacy in training dataset.\nA brief summary of the books:\n\n“Why crypto?”. Where I will try my best to ‘convince’ you to at least read some next chapters. How cryptography has been used along the time, what are the current challenges for cryptographers, etc. And most important, what are the most general catalogue for crypto fields (made by me).\n“Mathematical Background”. As any cross-field of Mathematics and Computer Science, you need some basic bricks to start building your Cryptography skills. In here, you will meet some secondary mathematics like modulo, to some crazy ‘variants’ of them.\n“Symmetric Cryptography”: As its name, we will have a walkthrough some fields of Symmetric Cryptography from the very historical (and completely) broken to the newest that are used in your daily Internet surfing.\n“Asymmetric Cryptography”: This part will look into the constructions of many famous cryptography scheme that is also the deliverer for your symmetric cryptography and validation. !!! Warning: Many Maths!\n“Hash functions”: Integrity will mostly mention in this field, and some examples of how to playing with some hacks to break the integrity!\n“Appendices”: Some other tools/guides for you to playing with the material of the book and also further games."
+  },
+  {
+    "objectID": "index.html#acknowledgements",
+    "href": "index.html#acknowledgements",
+    "title": "CryptoBook",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements"
+  },
+  {
+    "objectID": "Preface.html#philosophy",
+    "href": "Preface.html#philosophy",
+    "title": "Summary",
+    "section": "Philosophy",
+    "text": "Philosophy\nThe aim of this book is guilding you to start with crypto, rather than a cheatsheet for you to copy the snipset into any cryptography challenges in CTFs. Therefore, the basics of SageMath/Python will be mentioned in the book, but not the all attacks’ implementations. I know that there are many available samples on GitHub; however, gaining experiences by playing around with debugging, ‘math’-ing, and programming is better, rights?\nHowever, do not afraid about the hard problems. At any point of this book, you will find some exercises (that I find it should work for gaining your skills) to practice with. Also, do not afraid to contact me via social medias 😎!\n\n\n\n\n\n\nTip\n\n\n\nLet’s write something (as clear as you can) about what you want to learn or love about Cryptography and what do you expect this book has. 100% I can give you all the stuff you need, but I am sure you will find them out if you REALLY want to finish (and extend) your checklist!\n\n\nThat’s enough for the text! Let’s gooooo!!!!."
+  },
+  {
+    "objectID": "Preface.html#some-words-before-going",
+    "href": "Preface.html#some-words-before-going",
+    "title": "Summary",
+    "section": "Some words before going",
+    "text": "Some words before going\n“Have you used Cryptography?” I have asked this question to several of my friends and some of them would say, no. But look around, the website you love has a way to secretly communicate with you everyday, through some web protocols with cryptography. You may reveal everything to the hacker with only one tap of your credit card when you do some shopping without the magic of Cryptography. Some latest trend, Blockchain: Cryptocurrency, NFTs, Distributed stuffs, etc.; have its cores are cryptographic protocols to preserve the integrity. Even somethings does not seems to need Cryptography, like AI, recently have some usage of it to preserve the privacy in training dataset.\nTherefore, I would really appreciate that you choose me and my document as a first playground for your crypto knowledge!!!"
+  },
+  {
+    "objectID": "Preface.html#brief-summary",
+    "href": "Preface.html#brief-summary",
+    "title": "Summary",
+    "section": "Brief summary",
+    "text": "Brief summary\nA brief summary of the books:\n\n“Why crypto?”. Where I will try my best to ‘convince’ you to at least read some next chapters. How cryptography has been used along the time, what are the current challenges for cryptographers, etc. And most important, what are the most general catalogue for crypto fields (made by me).\n“Mathematical Background”. As any cross-field of Mathematics and Computer Science, you need some basic bricks to start building your Cryptography skills. In here, you will meet some secondary mathematics like modulo, to some crazy ‘variants’ of them.\n“Symmetric Cryptography”: As its name, we will have a walkthrough some fields of Symmetric Cryptography from the very historical (and completely) broken to the newest that are used in your daily Internet surfing.\n“Asymmetric Cryptography”: This part will look into the constructions of many famous cryptography scheme that is also the deliverer for your symmetric cryptography and validation. !!! Warning: Many Maths!\n“Hash functions”: Integrity will mostly mention in this field, and some examples of how to playing with some hacks to break the integrity!\n“Appendices”: Some other tools/guides for you to playing with the material of the book and also further games."
+  },
+  {
+    "objectID": "MathBackground.html#mathematical-objects",
+    "href": "MathBackground.html#mathematical-objects",
+    "title": "Mathematical Background",
+    "section": "Mathematical Objects",
+    "text": "Mathematical Objects\n\nSpecial sets\n\n\\(\\mathbb{C}\\): Complex numbers\n\\(\\mathbb{R}\\): Real numbers\n\\(\\mathbb{Z}\\): Integers\n\\(\\mathbb{Q}\\): Rational numbers\n\\(\\mathbb{N}\\): Natural numbers\n\\(\\mathbb{Z}/n\\mathbb{Z}\\): Set of integers mod \\(n\\)\n\nAn example of SageMath on these guys:\n\"\"\"\nThe following SageMath commands to call a set: \n\"\"\"\nCC # Complex numbers with 53-bit of precision.\nRR # Real numbers with 53-bit of precision.\nZZ # Integer Ring. \nQQ # Rational Field.\nNN # Non-negative integer semi-ring.\nZmod(11) # aka Integers(11) or `IntegerModRing(11)`: Ring of modulo 11"
+  },
+  {
+    "objectID": "Maths_Notation.html",
+    "href": "Maths_Notation.html",
+    "title": "1  Mathematical Notation",
+    "section": "",
+    "text": "1.0.1 Special sets\n\n\\(\\mathbb{C}\\): Complex numbers\n\\(\\mathbb{R}\\): Real numbers\n\\(\\mathbb{Z}\\): Integers\n\\(\\mathbb{Q}\\): Rational numbers\n\\(\\mathbb{N}\\): Natural numbers\n\\(\\mathbb{Z}/n\\mathbb{Z}\\): Set of integers mod \\(n\\)\n\nAn example of SageMath on these guys:\n\"\"\"\nThe following SageMath commands to call a set: \n\"\"\"\nCC # Complex numbers with 53-bit of precision.\nRR # Real numbers with 53-bit of precision.\nZZ # Integer Ring. \nQQ # Rational Field.\nNN # Non-negative integer semi-ring.\nZmod(11) # aka Integers(11) or `IntegerModRing(11)`: Ring of modulo 11"
+  },
+  {
+    "objectID": "Maths_Notation.html#special-sets",
+    "href": "Maths_Notation.html#special-sets",
+    "title": "1  Mathematical Notation",
+    "section": "1.1 Special sets",
+    "text": "1.1 Special sets\n\n\\(\\mathbb{C}\\): Complex numbers\n\\(\\mathbb{R}\\): Real numbers\n\\(\\mathbb{Z}\\): Integers\n\\(\\mathbb{Q}\\): Rational numbers\n\\(\\mathbb{N}\\): Natural numbers\n\\(\\mathbb{Z}/n\\mathbb{Z}\\): Set of integers mod \\(n\\)\n\nAn example of SageMath on these guys:\n\"\"\"\nThe following SageMath commands to call a set: \n\"\"\"\nCC # Complex numbers with 53-bit of precision.\nRR # Real numbers with 53-bit of precision.\nZZ # Integer Ring. \nQQ # Rational Field.\nNN # Non-negative integer semi-ring.\nZmod(11) # aka Integers(11) or `IntegerModRing(11)`: Ring of modulo 11\n\nThe unit groups: \\(R^{\\times}\\) or \\(R^{*}\\)\nFinite fields with \\(q\\) elements: \\(\\mathbb{F}_q\\)\nGeneral field: \\(k\\)\nAlgebraic closure of a field: \\(\\bar{k}\\)\n\nExample of SageMath codes:\nGF(11)\n\nGF(11)\n\nFinite Field of size 11\n\n\nGF(11).algebraic_closure()\n\nGF(11).algebraic_closure()\n\nAlgebraic closure of Finite Field of size 11\n\n\nSome interesting function for you to play with:\n\"\"\"\n`.parent()`: finding which field an element belongs to\n\"\"\"\nx = 7\nprint(x.parent())\n\nx = 3.5\nprint(x.parent())\n\nx = 7\nprint(x.parent())\n\nx = 3.5\nprint(x.parent())\n\nInteger Ring\nReal Field with 53 bits of precision\n\n\n\"\"\"\n`.lift()`: Lift an element from its parent to its... grandparent?\ne.g: from quotient ring Q (R/I) -> R\n\"\"\"\nR = ZZ \nRI = Zmod(11)\nx = RI(5)\n\nprint(x.parent())\n\ny = x.lift()\nprint(y.parent())\n\nprint(y in R)\n\nR = ZZ \nRI = Zmod(11)\nx = RI(5)\nprint(x.parent())\n\ny = x.lift()\nprint(y.parent())\nprint(y in R)\n\nRing of integers modulo 11\nInteger Ring\nTrue"
+  },
+  {
+    "objectID": "MathBackground.html",
+    "href": "MathBackground.html",
+    "title": "Mathematical Background",
+    "section": "",
+    "text": "Welcome to the start of our (actual) journey! Throughout the book, there will be more mathematical stuffs will be delivered, with many symbols and notations. Some of you may find it clear but if you not, a bookmark for this book (or any cheatsheet of SageMath) is my recommendation."
+  },
+  {
+    "objectID": "MathBackground.html#in-this-chapter",
+    "href": "MathBackground.html#in-this-chapter",
+    "title": "Mathematical Background",
+    "section": "In this chapter",
+    "text": "In this chapter\n\nMathematical Notations"
+  },
+  {
+    "objectID": "Maths_Notation.html#section",
+    "href": "Maths_Notation.html#section",
+    "title": "1  Mathematical Notation",
+    "section": "1.2 ",
+    "text": "1.2"
+  },
+  {
+    "objectID": "Maths_Notation.html#relation-operators",
+    "href": "Maths_Notation.html#relation-operators",
+    "title": "1  Mathematical Notation",
+    "section": "1.2 Relation operators",
+    "text": "1.2 Relation operators"
+  },
+  {
+    "objectID": "Maths_Notation.html#other-important-ones",
+    "href": "Maths_Notation.html#other-important-ones",
+    "title": "1  Mathematical Notation",
+    "section": "1.2 Other important ones",
+    "text": "1.2 Other important ones\n\n\\(Pr(A)\\) means the probability of an event \\(A\\) to happen. Sometimes, you may see the notation \\(Pr[A]\\) and \\(P(A)\\) also."
+  },
+  {
+    "objectID": "MathBackground.html#note-on-code-execution",
+    "href": "MathBackground.html#note-on-code-execution",
+    "title": "Mathematical Background",
+    "section": "Note on code execution",
+    "text": "Note on code execution\nAs this book uses SageMath as its main environment, I suggest you start with installing the tool first. The complete guide is available in their website.\nIf you are using Windows, you should install Windows Subsystem Linux (WSL), and then install inside your WSL system. As SageMath stops release the binary for Windows, your version of SageMath will not be updated if you choose this way.\nAs some limit of Quarto don’t allow us to both execute the SageMath code and syntax highlighting them (or I have not figured how to do it), you can see this example:\n\"\"\"\n    A test program on SageMath. NOTE: same syntax \n    with Python ;)\n\"\"\"\nprint(\"Hello World\")\nfor i in range(0, 10):\n    print(i)\n\n\nHello World\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n\n\nSome lines after the code are the output."
+  },
+  {
+    "objectID": "NumberTheory.html#introduction",
+    "href": "NumberTheory.html#introduction",
+    "title": "2  Number Theory",
+    "section": "2.1 Introduction",
+    "text": "2.1 Introduction\nWhen playing with ciphertext, most of the times, crypto guys would want to make it digital version: with numbers, computations, etc. Then, you need to face with number theory stuffs most of the time.\nThis chapter expects you could have a shot of basic number theory. Of course, this cannot replace a whole course about the topic. Discrete Mathematics from professor Wray Buntine is my suggestion.\n\n\n\n\n\n\nTip\n\n\n\nDon’t worry if something makes you struggle with. Take a step back and take it slow to understand the concepts."
+  },
+  {
+    "objectID": "NumberTheory.html#division",
+    "href": "NumberTheory.html#division",
+    "title": "2  Number Theory",
+    "section": "2.2 Division",
+    "text": "2.2 Division\nLet \\(\\mathbb{Z}\\) be the integers \\(\\{\\ldots, -1, 0, 1, 2, \\ldots \\}\\)\n\n\n\n\n\n\nDefinition - Divisibility\n\n\n\n\nFor \\(a, b \\in \\mathbb{Z}\\), we say that \\(a\\) divides \\(b\\) if there is a \\(k \\in \\mathbb{Z}\\) such that \\(a \\cdot k = b\\).\nNotation: \\(a \\mid b\\).\n\n\n\nExample: \\(2 \\mid 6\\), as \\(2 \\cdot 3 = 6\\).\nThere are some important properties:\n\n\n\n\n\n\nProperties\n\n\n\n\n\\(a \\mid a\\), \\(1 \\mid a\\), \\(a \\mid 0\\)\n\\(a \\mid b\\), \\(b \\mid c \\rightarrow a \\mid (bu+cv) \\quad \\forall u, v \\in \\mathbb{Z}\\)\n\\(a \\mid b\\), \\(b \\mid c \\rightarrow a \\mid c\\)\n\n\n\n\n\n\n\n\n\nDefinition - Division with remainder\n\n\n\nLet \\(a, b \\in \\mathbb{Z}\\), \\(b \\geq 1\\) Then, there exists unique \\(q, r \\in \\mathbb{Z}\\) such that \\(a = bq + r\\) and \\(0 \\le r \\lt b\\).\n\\(q\\) is quotient and \\(b\\) is remainder.\n\n\nTo find quotients and remainder in Python, you can use either // and % for div and mod, or divmod().\nq, r = divmod(6, 2)\nprint(q, r)\nq = 11 // 3\nr = 11 % 3\nprint(q, r)\n\n\n3 0\n3 2"
+  },
+  {
+    "objectID": "NumberTheory.html",
+    "href": "NumberTheory.html",
+    "title": "2  Number Theory",
+    "section": "",
+    "text": "2.0.1 Introduction\nWhen playing with ciphertext, most of the times, crypto guys would want to make it digital version: with numbers, computations, etc. Then, you need to face with number theory stuffs most of the time.\nThis chapter expects you could have a shot of basic number theory. Of course, this cannot replace a whole course about the topic. Discrete Mathematics from professor Wray Buntine is my suggestion.\n\n\n\n\n\n\nTip\n\n\n\nDon’t worry if something makes you struggle with. Take a step back and take it slow to understand the concepts.\n\n\n\n\n2.0.2 Division\nLet \\(\\mathbb{Z}\\) be the integers \\(\\{\\ldots, -1, 0, 1, 2, \\ldots \\}\\)\n\n\n\n\n\n\nDefinition - Divisibility\n\n\n\n\nFor \\(a, b \\in \\mathbb{Z}\\), we say that \\(a\\) divides \\(b\\) if there is a \\(k \\in \\mathbb{Z}\\) such that \\(a \\cdot k = b\\).\nNotation: \\(a \\mid b\\).\n\n\n\nExample: \\(2 \\mid 6\\), as \\(2 \\cdot 3 = 6\\).\nThere are some important properties:\n\n\n\n\n\n\nProperties\n\n\n\n\n\\(a \\mid a\\), \\(1 \\mid a\\), \\(a \\mid 0\\)\n\\(a \\mid b\\), \\(b \\mid c \\rightarrow a \\mid (bu+cv) \\quad \\forall u, v \\in \\mathbb{Z}\\)\n\\(a \\mid b\\), \\(b \\mid c \\rightarrow a \\mid c\\)\n\n\n\n\n\n\n\n\n\nDefinition - Division with remainder\n\n\n\nLet \\(a, b \\in \\mathbb{Z}\\), \\(b \\geq 1\\) Then, there exists unique \\(q, r \\in \\mathbb{Z}\\) such that \\(a = bq + r\\) and \\(0 \\le r \\lt b\\).\n\\(q\\) is quotient and \\(b\\) is remainder.\n\n\nTo find quotients and remainder in Python, you can use either // and % for div and mod, or divmod().\nq, r = divmod(6, 2)\nprint(q, r)\nq = 11 // 3\nr = 11 % 3\nprint(q, r)\n\n\n3 0\n3 2"
+  },
+  {
+    "objectID": "Guide_On_Source.html#introduction",
+    "href": "Guide_On_Source.html#introduction",
+    "title": "2  Guide on Mathematics sources",
+    "section": "2.1 Introduction",
+    "text": "2.1 Introduction\nAs you are working with computations of ciphering and deciphering, being comfortable with the Maths here is the best!"
+  },
+  {
+    "objectID": "Guide_On_Source.html#division",
+    "href": "Guide_On_Source.html#division",
+    "title": "2  Guide on Mathematics sources",
+    "section": "2.2 Division",
+    "text": "2.2 Division\nLet \\(\\mathbb{Z}\\) be the integers \\(\\{\\ldots, -1, 0, 1, 2, \\ldots \\}\\)\n\n\n\n\n\n\nDefinition - Divisibility\n\n\n\n\nFor \\(a, b \\in \\mathbb{Z}\\), we say that \\(a\\) divides \\(b\\) if there is a \\(k \\in \\mathbb{Z}\\) such that \\(a \\cdot k = b\\).\nNotation: \\(a \\mid b\\).\n\n\n\nExample: \\(2 \\mid 6\\), as \\(2 \\cdot 3 = 6\\).\nThere are some important properties:\n\n\n\n\n\n\nProperties\n\n\n\n\n\\(a \\mid a\\), \\(1 \\mid a\\), \\(a \\mid 0\\)\n\\(a \\mid b\\), \\(b \\mid c \\rightarrow a \\mid (bu+cv) \\quad \\forall u, v \\in \\mathbb{Z}\\)\n\\(a \\mid b\\), \\(b \\mid c \\rightarrow a \\mid c\\)\n\n\n\n\n\n\n\n\n\nDefinition - Division with remainder\n\n\n\nLet \\(a, b \\in \\mathbb{Z}\\), \\(b \\geq 1\\) Then, there exists unique \\(q, r \\in \\mathbb{Z}\\) such that \\(a = bq + r\\) and \\(0 \\le r \\lt b\\).\n\\(q\\) is quotient and \\(b\\) is remainder.\n\n\nTo find quotients and remainder in Python, you can use either // and % for div and mod, or divmod().\nq, r = divmod(6, 2)\nprint(q, r)\nq = 11 // 3\nr = 11 % 3\nprint(q, r)\n\n\n3 0\n3 2"
+  },
+  {
+    "objectID": "GuideOnSource.html#introduction",
+    "href": "GuideOnSource.html#introduction",
+    "title": "2  Guide on Mathematics sources",
+    "section": "2.1 Introduction",
+    "text": "2.1 Introduction\nAs you are working with computations of ciphering and deciphering, being comfortable with the Maths here is the best! In terms of the purpose of this document, we will not go too deep in any Mathematics here. However, here are some books that I think may help you a lot when studying some first cryptos:\nAlso, before working with the few next chapters, you should be comfortable with: - Modular Arithmetic (Concepts of modulo, GCD, etc.)"
+  },
+  {
+    "objectID": "Encoding.html#introductions",
+    "href": "Encoding.html#introductions",
+    "title": "3  Encoding",
+    "section": "3.1 Introductions",
+    "text": "3.1 Introductions\nAs a two-year (or more) CTF players, I have not see any challenges that works too much on the encoding (As they are standardized). Some may appear in challenges of Web or Pwn, where the format of the data matters. In this section, I will introduce several common types of encoding for you!"
+  },
+  {
+    "objectID": "Encoding.html#base64",
+    "href": "Encoding.html#base64",
+    "title": "3  Encoding",
+    "section": "3.4 Base64",
+    "text": "3.4 Base64\nUsing Base64 encoding, you can represent binary data as ASCII string, with an alphabet of 64 characters. Some other versions of Base64, like Base58 (Using in Bitcoin, remove some ‘look-the-same’ character like l (normalcase l) and I (uppercase i)) are alse used widely.\nIn Python, you can use the library base64 for working with this encoding.\ns = \"Hello World\"\nimport base64\nb64enc = base64.b64encode(s)\nprint(b64enc)\nprint(base64.b64decode(b64enc))\n\n\nb'SGVsbG8gV29ybGQ='\nb'Hello World'"
+  },
+  {
+    "objectID": "Foundations.html",
+    "href": "Foundations.html",
+    "title": "Foundations",
+    "section": "",
+    "text": "Most of the cases, you do not want to look at a piece where every single letters are abstract digits and numbers but images, videos or at least readable text. However, cryptography does not work quite well with the ordinary letters themselves; therefore, we need encoding to change our letter to some computable forms (like binary, decimal, etc.)\nIn this part, we will have a look at some topics:"
+  },
+  {
+    "objectID": "Encoding.html#ascii",
+    "href": "Encoding.html#ascii",
+    "title": "3  Encoding",
+    "section": "3.2 ASCII",
+    "text": "3.2 ASCII\nASCII is 7-bit encoding standard, where each letter is assigned with a number from 0-127. Besides this ASCII table, we also have an extended ASCII, where 256 characters are encoded. You can have a look at ASCII Table to see it clearer.\ns = \"Hello World\"\nprint([ord(c) for c in s])\n\n\n[72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100]"
+  },
+  {
+    "objectID": "Encoding.html#hex",
+    "href": "Encoding.html#hex",
+    "title": "3  Encoding",
+    "section": "3.3 Hex",
+    "text": "3.3 Hex\nHex stands for Hexadecimal, i.e. base 16. Basically, you can understand Hex as a version of ASCII but in hexadecimal rather than decimal.\ns = \"Hello World\"\nprint([hex(ord(c)) for c in s])\nprint(bytes(s, encoding='utf-8').hex())\n\n\n['0x48', '0x65', '0x6c', '0x6c', '0x6f', '0x20', '0x57', '0x6f', '0x72', '0x6c', '0x64']\n48656c6c6f20576f726c64"
+  },
+  {
+    "objectID": "Encoding.html#bignum-and-bytes",
+    "href": "Encoding.html#bignum-and-bytes",
+    "title": "3  Encoding",
+    "section": "3.5 Bignum and Bytes",
+    "text": "3.5 Bignum and Bytes\nIf you want to encrypt a word (“HELLO”, for example); most of the case, you can’t apply encryption directly on it. A solution is that: concatenate the hex value of each characters. For example:\nmessage: HELLO\nascii bytes: [72, 69, 76, 76, 79]\nhex bytes: [0x48, 0x45, 0x4c, 0x4c, 0x4f]\nbase-16: 0x48454c4c4f\nbase-10: 310400273487 \nWhen working with these bignums, a Python library PyCryptodome provides two functions to convert back and forth:\ns = b\"Hello World\"\nprint(s.hex())\nfrom Crypto.Util.number import long_to_bytes, bytes_to_long\n# The usage of command\nprint(bytes_to_long(s))\n\n# Compare with the hex value\nprint(hex(bytes_to_long(s)))\n\n# Decoding\nprint(long_to_bytes(bytes_to_long(s)))\n\n\n48656c6c6f20576f726c64\n87521618088882533792115812\n0x48656c6c6f20576f726c64\nb'Hello World'\n\n\nAlso, there are some forms of encoding like URL Encoding, which uses a lot in our hyperlinks. You can always search them, when you need it xD."
+  },
+  {
+    "objectID": "Symmetric.html",
+    "href": "Symmetric.html",
+    "title": "Symmetric Cryptography",
+    "section": "",
+    "text": "Welcome to the first part of real crypto stuffs! I hope you are familiar with all previous materials!\nAs its name, Symmetric Cryptography is the types of cryptography where the key for both encryption & decryption process is the same.\n\n\n\nSymmetric Cryptography\n\n\nIn this section, we will cover mainly one of the most advanced symmetric-key algorithm: AES (Advanced Encryption Standard), and some modes of operation around them. There will be some extra resources for you to read some older (and doomed) algorithms, like DES."
+  },
+  {
+    "objectID": "AESBasic.html#introduction",
+    "href": "AESBasic.html#introduction",
+    "title": "8  Basics about AES",
+    "section": "8.1 Introduction",
+    "text": "8.1 Introduction\nIn some decades ago, the needs of encryption in both governmental, military and also basic data arose around the world. Therefore, many algorithms have been developed. Some among them survive until today and we have AES.\nFor a clear introduction about AES, I would refer you to read it in the Wikipedia page of AES."
+  },
+  {
+    "objectID": "AESBasic.html#algorithms.",
+    "href": "AESBasic.html#algorithms.",
+    "title": "4  Basics about AES",
+    "section": "4.2 Algorithms.",
+    "text": "4.2 Algorithms."
+  },
+  {
+    "objectID": "AESBasic.html#algorithms",
+    "href": "AESBasic.html#algorithms",
+    "title": "8  Basics about AES",
+    "section": "8.2 Algorithms",
+    "text": "8.2 Algorithms\nThe encryption of AES can be broken into two parts, the Key Schedule and the Encryption. Based on your mode (AES-256, for example), your key will be required to have this length. At right now, AES-256 is still super good for any of your normal encryption.\n\n8.2.1 Key Schedule\nThe Key Schedule process is required to break the key into small sub-keys, which will be used in each round of AES. The Key Schedule’s implementation is worked by the operations under Galois Field \\(GF(2^8)\\). Explaining this process would take lots of time because of the Abstract Algebra it’s related, so I would give a link if you really want to learn about it:\nAES Key Schedule"
+  },
+  {
+    "objectID": "ModesOfOperations.html",
+    "href": "ModesOfOperations.html",
+    "title": "4  Modes of operations",
+    "section": "",
+    "text": "In cryptography, the mode of operation of the block cipher allows encryption of more than one block of data using the same packet cipher key. The block cipher itself can only encrypt a single block of data whose length is equal to the length of the cipher block. To encrypt longer data, the data must ﬁrst be divided into several separate chunks. Usually, the last block of data needs to be expanded to match the block size using appropriate padding. The mode of operation describes the process of encrypting each data block and is often randomized using an additional initiali- zation vector (IV) to ensure security. The study of modes of operations used to include data integrity protection, i.e., the error propagation characteristics of the cipher, if some byte is modiﬁed. Subse- quent research has treated integrity protection as an entirely different cryptosystem- independent goal of cryptography. Some modern modes of operations combine encryption (conﬁdentiality) and authentication in an efﬁcient way, which is called authentication encryption."
+  },
+  {
+    "objectID": "Symmetric.html#block-cipher",
+    "href": "Symmetric.html#block-cipher",
+    "title": "Symmetric Cryptography",
+    "section": "Block cipher",
+    "text": "Block cipher\nIn Cryptography, Block Cipher is a symmetric cryptographic algorithm that divides a plaintext into multiple blocks of equal length, and encrypts/decrypts each block separately. This pretty much same as some classical ciphers you may hear about, like Caesar, except a whole block is substituted rather than a single character.\nWith supports of some modes of operations, we could have different ways of encrypt/decrypt, and also even change the block cipher into stream cipher, where each characters are substituted."
+  },
+  {
+    "objectID": "ModesOfOperations.html#ecb",
+    "href": "ModesOfOperations.html#ecb",
+    "title": "4  Modes of operations",
+    "section": "4.1 ECB",
+    "text": "4.1 ECB\nElectronic Code Book is the simplest mode of operation, where each block of plaintext is independently encrypted/decrypted.\n\n\n\nECB\n\n\nIndeed, besides its simplicity, ECB can bring lots of hazards. According to the independent process between each block, the data pattern is not well-hidden with ECB, with this example below:\n\n\n\nTux_ECB\n\n\nYou can try ECB encryption process with the library PyCryptodome with this example:"
+  },
+  {
+    "objectID": "ECB.html#ecb",
+    "href": "ECB.html#ecb",
+    "title": "4  Modes of operations & ECB",
+    "section": "4.1 ECB",
+    "text": "4.1 ECB\nElectronic Code Book is the simplest mode of operation, where each block of plaintext is independently encrypted/decrypted.\n\n\n\nECB\n\n\nIndeed, besides its simplicity, ECB can bring lots of hazards. According to the independent process between each block, the data pattern is not well-hidden with ECB, with this example below:\n\n\n\nTux_ECB\n\n\nYou can try ECB encryption process with the library PyCryptodome with this example:\nfrom Crypto.Cipher import AES\nfrom Crypto.Util.Padding import pad, unpad\n\n\nkey = b'sixteen byte key' # should be 16-byte key\nAESMachine = AES.new(key, AES.MODE_ECB)\ndata = b'I am b1b1 s4y 0h y3@h!'\n# remember to pad the data!\ncipher = AESMachine.encrypt(pad(data, 16))\ndecrypt = AESMachine.decrypt(cipher)\n\nprint(cipher)\nprint(decrypt)\n\n\nb\"\\x1a\\xcbv]y\\x7f\\xe6\\x9c\\xe3I'F\\xe5e)\\xef;\\xbb#>w_\\x97\\x0f\\x8a\\xfff\\xbd\\x88\\xb3n\\xcb\"\nb'I am b1b1 s4y 0h y3@h!\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n'\n\n\n\n\n\n\n\n\nImportant\n\n\n\nIn most of AES modes of operations, we need to pad the data with proper size. As you see in some next chapters, AES will encrypt each 16-byte block of the message at one time; therefore, we need to pad the data as 16-byte block. The function pad(data, 16) as you see in the code is one very good padding scheme, PKCS7"
+  },
+  {
+    "objectID": "CBC.html",
+    "href": "CBC.html",
+    "title": "5  CBC",
+    "section": "",
+    "text": "From now on, every mode of operations we see will make our blocks dependant to each other, by some ways.\nThe Cipher Block Chaining mode will make every block encrypted after it has been XORed with its preceding cipher block. With the first block, we add in a Initialization vector (IV) to work as its preceding block.\n\n\n\nCBC Encryption\n\n\nThen, the decryption will be reversed:\n\n\n\nCBC Decryption\n\n\nWe can formulate the above processes as:\nWith \\(C_0 = IV\\) \\[\n\\displaylines{C_i = E(P_i \\oplus C_{i-1})\\\\P_i = D(C_i) \\oplus C_{i-1}}\n\\]\nIndeed, it does not (and also never) means we use CBC then our cipher is good.\nYou can try AES CBC by this piece of code:\nfrom Crypto.Cipher import AES \nfrom Crypto.Util.Padding import pad, unpad \n\nkey = b'a'*16\ndata = b'hello world this is bibi' \niv = b'yellow submarine'\n\nAESMachine = AES.new(key, AES.MODE_CBC, iv)\ncipher = AESMachine.encrypt(pad(data, 16))\nprint(cipher)\n\nAESMachine = AES.new(key, AES.MODE_CBC, iv)\ndecrypt = AESMachine.decrypt(cipher)\nprint(decrypt)\n\n\nb'\\x18|\\x95M\\xc4iw\\xbc\\x13<2\\xaf\\x0e\\n\\xe4d{Rm!/B\\xc4sB\\xbc\\x07\\xc7@\\xa5\\x8e\\xd1'\nb'hello world this is bibi\\x08\\x08\\x08\\x08\\x08\\x08\\x08\\x08'\n\n\n\n\n\n\n\n\nRecommended challenges:\n\n\n\n\nLazy CBC\nFlipping Cookies"
+  },
+  {
+    "objectID": "OFB_CFB.html#ofb",
+    "href": "OFB_CFB.html#ofb",
+    "title": "6  OFB & CFB",
+    "section": "6.1 OFB",
+    "text": "6.1 OFB\nOutput Feedback (OFB) encrypts the Initialization Vector for the first time, and the previous encrypted version of it as the first XOR block. then, the plaintext block will be XOR-ed with this one.\n\n\n\nOFB\n\n\nWe can formulate the process as:\nIf “XOR block” is \\(O\\), plaintext is \\(P\\), ciphertext is \\(C\\):\n\\[\n\\displaylines{O_0 = IV \\\\ O_i = E(O_{i-1}) \\\\ C_i = P_i \\oplus O_i \\\\ P_i = C_i \\oplus O_I}\n\\]\nAs you can see, the ciphertext and plaintext are symmetric, due to symmetry properties of OFB.\n\n\n\n\n\n\nSpot\n\n\n\nCan you spot a weakness if the advisery know the ciphertext and the IV used in this ciphertext?"
+  },
+  {
+    "objectID": "OFB_CFB.html#cfb",
+    "href": "OFB_CFB.html#cfb",
+    "title": "6  OFB & CFB",
+    "section": "6.2 CFB",
+    "text": "6.2 CFB\nCipher Feedback (CFB) is quite not the same with OFB, except it uses the ciphertext of previous block as input of current block. (In OFB, we use the previous block cipher output)\n\n\n\nCFB_enc\n\n\n\n\n\nCFB_dec\n\n\nAgain, we can formulate the process as:\n\\[\n\\displaylines{C_0 = IV \\\\ C_i = P_i \\oplus E(C_{i-1}) \\\\ P_i = C_i \\oplus E(C_{i-1})}\n\\]\n\n\n\n\n\n\nTip\n\n\n\nCan you try this version by yourself, using the snipset in two part above?"
+  },
+  {
+    "objectID": "CTR.html",
+    "href": "CTR.html",
+    "title": "7  CTR",
+    "section": "",
+    "text": "The final mode of operation we will introduce will have a little bit different. While every other mode will have a fixed ciphertext for each plaintext, CTR will provide a different one every time we create new ciphers. This can be done because of the mechanism of nonce and counter (the name Counter Mode of CTR said it all).\nIn CTR, the nonce acts the same as IV in other modes, while the counter will be altered each time new message is required."
+  },
+  {
+    "objectID": "AESBasic.html#processes-of-an-aes",
+    "href": "AESBasic.html#processes-of-an-aes",
+    "title": "8  Basics about AES",
+    "section": "8.3 Processes of an AES",
+    "text": "8.3 Processes of an AES\n\n\n\nAES Structure\n\n\nAs you see here, default AES will have 10 rounds, with these subprocess:\n\nAddRoundKey: The sub-key from Key Schedule will be XOR-ed with the 16-byte block of plaintext.\n\n\n\n\n\n\n\nSubBytes: Each position of the block will be substituted with another byte, via implementation of Sbox. The Sbox is just a sophiticated way to substitute, rather than poorer one like in classical cipher, like Caesar. Again, the implementation is required some advanced math so we can assume that, this Sbox will never leak any bytes.\n\n\n\n\n\n\n\nShiftRows: This step is super simple, as except the first row, every other rows will be left-shifted 1, 2, and 3 positions.\n\n\n\n\n\n\n\nMixColumn: At this step, every column of the block will be fixed after a matrix multiplication under Galois Field.\n\n\n\n\n\n\nOne series that I really recommended is AES introduction from the website CryptoHack. You could also play others about AES here."
+  },
+  {
+    "objectID": "Asymmetric.html",
+    "href": "Asymmetric.html",
+    "title": "Asymmetric Cryptography",
+    "section": "",
+    "text": "Welcome to the second part of this guide! With the previous part, we have a quick walkthrough for every part of symmetric cryptography. As you may recognize, the main uncomfortable thing of symmetric cryptography is that both party need to have an agreement on a same key. During the 1970s, some first attempts to remove this barrier has been successful. Since then, two party can use secured protection over their conversations.\nTwo main applications of asymmetric cryptography is:\n\nPublic key encryption: where Alice will use a public key to allow other people send messages to her, and another private key for her to read the ciphertext.\n\n\n\n\n\n\n\nDigital signature: when Alice create some document, she can ‘sign’ into the document to verify her as the true owner. Any other people can verify it easily, just by some simple calculations.\n\n\n\n\n\n\nMore than that, Asymmetric cryptography can be used as a key sharing scheme (like Diffie-Hellman) that can be used in sharing the common key for the Symmetric Cryptography.\n\n\n\n\n\nThe anatomy of Asymmetric Cryptography is just like that. During this part, three significants cryptosystem will be demonstrated: RSA, Diffie-Hellman Key Exchange and a little bit on simple digital signature.\nIn the last chapters, the mechanism of Elliptic Curve Cryptography will also be included."
+  },
+  {
+    "objectID": "UsefulMaths.html",
+    "href": "UsefulMaths.html",
+    "title": "9  Toddlers’ Mathematics for PKC",
+    "section": "",
+    "text": "In this chapter, we will have a small walkthrough on some simple concepts of modular arithmetic that we needs for RSA and Diffie-Hellman.\n\n\n\n\n\n\nAssumption\n\n\n\nThe material here will assume that you have basic knowledge about modular arithmetic, how to do GCD and Extended GCD (via Euclidean and Extended Euclidean algorithm)"
+  },
+  {
+    "objectID": "UsefulMaths.html#eulers-phi-totient",
+    "href": "UsefulMaths.html#eulers-phi-totient",
+    "title": "9  Toddlers’ Mathematics for PKC",
+    "section": "9.1 Euler’s Phi Totient",
+    "text": "9.1 Euler’s Phi Totient\n\n\n\n\n\n\nNote\n\n\n\nGiven a number \\(n\\), Euler’s Phi Totient number defines the numbers of natural numbers \\(i\\) (\\(1 \\le i \\lt n\\)) that \\(GCD(i, n) = 1\\)\nThis function is denoted as \\(\\phi(n)\\).\n\n\nExample:  \\(\\phi(20) = 8\\), \\(\\phi(4) = 2, \\phi(5) = 4\\)\nThis totient has some important properties that is useful with RSA:\n\n\n\n\n\n\nImportant Euler’s Phi Totient Properties:\n\n\n\n\nIf \\(p\\) is a prime, then \\(\\phi(p) = p - 1\\)\nIf \\(GCD(a, b) = 1\\), then \\(\\phi(a\\cdot b) = \\phi(a) \\cdot \\phi(b)\\)\nGiven two numbers \\(a, n\\) where \\(GCD(a, n) == 1\\), then: \\[\na^{\\phi(n)} \\equiv 1 \\pmod n\n\\]"
+  },
+  {
+    "objectID": "UsefulMaths.html#important-eulers-phi-totient-properties",
+    "href": "UsefulMaths.html#important-eulers-phi-totient-properties",
+    "title": "9  Toddlers’ Mathematics for PKC",
+    "section": "9.2 Important Euler’s Phi Totient Properties:",
+    "text": "9.2 Important Euler’s Phi Totient Properties:\n\nIf \\(p\\) is a prime, then \\(\\phi(p) = p - 1\\)"
+  },
+  {
+    "objectID": "UsefulMaths.html#inverse-modulo",
+    "href": "UsefulMaths.html#inverse-modulo",
+    "title": "9  Toddlers’ Mathematics for PKC",
+    "section": "9.2 Inverse modulo",
+    "text": "9.2 Inverse modulo\n\n\n\n\n\n\nInverse modulo n\n\n\n\nGiven a number \\(a\\), the inverse modulo \\(n\\) of \\(a\\) is the number \\(x\\) where:\n\\[\nax \\equiv 1 \\pmod{n}\n\\]\nThis inverse should exist if \\(GCD(a, n) = 1\\)"
+  },
+  {
+    "objectID": "UsefulMaths.html#discrete-logarithm",
+    "href": "UsefulMaths.html#discrete-logarithm",
+    "title": "9  Toddlers’ Mathematics for PKC",
+    "section": "9.3 Discrete Logarithm",
+    "text": "9.3 Discrete Logarithm\nGiven \\(a, h, n\\) where there exists a number \\(x\\) that \\(a^x \\equiv h \\pmod{n}\\), the discrete logarithm problem is the process of finding the suitable number \\(x\\) in \\(\\mathbb{Z}_n\\)."
+  },
+  {
+    "objectID": "UsefulMaths.html#some-abstract-algebra",
+    "href": "UsefulMaths.html#some-abstract-algebra",
+    "title": "9  Toddlers’ Mathematics for PKC",
+    "section": "9.4 Some Abstract Algebra",
+    "text": "9.4 Some Abstract Algebra\nIn here, I will introduce several simple concepts of group, generator, order of a group and order of a member of the group.\n\n9.4.1 Group"
+  }
+]

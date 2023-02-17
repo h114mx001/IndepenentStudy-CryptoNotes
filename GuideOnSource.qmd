@@ -1,0 +1,8 @@
+# Guide on Mathematics sources {#sec-MathBG}
+
+## Introduction 
+
+As you are working with computations of ciphering and deciphering, being comfortable with the Maths here is the best! In terms of the purpose of this document, we will not go too deep in any Mathematics here. However, here are some books that I think may help you a lot when studying some first cryptos:
+
+Also, before working with the few next chapters, you should be comfortable with: 
+- Modular Arithmetic (Concepts of modulo, GCD, etc.)
