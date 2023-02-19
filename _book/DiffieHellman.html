@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./Attacks_DH.html" rel="next">
+<link href="./BreakingDLP.html" rel="next">
 <link href="./RSA_Parameters.html" rel="prev">
 <link href="./cover.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
@@ -222,7 +222,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Attacks_DH.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Attacks_DH.html</span></a>
+  <a href="./BreakingDLP.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Some attacks on Diffie-Hellman</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -263,6 +263,7 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#diffie-hellman-basic" id="toc-diffie-hellman-basic" class="nav-link active" data-scroll-target="#diffie-hellman-basic"><span class="toc-section-number">14.1</span>  Diffie-Hellman basic</a></li>
   <li><a href="#cryptosystem-built-on-discrete-logarithm" id="toc-cryptosystem-built-on-discrete-logarithm" class="nav-link" data-scroll-target="#cryptosystem-built-on-discrete-logarithm"><span class="toc-section-number">14.2</span>  Cryptosystem built on Discrete Logarithm</a></li>
+  <li><a href="#meet-in-the-middle" id="toc-meet-in-the-middle" class="nav-link" data-scroll-target="#meet-in-the-middle"><span class="toc-section-number">14.3</span>  Meet-in-the-middle</a></li>
   </ul>
 </nav>
     </div>
@@ -311,6 +312,15 @@ S \equiv B^a \equiv (g^b)^a \equiv g^{ba} \pmod p
 <section id="cryptosystem-built-on-discrete-logarithm" class="level2" data-number="14.2">
 <h2 data-number="14.2" class="anchored" data-anchor-id="cryptosystem-built-on-discrete-logarithm"><span class="header-section-number">14.2</span> Cryptosystem built on Discrete Logarithm</h2>
 <p>There are some others cryptosystem (like RSA), that built on the Discrete Logarithm rather than the trapdoor function of factorization. One significant is <a href="https://en.wikipedia.org/wiki/ElGamal_encryption">ElGamal</a>.</p>
+</section>
+<section id="meet-in-the-middle" class="level2" data-number="14.3">
+<h2 data-number="14.3" class="anchored" data-anchor-id="meet-in-the-middle"><span class="header-section-number">14.3</span> Meet-in-the-middle</h2>
+<p>Now, we will discuss about an attack in Diffie-Hellman Key Exchange.</p>
+<p>Let Mallory be the adversary, by some ways can interrupt and intimate the sharing scheme between Alice and Bob.</p>
+<p><img src="./images/MITM.png" class="img-fluid"></p>
+<p>Mallory will send his private key to Bob and Alice. And by this mean, the shared secret that Alice and Bob would compute is <span class="math inline">\(g^{az}\)</span> and <span class="math inline">\(g^{bz}\)</span>, which Mallory also has.</p>
+<p>Then, Mallory would establish two secret connections between Alice and Bob, using these two shared secrets, and can read the plaintext between Alice and Bob.</p>
+<p>However, Mallory still cannot find back Alice and Bob secret key <span class="math inline">\(a, b\)</span>. We will discuss this on the next chapter.</p>
 
 
 </section>
@@ -456,8 +466,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./Attacks_DH.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Attacks_DH.html</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./BreakingDLP.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Some attacks on Diffie-Hellman</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

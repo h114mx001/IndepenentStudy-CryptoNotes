@@ -1,1 +1,1 @@
-{"entries":[{"key":"sec-Asymmetric","order":{"section":[15,0,0,0,0,0,0],"number":1}}],"options":{"chapters":true,"chapter-id":"sec-Asymmetric"},"headings":["baby-step-giant-step","sec-Asymmetric"]}
+{"entries":[{"order":{"number":1,"section":[15,0,0,0,0,0,0]},"key":"sec-Asymmetric"}],"headings":["baby-step-giant-step","pohlig-hellman-algorithm","smooth-number","pohlig-hellman","sec-Asymmetric"],"options":{"chapter-id":"sec-Asymmetric","chapters":true}}

@@ -1,1 +1,1 @@
-{"entries":[{"order":{"number":1,"section":[8,0,0,0,0,0,0]},"key":"sec-Symmetric"}],"headings":["introduction","algorithms","key-schedule","processes-of-an-aes","sec-Symmetric"],"options":{"chapters":true,"chapter-id":"sec-Symmetric"}}
+{"headings":["introduction","algorithms","key-schedule","processes-of-an-aes","sec-Symmetric"],"entries":[{"order":{"number":1,"section":[8,0,0,0,0,0,0]},"key":"sec-Symmetric"}],"options":{"chapter-id":"sec-Symmetric","chapters":true}}

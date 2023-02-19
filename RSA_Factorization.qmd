@@ -156,4 +156,187 @@ assert n % p == 0
 print(p, n // p)
 ```
 
-In the later chapters, we will look at another factoring algorithm, that lies on the elliptic curve. For further factoring, I recommend you to have a look at the book: `The Joy of Factoring`, from Samuel S. Wagstaff and some chapters in the book `An Introduction to Mathematical Cryptography` I mentioned above. 
+## Lenstra's Elliptic Curve Factorization
+
+With this method, we are using the concepts of Elliptic Curve. Therefore, you may want to look at the chapters about Elliptic Curve before coming back this chapter.
+
+In the previous part, in the Pollard's p-1 algorithm, we compute the factorial and hoping it will share the prime factorization with $p - 1$. So, Can we do a 'mimic' of this, as instead of $a^{p-1} \equiv 1 \pmod p$, we can do something like this with properties of elliptic curve on finite field addition?
+
+### Intuition
+
++ If we know $P$, we can calculate $2P$, $3P$, $\ldots$ easily. Let's see with an example.
+
+$$
+P = (38, 112) \qquad E: Y^2 = X^3 + 3X + 7
+$$
++ In here, $x(P), y(P)$ mean the x and y coordinate of P
+
++ For 2P, from Addition Algorithm:
+$$
+\begin{aligned}
+\frac{1}{2y(P)} &= \frac{1}{224} \equiv 91 \pmod {187} \\
+\lambda &= \frac{3x(P)^2 + A}{2y(P)}
+\ldots
+\end{aligned}
+$$
+
++ For 3P, from Addition Algorithm:
+$$
+\begin{aligned}
+\frac{1}{x(2P) - x(P)} &= \frac{1}{5} \equiv 75 \pmod {187} \\
+\lambda &= \frac{y(2P) - y(P)}{x(2P) - x(P)} = \frac{14}{5} \ldots
+\end{aligned}
+$$
+
++ We call the value $\frac{1}{x} \pmod p$ is **reciprocal**.
+
+As stated, at each step, in order to determine if we can compute the next $(i+1)P$, we always need to find the inverse modulo of $N$ for some reciprocal value (the denominator of the $\lambda$)
+
+Then, the idea of Lenstra's Factoring algorithm is just similar to Pollard $p-1$: At each step, we compute 
+$$
+P, 2!\cdot P, 3!\cdot P, \ldots
+$$
+
+There are only 3 cases for reciprocal $d$:
+
++ If $d = kN$, we need to change the curve and point.
++ If $d | N$, we have found a prime factor!
++ Else, continue our computation.
+
+![](/images/elliptic_factoring.png)
+
+This algorithm works, also because of the Lagrange's theorem. 
+
++ Recall, the Lagrange's theorem stated that if a curve $E$ has order $N$, then any point under this curve will have the order $d$ such $d|N$.
+
++ As $n = pq$, our original curve $E(\mathbb{F}_n)$ can be broken into 2 smaller curve of $p, q$, each with the order $N_p, N_q << n$ 
+
++ Then, for any point $P$, we only need to find a number that is divisible by the order of the point $P$, which also divisible by $N_p$. 
+
+```Python
+p = 6887
+E = EllipticCurve(Zmod(p), [14, 19])
+Point = E(1512, 3166)
+
+def pointAddition(point1, point2, p):
+    try:
+        res = point1 + point2 
+    except: 
+        reciprocal = (point1[0] - point2[0]) % p 
+        d = gcd(reciprocal, p)
+        return (0, 0, d)
+    return res
+
+def multiplication(k, point, curve, p):
+    r = curve(0, 1, 0) # null 
+    tmp = point 
+    while k > 0:
+        if k % 2 == 1:
+            r = pointAddition(r, tmp, p)
+            if r[2] > 1:
+                return r
+        tmp = pointAddition(tmp, tmp, p)
+        k //=2 
+    return r
+
+from sympy.ntheory import sieve 
+from random import randint
+
+sieve._reset()
+
+def LenstraFactorization(n, bound):
+    sieve.extend(bound)
+    while True:
+        g = n 
+        point = [0, 0]
+        a, b = 0, 0
+        while (g == n):
+            point = [randint(1, n - 1), randint(1, n - 1)]
+            a = randint(1, n - 1)
+            b = (point[1]^2 - point[0]^3 - a*point[0]) % n
+            g = gcd(4*a^3 + 27*b^2, n)
+        if g > 1:
+            return g
+        curve = EllipticCurve(Zmod(n), [a, b])
+        point = curve(point)
+        q = point
+        for p in sieve:
+            pp = p
+            while pp < bound: 
+                q = multiplication(p, q, curve, n)
+                print(q)
+                if q[2] > 1:
+                    return gcd(q[2], n)
+                pp *= p
+        return False
+
+LenstraFactorization(6887, 10000)
+```
+```{sagemath}
+p = 6887
+E = EllipticCurve(Zmod(p), [14, 19])
+Point = E(1512, 3166)
+
+def pointAddition(point1, point2, p):
+    try:
+        res = point1 + point2 
+    except: 
+        reciprocal = (point1[0] - point2[0]) % p 
+        d = gcd(reciprocal, p)
+        return (0, 0, d)
+    return res
+
+def multiplication(k, point, curve, p):
+    r = curve(0, 1, 0) # null 
+    tmp = point 
+    while k > 0:
+        if k % 2 == 1:
+            r = pointAddition(r, tmp, p)
+            if r[2] > 1:
+                return r
+        tmp = pointAddition(tmp, tmp, p)
+        k //=2 
+    return r
+
+from sympy.ntheory import sieve 
+from random import randint
+
+sieve._reset()
+
+def LenstraFactorization(n, bound):
+    sieve.extend(bound)
+    while True:
+        g = n 
+        point = [0, 0]
+        a, b = 0, 0
+        while (g == n):
+            point = [randint(1, n - 1), randint(1, n - 1)]
+            a = randint(1, n - 1)
+            b = (point[1]^2 - point[0]^3 - a*point[0]) % n
+            g = gcd(4*a^3 + 27*b^2, n)
+        if g > 1:
+            return g
+        curve = EllipticCurve(Zmod(n), [a, b])
+        point = curve(point)
+        q = point
+        for p in sieve:
+            pp = p
+            while pp < bound: 
+                q = multiplication(p, q, curve, n)
+                print(q)
+                if q[2] > 1:
+                    return gcd(q[2], n)
+                pp *= p
+        return False
+
+LenstraFactorization(6887, 10000)
+```
+
+With Factorization, SageMath offers a lot of methods that can be used like methods above, or Quadratic Sieve, etc. 
+The full documentation of factorization can be found in:
+
++ [Integer Factorization](https://doc.sagemath.org/html/en/thematic_tutorials/explicit_methods_in_number_theory/integer_factorization.html#integer-factorization)
+
++ [Factorization](https://doc.sagemath.org/html/en/reference/structure/sage/structure/factorization.html)
+
+For further factoring, I recommend you to have a look at the book: `The Joy of Factoring`, from Samuel S. Wagstaff and some chapters in the book `An Introduction to Mathematical Cryptography` I mentioned above. 

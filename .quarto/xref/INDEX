@@ -94,5 +94,17 @@
   },
   "RSA_Parameters.qmd": {
     "RSA_Parameters.html": "e65bb4bb"
+  },
+  "BreakingDLP.qmd": {
+    "BreakingDLP.html": "05b34b1e"
+  },
+  "EC_FiniteField.qmd": {
+    "EC_FiniteField.html": "0ec07753"
+  },
+  "ECC_Attacks.qmd": {
+    "ECC_Attacks.html": "7148d3d1"
+  },
+  "FinalWords.qmd": {
+    "FinalWords.html": "a76d5e93"
   }
 }

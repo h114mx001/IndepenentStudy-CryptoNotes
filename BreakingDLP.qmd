@@ -1,0 +1,295 @@
+# Breaking DLP {#sec-Asymmetric}
+
+In this chapter, we will cover the methods of breaking the Discrete Logarithm - the core of Diffie-Hellman. 
+
+For the uniform, in this chapter, we will try to solve the problem of Discrete Logarithm on $g^x \equiv h \pmod p$, with $p, g, h$ are given. 
+
+## Baby step, giant step 
+
+This algorithm would be able to break the Discrete Logarithm in the complexity $O(\sqrt{n})$, for $n$ is the bit-size of $x$. 
+
+Let's give $x$ a bound, $0 \lt x \le 2^{40}$. 
+
+Let $B = 2^{20}$. $x < B^2$, then we can write down $x$ as:
+
+$$
+x = x_0\cdot B + x_1
+$$
+
+where $x_0, x_1 \in [0, B-1]$
+
+$$
+h \equiv g^x \equiv g^{x_0B+x_1} \equiv (g^B)^{x_0} \cdot g^{x_1} \pmod p 
+$$
+
+Then, if we divide both side with $g^{x_1}$: 
+
+$$
+\frac{h}{g^{x_1}} \equiv (g^B)^{x_0} \pmod p$
+$$
+
+From here, we can find the logarithm by building the hash table of every value $\frac{h}{g^x_1}$; then, finding if we have a collision of $(g^B)^{x_0}$ for both $x_0, x_1 \in \mathbb{Z}_p$
+
+If we have found such a pair $x_0, x_1$, we can compute back $x = x_0B + x_1$.
+```Python
+from math import ceil, sqrt
+
+
+def bsgs(g, h, p):
+    '''
+    Solve for x in h = g^x mod p given a prime p.
+    If p is not prime, you shouldn't use BSGS anyway.
+    '''
+    N = ceil(sqrt(p - 1))  # phi(p) is p-1 if p is prime
+    # Store hashmap of g^{1...m} (mod p). Baby step.
+    tbl = {pow(g, i, p): i for i in range(N)}
+    # Precompute via Fermat's Little Theorem
+    c = pow(g, N * (p - 2), p)
+    # Search for an equivalence in the table. Giant step.
+    for j in range(N):
+        y = (h * pow(c, j, p)) % p
+        if y in tbl:
+            return j * N + tbl[y]
+    # Solution not found
+    return None
+
+print(bsgs(7894352216, 355407489, 604604729))
+```
+```{sagemath}
+from math import ceil, sqrt
+
+def bsgs(g, h, p):
+    '''
+    Solve for x in h = g^x mod p given a prime p.
+    If p is not prime, you shouldn't use BSGS anyway.
+    '''
+    N = ceil(sqrt(p - 1))  # phi(p) is p-1 if p is prime
+    # Store hashmap of g^{1...m} (mod p). Baby step.
+    tbl = {pow(g, i, p): i for i in range(N)}
+    # Precompute via Fermat's Little Theorem
+    c = pow(g, N * (p - 2), p)
+    # Search for an equivalence in the table. Giant step.
+    for j in range(N):
+        y = (h * pow(c, j, p)) % p
+        if y in tbl:
+            return j * N + tbl[y]
+    # Solution not found
+    return None
+
+print(bsgs(7894352216, 355407489, 604604729))
+```
+
+## Pohlig-Hellman Algorithm
+
+### Smooth number 
+
+Smooth prime could be informally interpreted as having its order (i. e. $p-1$) to have many small primes in their factorization. More specifically, a number is $B$-smooth if it has its primes to be smaller or equal than $B$.
+
++ For example, prime $101$ is $5$-smooth, as its order $100 = 2^2 \cdot 5^5$ 
+
+### Pohlig-Hellman
+
+Recall, in the discrete logarithm problem, $g^x \equiv h \pmod p$, $p$ is prime; which we cannot apply some algorithms like Chinese Remainder Theorem on $p$ directly. However, The solution of $x$ only live in $\mathbb{Z}_{p-1}$ (Can be explained by Fermat's Little Theorem), which hints us about the using of factorization of $p-1$ may help in this case. 
+
+The Pohlig-Hellman Algorithm exploit this fact, and also with the support of Lagrange's Theorem. The process of the algorithm could be shortly written as: 
+
+::: {.callout-note}
+## Pohlig-Hellman Algorithm 
+
+Assume the prime $p$ has its order $N = q_1^{e_1} \cdot q_2^{e_2} \ldots q_t^{e_t}$
+
++ **Step 1**: for each $1 \le i \le t$, let:
+$$
+\displaylines{g_i \equiv g^{N/q_i^{e_i}} \qquad h_i \equiv h^{N/q_i^{e_i}} \pmod N}
+$$
+
+Then, according to the Lagrange's Theorem, $g_i$ has prime order $q_i^{e_i}$. Therefore, we can solve this problem:
+
+$$
+g_i^y \equiv h_i \pmod{q_i^{e_i}}
+$$
+
+Using the "Baby step, giant step" is a choice. 
+
++ **Step 2**: Then, we can apply CRT on:
+
+$$
+\left\{\begin{matrix}
+x &\equiv y_1 \pmod{q_1^{e_1}} \\
+x &\equiv y_2 \pmod{q_2^{e_2}} \\ 
+...\\
+x &\equiv y_t \pmod{q_t^{e_t}}
+\end{matrix}\right.
+$$
+
+After that, we could find a number $x$ holds the original discrete logarithm problem.
+:::
+
+For a quick sketch of proof, you can visit the chapter 2.9 of the book `An Introduction to Mathematical Cryptography`, that has been introduced before in the document. In general, here is the process of Pohlig-Hellman Algorithm:
+
+![](/images/Pohlig-Hellman-Diagram.svg.png)
+
+```Python
+def PohligHellman(g, h, p):
+    '''
+    Solve for x where g^x = h mod p
+    '''
+    factorList = list(factor(p-1))
+    X = [] 
+    a = []
+    for q, e in factorList: 
+        a.append(q^e)
+        # print(q, e)
+        A = g^((p-1)/(q^e)) % p
+        B = h^((p-1)/(q^e)) % p
+        xg = xgcd(A, p) # Extended Euclidean Algorithm
+        A_inv = (xg[1] % p + p) % p
+        # print(A, B)
+        x = []
+        lhs = A^(q^(e - 1)) % p 
+        rhs = B^(q^(e - 1)) % p
+        for x0 in range(p):
+            if (pow(lhs, x0, p) == rhs % p):
+                x.append(x0)
+                break 
+        for i in reversed(range(e - 1)):
+            degree = sum([x_i*q^j for x_i, j in zip(x, range(e - i))])
+            rhs = (B * (A_inv^degree % p))^(q^i) % p
+            for xi in range(p):
+                if (pow(lhs, xi, p) == rhs % p):
+                    x.append(xi)
+                    break
+        # print(x)
+        X.append(sum([x_i*q^j for x_i, j in zip(x, range(e))]))
+    # print(X, a)
+    x_sol = crt(X, a)
+    assert pow(g, x_sol, p) == h
+    return x_sol
+
+def test():
+    g = 7
+    p = 433
+    h = 166
+    x_1 = PohligHellman(g, h, p)
+    assert pow(g, x_1, p) == h 
+
+test()
+```
+
+```{sagemath}
+def PohligHellman(g, h, p):
+    '''
+    Solve for x where g^x = h mod p
+    '''
+    factorList = list(factor(p-1))
+    X = [] 
+    a = []
+    for q, e in factorList: 
+        a.append(q^e)
+        # print(q, e)
+        A = g^((p-1)/(q^e)) % p
+        B = h^((p-1)/(q^e)) % p
+        xg = xgcd(A, p) # Extended Euclidean Algorithm
+        A_inv = (xg[1] % p + p) % p
+        # print(A, B)
+        x = []
+        lhs = A^(q^(e - 1)) % p 
+        rhs = B^(q^(e - 1)) % p
+        for x0 in range(p):
+            if (pow(lhs, x0, p) == rhs % p):
+                x.append(x0)
+                break 
+        for i in reversed(range(e - 1)):
+            degree = sum([x_i*q^j for x_i, j in zip(x, range(e - i))])
+            rhs = (B * (A_inv^degree % p))^(q^i) % p
+            for xi in range(p):
+                if (pow(lhs, xi, p) == rhs % p):
+                    x.append(xi)
+                    break
+        # print(x)
+        X.append(sum([x_i*q^j for x_i, j in zip(x, range(e))]))
+    # print(X, a)
+    x_sol = crt(X, a)
+    assert pow(g, x_sol, p) == h
+    return x_sol
+
+def PohligHellman_ShortCut(g, h , p): # used in the next attack
+    order = p-1
+    factorList = list(factor(order))
+    X = []
+    for (q, e) in factorList:
+        _g = pow(g, order // q^e, p)
+        _B = pow(h, order // q^e, p)
+        X.append(discrete_log(_B, Mod(_g, p), ord = q^e))
+    res = crt(X, [q^e for q, e in factorList])
+    return res
+
+def test():
+    g = 7
+    p = 433
+    h = 166
+    x_1 = PohligHellman(g, h, p)
+    print(x_1)
+    assert pow(g, x_1, p) == h 
+
+test()
+```
+
+## Small subgroup confinement
+
+In the real cases, the prime would be used as the `safe primes`, which have the property that $\frac{(p - 1)}{2}$ is also a prime. By this, there will be no small primes in factorization of $p - 1$. 
+
+However, if by some ways, Bob do not change his private key with other conversation, he will be broken by an attack called **Small Subgroup Confinement**. The mechanism of this attack is that, by choosing a prime $p'$ that is both: 1. larger than original, 2. smooth, the attacker will fool Bob to use his $p'$ and then can indeedly solve the Discrete Logaritm on the prime $p'$ rather than $p$. 
+
+This is an example of Subgroup attack.
+
+```Python
+from Crypto.Util.number import *
+
+def safePrime(n):
+    while True: 
+        p = getPrime(n)
+        if isPrime((p-1)//2):
+            return p
+
+# generate the prime
+p = safePrime(512)
+g = 2
+x = getRandomRange(1, p-1)
+h = pow(g, x, p)
+print(g, h, p)
+
+# Assuming we can ask Bob to calculate the exchange...
+p_smooth = 11520796732441878515027373358328216938283048199188491628006176039599126895829173510147739451884815667612904500823587381619486714035051906673720821163556657311958585660374139051567952188324884102442385219224493620823660444932593986100650360037352878445543646628098538099116078184566756291092367196511240004251792982479476655806091759279086274692942838381048910186636592077380073350162280464968139585924763388159814562289552926323602180142347053299426189205228246387
+# we have fooled Bob to find the $g^b$ modulo p_smooth
+n_smooth = p_smooth - 1
+h_smooth = pow(g, x, p_smooth)
+x_smooth = PohligHellman_ShortCut(g, h_smooth, p_smooth)
+print(x_smooth)
+print(x)
+```
+
+```{sagemath}
+from Crypto.Util.number import *
+
+def safePrime(n):
+    while True: 
+        p = getPrime(n)
+        if isPrime((p-1)//2):
+            return p
+
+p = safePrime(512)
+g = 2
+x = getRandomRange(1, p-1)
+h = pow(g, x, p)
+print(g, h, p)
+
+# Assuming we can ask Bob to calculate the exchange...
+p_smooth = 11520796732441878515027373358328216938283048199188491628006176039599126895829173510147739451884815667612904500823587381619486714035051906673720821163556657311958585660374139051567952188324884102442385219224493620823660444932593986100650360037352878445543646628098538099116078184566756291092367196511240004251792982479476655806091759279086274692942838381048910186636592077380073350162280464968139585924763388159814562289552926323602180142347053299426189205228246387
+n_smooth = p_smooth - 1
+h_smooth = pow(g, x, p_smooth)
+x_smooth = PohligHellman_ShortCut(g, h_smooth, p_smooth)
+print(x_smooth)
+print(x)
+```
+

@@ -4,5 +4,43 @@
 
 As you are working with computations of ciphering and deciphering, being comfortable with the Maths here is the best! In terms of the purpose of this document, we will not go too deep in any Mathematics here. However, here are some books that I think may help you a lot when studying some first cryptos:
 
-Also, before working with the few next chapters, you should be comfortable with: 
-- Modular Arithmetic (Concepts of modulo, GCD, etc.)
+Also, before working with the few next chapters, you should be comfortable with:
+
++ Modular Arithmetic (Concepts of modulo, GCD, etc.)
++ Python (if you are good at SageMath, it's really appreciated!)
++ Some simple binary operations `(AND, OR, XOR, NOT, etc.)`
++ Learning something cool!
+
+## Sources:
+
+Here is some books that I am reading during my crypto path, and also websites that I practice crypto:
+
+### Course
+
+The only course, that I would recommend now is the [Cryptography I](https://www.coursera.org/learn/crypto) course from professor Dan Boneh, Stanford University. This course would help you have a good background in both Mathematics and Theory of Crypto, also programming exercises included too. Also, you can have a certificate xD. 
+
+
+### Books
+
+**Crypto-dedicated**:
+
++ [An Introduction To Mathematical Cryptography](https://link.springer.com/book/10.1007/978-0-387-77993-5)
++ [Mathematics for Public Key Cryptography](https://www.math.auckland.ac.nz/~sgal018/crypto-book/main.pdf)
+
+**Maths**:
+
++ [Abstract Algebra: Theory and Applications](http://abstract.ups.edu/aata/aata-toc.html)
+
+**General InfoSec**:
+
++ [Handbook for CTF-ers](https://link.springer.com/book/10.1007/978-981-19-0336-6) - Highly recommend if you are new to infosec.
+
+### Practice sites
+
++ [CryptoHack](https://cryptohack.org): A good site for both beginner and gurus, and a really practical & close to CTFs
+
++ [CryptoPals](cryptopals.com): Learn cryptography by programming and understanding the concepts from the scratch (also good if you want to learn a new programming language).
+
+(Will be update soon if I remember more =)))
+
+That's all! Let's go!!!!!!!!!!!!!!

@@ -30,12 +30,15 @@ book:
         - RSA_Factorization.qmd
         - RSA_Parameters.qmd
         - DiffieHellman.qmd
-        - Attacks_DH.qmd
+        - BreakingDLP.qmd
         - Elliptic_Curve.qmd
+        - EC_FiniteField.qmd
         - ECC_ECDH.qmd
-    - part: Miscellaneous.qmd
+        - ECC_Attacks.qmd
+    - part: Miscellaneous
       chapters:
         - HashFunctions.qmd    
+    - FinalWords.qmd
   reader-mode: true 
   page-footer:
     left: | 

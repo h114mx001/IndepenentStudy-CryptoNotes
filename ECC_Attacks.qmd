@@ -1,0 +1,64 @@
+# ECDH Attacks 
+
+In the last chapter of PKC, we will revisit the Pohlig-Hellman Algorithm, but in the theme of Elliptic Curve. 
+
+## Pohlig-Hellman in ECC 
+
+In elliptic curve, we know that we need to choose a finite field $\mathbb{F}_p$. If this prime $p$ is smooth, we can sure that the discrete logarithm on the curve is also vulnerable. As in Pohlig-Hellman chapter for Diffie-Hellman, the discrete logarithm on the curve could be computed on each curve with the finite field of prime factorization. 
+
+Also, SageMath comes with the function `discrete_log()` for computing this one:
+
+```Python
+def discreteLogarithm(p, a, b, G, B, A):
+    '''
+        Discrete Logarithm for a curve that its parameter is smooth. 
+        p: prime number 
+        a, b: parameters of the curve
+        G: generator point
+        B: Bob's public key
+        A: Alice's public key
+    '''
+    E = EllipticCurve(GF(p), [a, b])
+    G = E(G)
+    B = E(B)
+    A = E(A)
+    b = G.discrete_log(B)
+    sharedSecret = (A*b).xy()[0]
+    return sharedSecret
+
+p = 310717010502520989590157367261876774703
+a = 2 
+b = 3
+G = [179210853392303317793440285562762725654, 105268671499942631758568591033409611165]
+B = [272640099140026426377756188075937988094, 51062462309521034358726608268084433317]
+A = [280810182131414898730378982766101210916, 291506490768054478159835604632710368904]
+print(discreteLogarithm(p, a, b, G, B, A))
+```
+```{sagemath}
+def discreteLogarithm(p, a, b, G, B, A):
+    '''
+        Discrete Logarithm for a curve that its parameter is smooth. 
+        p: prime number 
+        a, b: parameters of the curve
+        G: generator point
+        B: Bob's public key
+        A: Alice's public key
+    '''
+    E = EllipticCurve(GF(p), [a, b])
+    G = E(G)
+    B = E(B)
+    A = E(A)
+    b = G.discrete_log(B)
+    sharedSecret = (A*b).xy()[0]
+    return sharedSecret
+
+p = 310717010502520989590157367261876774703
+a = 2 
+b = 3
+G = [179210853392303317793440285562762725654, 105268671499942631758568591033409611165]
+B = [272640099140026426377756188075937988094, 51062462309521034358726608268084433317]
+A = [280810182131414898730378982766101210916, 291506490768054478159835604632710368904]
+print(discreteLogarithm(p, a, b, G, B, A))
+```
+
+There are several other methods for solving DLP in EC, but requires some specific properties of curve. 

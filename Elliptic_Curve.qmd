@@ -1,0 +1,116 @@
+# Introduction to Elliptic Curve {#sec-Asymmetric}
+
+Elliptic Curve Cryptography is used widely in many new authentication and advance tech like BitCoin, blockchain, etc. It is also a solution for the Post-quantum. This cryptography method is using a special curve, called Elliptic Curve. 
+
+
+## Elliptic Curve
+
+An elliptic curve is the set of solutions to an equation of the form:
+
+$$
+Y^2 = X^3 + AX + B
+$$
+
+for A, B as the parameters. The constraints over $A, B$ is:
+
+$$
+\Delta_E = 4A^3 + 27B^2 \neq 0
+$$
+
+For example, here is the elliptic curve $Y^2 = X^3 - 3X + 3$
+
+```Python
+E = EllipticCurve([-3, 3]) # create curve y^2 = x^3 - 3x + 3
+E.plot()
+```
+```{sagemath}*
+E = EllipticCurve([-3, 3])
+E.plot()
+```
+
+The basic operation on Elliptic Curve is **addition**. 
+
+### Addition rules 
+
+**If two points are different (i. e. $P$ + $Q$)**:
+
++ Connect $P, Q$ as a line $L$, with intersection $R$. 
++ Take reflection of $R$ over x-axis $\rightarrow R'$.
+
+![](/images/add_1.png)
+
++ This operation is easy, as 
+$$
+Y = \lambda \cdot (X-x_1) + y_1
+$$
+where the slope $\lambda = \frac{y_2-y_1}{x_2-x_1}$
++ Substitute $Y$ as an expression of $X$, we can find all values $X, Y$
+
+**Addition of the same points ($P + P$)**
+
++ Find the tangent $L$ at $P$ on the curve $E$.
++ Find its intersection on $E$, and also take the reflection. 
+
+![](/images/add_2.png)
+
+As $Y^2 = X^3 + AX + B$, we can find the slope $\frac{dY}{dX}$ by taking its implicit derivative.
+$$
+\begin{equation}
+2Y\cdot \frac{dY}{dX} = 3X^2 - 15 \qquad \frac{dY}{dX} = \frac{3X^2 - 15}{2Y}
+\end{equation}
+$$
+With same method as the previous case, we can find the value of $R'$
+
+**If the connection $PQ$ is parallel with Oy**
+
+In the case when the connection line gives no intersection with the curve, then we define its value as null $\mathcal{O}$. 
+
+![](/images/zero.png)
+
+With the support of this null, we can define the addition under the curve, as in modulo arithmetic: 
+
+![](/images/theorem.png)
+
+### Multiplication
+
++ The multiplication of point $P$ on curve $E$ is adding point $P$ $n$ times.
+
+$$
+nP = \underbrace{P + P + \ldots + P}_{\text{n times}}
+$$
+
++ In order to generalize the addition, we have an algorithm by the way:
+
+![](/images/addition_algo.png){fig-align="center"}
+
+With support of SageMath, we can perform the addition and multiplication very easily. 
+
+```Python
+E = EllipticCurve([-3, 3])
+# just 2 random points
+P = E(1, 1)
+Q = E(0)
+print(P)
+print(Q)
+print(P + Q)
+print(P - Q)
+print(P * 2)
+```
+```{sagemath}
+E = EllipticCurve([-3, 3])
+# just 2 random points
+P = E(1, 1)
+Q = E(0)
+print(P)
+print(Q)
+print(P + Q)
+print(P - Q)
+print(P * 2)
+```
+
+In here, we introduced the substitution, which is just simple as $P - Q = P + (-Q)$, where $-Q$ can be interpreted as the reflection over $Ox$ of the point.
+
+With multiplication, there is also a version like `square-and-multiply` in modular arithmetic, which is `double-and-add`.
+
+![](/images/double-add.png)
+

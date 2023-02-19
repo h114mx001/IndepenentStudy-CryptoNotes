@@ -275,27 +275,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./RSA_Parameters.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">RSA_Parameters.html</span></a>
+  <a href="./RSA_Parameters.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Bad choices of parameters &amp; Side-channel</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./DiffieHellman.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">DiffieHellman.html</span></a>
+  <a href="./DiffieHellman.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Diffie-Hellman Key Exchange</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Attacks_DH.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Attacks_DH.html</span></a>
+  <a href="./BreakingDLP.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Breaking DLP</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Elliptic_Curve.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Elliptic_Curve.html</span></a>
+  <a href="./Elliptic_Curve.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Introduction to Elliptic Curve</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ECC_ECDH.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">ECC_ECDH.html</span></a>
+  <a href="./EC_FiniteField.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Elliptic Curve over Finite Field</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ECC_ECDH.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Elliptic Curve Cryptography and Elliptic Curve Diffie-Hellman</span></a>
   </div>
 </li>
       </ul>
@@ -310,7 +315,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./HashFunctions.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">HashFunctions.html</span></a>
+  <a href="./HashFunctions.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">HashFunctions.html</span></a>
   </div>
 </li>
       </ul>
@@ -327,6 +332,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#rainbow-attack" id="toc-rainbow-attack" class="nav-link active" data-scroll-target="#rainbow-attack"><span class="toc-section-number">12.1</span>  Rainbow attack</a></li>
   <li><a href="#factorization-via-difference-of-squares" id="toc-factorization-via-difference-of-squares" class="nav-link" data-scroll-target="#factorization-via-difference-of-squares"><span class="toc-section-number">12.2</span>  Factorization via Difference of Squares</a></li>
   <li><a href="#pollards-p-1-algorithm" id="toc-pollards-p-1-algorithm" class="nav-link" data-scroll-target="#pollards-p-1-algorithm"><span class="toc-section-number">12.3</span>  Pollard’s p-1 Algorithm</a></li>
+  <li><a href="#lenstras-elliptic-curve-factorization" id="toc-lenstras-elliptic-curve-factorization" class="nav-link" data-scroll-target="#lenstras-elliptic-curve-factorization"><span class="toc-section-number">12.4</span>  Lenstra’s Elliptic Curve Factorization</a>
+  <ul class="collapse">
+  <li><a href="#intuition" id="toc-intuition" class="nav-link" data-scroll-target="#intuition"><span class="toc-section-number">12.4.1</span>  Intuition</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -389,7 +398,7 @@ n = a^2 - b^2 = (a - b)\cdot(a+b)
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(Fermat(p<span class="op">*</span>q))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell" data-execution_count="1">
 <div class="cell-output cell-output-stdout">
-<pre><code>(8063893325433185023797813861938389954124963938827260055890167264220182164332393160011516880879407387195283160843060271734485538182105778197812557684160431, 8063893325433185023797813861938389954124963938827260055890167264220182164332393160011516880879407387195283160843060271734485538182105778197812557684160719)</code></pre>
+<pre><code>(11684157899954979996979082866262653803586498995495766081693122889492206114926204346355410010887353071582115230205128010020201869047949018633033315023637067, 11684157899954979996979082866262653803586498995495766081693122889492206114926204346355410010887353071582115230205128010020201869047949018633033315023637473)</code></pre>
 </div>
 </div>
 <p>This attack has another enhances methods, that requires understanding of more mathematics about smooth numbers and sieve, so that I will only leave the address here:</p>
@@ -442,9 +451,139 @@ p = GCD(a^L - 1, N)
 <pre><code>100153 100129</code></pre>
 </div>
 </div>
-<p>In the later chapters, we will look at another factoring algorithm, that lies on the elliptic curve. For further factoring, I recommend you to have a look at the book: <code>The Joy of Factoring</code>, from Samuel S. Wagstaff and some chapters in the book <code>An Introduction to Mathematical Cryptography</code> I mentioned above.</p>
+</section>
+<section id="lenstras-elliptic-curve-factorization" class="level2" data-number="12.4">
+<h2 data-number="12.4" class="anchored" data-anchor-id="lenstras-elliptic-curve-factorization"><span class="header-section-number">12.4</span> Lenstra’s Elliptic Curve Factorization</h2>
+<p>With this method, we are using the concepts of Elliptic Curve. Therefore, you may want to look at the chapters about Elliptic Curve before coming back this chapter.</p>
+<p>In the previous part, in the Pollard’s p-1 algorithm, we compute the factorial and hoping it will share the prime factorization with <span class="math inline">\(p - 1\)</span>. So, Can we do a ‘mimic’ of this, as instead of <span class="math inline">\(a^{p-1} \equiv 1 \pmod p\)</span>, we can do something like this with properties of elliptic curve on finite field addition?</p>
+<section id="intuition" class="level3" data-number="12.4.1">
+<h3 data-number="12.4.1" class="anchored" data-anchor-id="intuition"><span class="header-section-number">12.4.1</span> Intuition</h3>
+<ul>
+<li>If we know <span class="math inline">\(P\)</span>, we can calculate <span class="math inline">\(2P\)</span>, <span class="math inline">\(3P\)</span>, <span class="math inline">\(\ldots\)</span> easily. Let’s see with an example.</li>
+</ul>
+<p><span class="math display">\[
+P = (38, 112) \qquad E: Y^2 = X^3 + 3X + 7
+\]</span> + In here, <span class="math inline">\(x(P), y(P)\)</span> mean the x and y coordinate of P</p>
+<ul>
+<li><p>For 2P, from Addition Algorithm: <span class="math display">\[
+\begin{aligned}
+\frac{1}{2y(P)} &amp;= \frac{1}{224} \equiv 91 \pmod {187} \\
+\lambda &amp;= \frac{3x(P)^2 + A}{2y(P)}
+\ldots
+\end{aligned}
+\]</span></p></li>
+<li><p>For 3P, from Addition Algorithm: <span class="math display">\[
+\begin{aligned}
+\frac{1}{x(2P) - x(P)} &amp;= \frac{1}{5} \equiv 75 \pmod {187} \\
+\lambda &amp;= \frac{y(2P) - y(P)}{x(2P) - x(P)} = \frac{14}{5} \ldots
+\end{aligned}
+\]</span></p></li>
+<li><p>We call the value <span class="math inline">\(\frac{1}{x} \pmod p\)</span> is <strong>reciprocal</strong>.</p></li>
+</ul>
+<p>As stated, at each step, in order to determine if we can compute the next <span class="math inline">\((i+1)P\)</span>, we always need to find the inverse modulo of <span class="math inline">\(N\)</span> for some reciprocal value (the denominator of the <span class="math inline">\(\lambda\)</span>)</p>
+<p>Then, the idea of Lenstra’s Factoring algorithm is just similar to Pollard <span class="math inline">\(p-1\)</span>: At each step, we compute <span class="math display">\[
+P, 2!\cdot P, 3!\cdot P, \ldots
+\]</span></p>
+<p>There are only 3 cases for reciprocal <span class="math inline">\(d\)</span>:</p>
+<ul>
+<li>If <span class="math inline">\(d = kN\)</span>, we need to change the curve and point.</li>
+<li>If <span class="math inline">\(d | N\)</span>, we have found a prime factor!</li>
+<li>Else, continue our computation.</li>
+</ul>
+<p><img src="./images/elliptic_factoring.png" class="img-fluid"></p>
+<p>This algorithm works, also because of the Lagrange’s theorem.</p>
+<ul>
+<li><p>Recall, the Lagrange’s theorem stated that if a curve <span class="math inline">\(E\)</span> has order <span class="math inline">\(N\)</span>, then any point under this curve will have the order <span class="math inline">\(d\)</span> such <span class="math inline">\(d|N\)</span>.</p></li>
+<li><p>As <span class="math inline">\(n = pq\)</span>, our original curve <span class="math inline">\(E(\mathbb{F}_n)\)</span> can be broken into 2 smaller curve of <span class="math inline">\(p, q\)</span>, each with the order <span class="math inline">\(N_p, N_q &lt;&lt; n\)</span></p></li>
+<li><p>Then, for any point <span class="math inline">\(P\)</span>, we only need to find a number that is divisible by the order of the point <span class="math inline">\(P\)</span>, which also divisible by <span class="math inline">\(N_p\)</span>.</p></li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> <span class="dv">6887</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>E <span class="op">=</span> EllipticCurve(Zmod(p), [<span class="dv">14</span>, <span class="dv">19</span>])</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>Point <span class="op">=</span> E(<span class="dv">1512</span>, <span class="dv">3166</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> pointAddition(point1, point2, p):</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>        res <span class="op">=</span> point1 <span class="op">+</span> point2 </span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span>: </span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>        reciprocal <span class="op">=</span> (point1[<span class="dv">0</span>] <span class="op">-</span> point2[<span class="dv">0</span>]) <span class="op">%</span> p </span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>        d <span class="op">=</span> gcd(reciprocal, p)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> (<span class="dv">0</span>, <span class="dv">0</span>, d)</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> res</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> multiplication(k, point, curve, p):</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    r <span class="op">=</span> curve(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>) <span class="co"># null </span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    tmp <span class="op">=</span> point </span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> k <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> k <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">1</span>:</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>            r <span class="op">=</span> pointAddition(r, tmp, p)</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> r[<span class="dv">2</span>] <span class="op">&gt;</span> <span class="dv">1</span>:</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> r</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>        tmp <span class="op">=</span> pointAddition(tmp, tmp, p)</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>        k <span class="op">//=</span><span class="dv">2</span> </span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> r</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sympy.ntheory <span class="im">import</span> sieve </span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> random <span class="im">import</span> randint</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>sieve._reset()</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> LenstraFactorization(n, bound):</span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>    sieve.extend(bound)</span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>        g <span class="op">=</span> n </span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>        point <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">0</span>]</span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>        a, b <span class="op">=</span> <span class="dv">0</span>, <span class="dv">0</span></span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>        <span class="cf">while</span> (g <span class="op">==</span> n):</span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>            point <span class="op">=</span> [randint(<span class="dv">1</span>, n <span class="op">-</span> <span class="dv">1</span>), randint(<span class="dv">1</span>, n <span class="op">-</span> <span class="dv">1</span>)]</span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>            a <span class="op">=</span> randint(<span class="dv">1</span>, n <span class="op">-</span> <span class="dv">1</span>)</span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>            b <span class="op">=</span> (point[<span class="dv">1</span>]<span class="op">^</span><span class="dv">2</span> <span class="op">-</span> point[<span class="dv">0</span>]<span class="op">^</span><span class="dv">3</span> <span class="op">-</span> a<span class="op">*</span>point[<span class="dv">0</span>]) <span class="op">%</span> n</span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a>            g <span class="op">=</span> gcd(<span class="dv">4</span><span class="op">*</span>a<span class="op">^</span><span class="dv">3</span> <span class="op">+</span> <span class="dv">27</span><span class="op">*</span>b<span class="op">^</span><span class="dv">2</span>, n)</span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> g <span class="op">&gt;</span> <span class="dv">1</span>:</span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> g</span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a>        curve <span class="op">=</span> EllipticCurve(Zmod(n), [a, b])</span>
+<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a>        point <span class="op">=</span> curve(point)</span>
+<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a>        q <span class="op">=</span> point</span>
+<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> p <span class="kw">in</span> sieve:</span>
+<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a>            pp <span class="op">=</span> p</span>
+<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a>            <span class="cf">while</span> pp <span class="op">&lt;</span> bound: </span>
+<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a>                q <span class="op">=</span> multiplication(p, q, curve, n)</span>
+<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a>                <span class="bu">print</span>(q)</span>
+<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> q[<span class="dv">2</span>] <span class="op">&gt;</span> <span class="dv">1</span>:</span>
+<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">return</span> gcd(q[<span class="dv">2</span>], n)</span>
+<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a>                pp <span class="op">*=</span> p</span>
+<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">False</span></span>
+<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a>LenstraFactorization(<span class="dv">6887</span>, <span class="dv">10000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="3">
+<div class="cell-output cell-output-stdout">
+<pre><code>(545 : 5826 : 1)
+(3369 : 1745 : 1)
+(6346 : 4972 : 1)
+(1890 : 6041 : 1)
+(5382 : 2204 : 1)
+(1599 : 221 : 1)
+(5964 : 1525 : 1)
+(5091 : 2646 : 1)
+(47 : 458 : 1)
+(6158 : 1094 : 1)
+(726 : 2495 : 1)
+(6643 : 5362 : 1)
+(1114 : 3853 : 1)
+(0, 0, 97)</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<pre><code>97</code></pre>
+</div>
+</div>
+<p>With Factorization, SageMath offers a lot of methods that can be used like methods above, or Quadratic Sieve, etc. The full documentation of factorization can be found in:</p>
+<ul>
+<li><p><a href="https://doc.sagemath.org/html/en/thematic_tutorials/explicit_methods_in_number_theory/integer_factorization.html#integer-factorization">Integer Factorization</a></p></li>
+<li><p><a href="https://doc.sagemath.org/html/en/reference/structure/sage/structure/factorization.html">Factorization</a></p></li>
+</ul>
+<p>For further factoring, I recommend you to have a look at the book: <code>The Joy of Factoring</code>, from Samuel S. Wagstaff and some chapters in the book <code>An Introduction to Mathematical Cryptography</code> I mentioned above.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -589,7 +728,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
   <div class="nav-page nav-page-next">
       <a href="./RSA_Parameters.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">RSA_Parameters.html</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Bad choices of parameters &amp; Side-channel</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

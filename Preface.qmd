@@ -10,10 +10,6 @@ Therefore, I would really appreciate that you choose me and my document as a fir
 
 A brief summary of the books: 
 
-+ **"Why crypto?"**. Where I will try my best to 'convince' you to at least read some next chapters. How cryptography has been used along the time, what are the current challenges for cryptographers, etc. And most important, what are the most general catalogue for crypto fields (made by me).
- 
-+ **"Mathematical Background"**. As any cross-field of Mathematics and Computer Science, you need some basic bricks to start building your Cryptography skills. In here, you will meet some secondary mathematics like modulo, to some crazy 'variants' of them. 
-
 + **"Symmetric Cryptography"**: As its name, we will have a walkthrough some fields of Symmetric Cryptography from the very historical (and completely) broken to the newest that are used in your daily Internet surfing. 
 
 + **"Asymmetric Cryptography"**: This part will look into the constructions of many famous cryptography scheme that is also the deliverer for your symmetric cryptography and validation. !!! Warning: Many Maths!

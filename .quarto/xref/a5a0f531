@@ -1,1 +1,1 @@
-{"headings":["diffie-hellman-basic","cryptosystem-built-on-discrete-logarithm","sec-Asymmetric"],"entries":[{"order":{"section":[14,0,0,0,0,0,0],"number":1},"key":"sec-Asymmetric"}],"options":{"chapters":true,"chapter-id":"sec-Asymmetric"}}
+{"headings":["diffie-hellman-basic","cryptosystem-built-on-discrete-logarithm","meet-in-the-middle","sec-Asymmetric"],"entries":[{"key":"sec-Asymmetric","order":{"section":[14,0,0,0,0,0,0],"number":1}}],"options":{"chapters":true,"chapter-id":"sec-Asymmetric"}}

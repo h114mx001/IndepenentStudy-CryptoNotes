@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>CryptoBook – ecc_ecdh</title>
+<title>CryptoBook - 18&nbsp; Elliptic Curve Cryptography and Elliptic Curve Diffie-Hellman</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./Miscellaneous.html" rel="next">
-<link href="./Elliptic_Curve.html" rel="prev">
+<link href="./EC_FiniteField.html" rel="prev">
 <link href="./cover.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -62,16 +62,17 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
-<body class="nav-sidebar floating fullcontent">
+<body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">CryptoBook</h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Elliptic Curve Cryptography and Elliptic Curve Diffie-Hellman</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -196,32 +197,47 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./RSA.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">RSA.html</span></a>
+  <a href="./RSA.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">RSA</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Attacks_RSA.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Attacks_RSA.html</span></a>
+  <a href="./Attacks_RSA.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Review several attacks on RSA</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./DiffieHellman.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">DiffieHellman.html</span></a>
+  <a href="./RSA_Factorization.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Factorization Attack</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Attacks_DH.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Attacks_DH.html</span></a>
+  <a href="./RSA_Parameters.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Bad choices of parameters &amp; Side-channel</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Elliptic_Curve.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Elliptic_Curve.html</span></a>
+  <a href="./DiffieHellman.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Diffie-Hellman Key Exchange</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ECC_ECDH.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">ECC_ECDH.html</span></a>
+  <a href="./BreakingDLP.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Breaking DLP</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Elliptic_Curve.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Introduction to Elliptic Curve</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./EC_FiniteField.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Elliptic Curve over Finite Field</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ECC_ECDH.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Elliptic Curve Cryptography and Elliptic Curve Diffie-Hellman</span></a>
   </div>
 </li>
       </ul>
@@ -236,7 +252,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./HashFunctions.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">HashFunctions.html</span></a>
+  <a href="./HashFunctions.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">HashFunctions.html</span></a>
   </div>
 </li>
       </ul>
@@ -245,14 +261,66 @@ ul.task-list li input[type="checkbox"] {
     </div>
 </nav>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#ecdlp-elliptic-curve-discrete-logarithm-problem" id="toc-ecdlp-elliptic-curve-discrete-logarithm-problem" class="nav-link active" data-scroll-target="#ecdlp-elliptic-curve-discrete-logarithm-problem"><span class="toc-section-number">18.1</span>  ECDLP (Elliptic Curve Discrete Logarithm Problem)</a></li>
+  <li><a href="#ecdh" id="toc-ecdh" class="nav-link" data-scroll-target="#ecdh"><span class="toc-section-number">18.2</span>  ECDH</a></li>
+  <li><a href="#little-conclusion" id="toc-little-conclusion" class="nav-link" data-scroll-target="#little-conclusion"><span class="toc-section-number">18.3</span>  Little conclusion</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-Asymmetric" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Elliptic Curve Cryptography and Elliptic Curve Diffie-Hellman</span></span></h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
 
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="ecdlp-elliptic-curve-discrete-logarithm-problem" class="level2" data-number="18.1">
+<h2 data-number="18.1" class="anchored" data-anchor-id="ecdlp-elliptic-curve-discrete-logarithm-problem"><span class="header-section-number">18.1</span> ECDLP (Elliptic Curve Discrete Logarithm Problem)</h2>
+<ul>
+<li>In here, we can simply define the ECDLP that <span class="math inline">\(\text{log}_P(Q) = n\)</span> when <span class="math inline">\(nP = Q\)</span> in <span class="math inline">\(E(\mathbb{F_p})\)</span></li>
+<li>It turns out to be the ECDLP is also a hard problem.</li>
+</ul>
+</section>
+<section id="ecdh" class="level2" data-number="18.2">
+<h2 data-number="18.2" class="anchored" data-anchor-id="ecdh"><span class="header-section-number">18.2</span> ECDH</h2>
+<p>As nothing changes quite much, we can define ECDH as we have done with DH of modular arithmetic.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/ecdh.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>After the process, Alice and Bob can use either <span class="math inline">\(x\)</span> or <span class="math inline">\(y\)</span> for their same secret.</p>
+<p>One other notable, finding a good generator for elliptic curve is <strong>not easy</strong>. So, Alice &amp; Bob often use pre-computed curve, generator and prime.</p>
+</section>
+<section id="little-conclusion" class="level2" data-number="18.3">
+<h2 data-number="18.3" class="anchored" data-anchor-id="little-conclusion"><span class="header-section-number">18.3</span> Little conclusion</h2>
+<p>Along with key sharing, Elliptic Curve can also be applied in building Public key cryptography and digital signature as RSA does.</p>
+<p>However, this is not discussed pretty much, as: + The main purposes of new cryptographic schemes are sharing rather than encrypt, as other cryptography like AES can be done pretty well the encrypt/decrypt.</p>
+<ul>
+<li>Several PKC on Elliptic Curve requires 4-to-1 (4 ciphertext to 1 plaintext), because ECC goes with points, rather than plain numbers.</li>
+</ul>
+<p>Right now, the theme is also shifting into <code>Lattice-based Cryptography</code>, which built on the problems on <code>Matrix in Integer Field</code>.</p>
+
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -390,8 +458,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./Elliptic_Curve.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Elliptic_Curve.html</span></span>
+      <a href="./EC_FiniteField.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Elliptic Curve over Finite Field</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

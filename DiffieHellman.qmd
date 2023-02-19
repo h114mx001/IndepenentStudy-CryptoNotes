@@ -33,3 +33,16 @@ The security of Diffie-Hellman lies in the hard problem of discrete logarithm. F
 
 There are some others cryptosystem (like RSA), that built on the Discrete Logarithm rather than the trapdoor function of factorization. One significant is [ElGamal](https://en.wikipedia.org/wiki/ElGamal_encryption).
 
+## Meet-in-the-middle 
+
+Now, we will discuss about an attack in Diffie-Hellman Key Exchange. 
+
+Let Mallory be the adversary, by some ways can interrupt and intimate the sharing scheme between Alice and Bob. 
+
+![](/images/MITM.png)
+
+Mallory will send his private key to Bob and Alice. And by this mean, the shared secret that Alice and Bob would compute is $g^{az}$ and $g^{bz}$, which Mallory also has.
+
+Then, Mallory would establish two secret connections between Alice and Bob, using these two shared secrets, and can read the plaintext between Alice and Bob. 
+
+However, Mallory still cannot find back Alice and Bob secret key $a, b$. We will discuss this on the next chapter. 

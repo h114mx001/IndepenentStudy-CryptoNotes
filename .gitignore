@@ -5,3 +5,8 @@
 *.toc
 *.aux
 *.py
+_book
+*.md
+/*.html
+search_index.json
+libs

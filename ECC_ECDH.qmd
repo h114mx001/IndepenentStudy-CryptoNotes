@@ -1,0 +1,28 @@
+# Elliptic Curve Cryptography and Elliptic Curve Diffie-Hellman {#sec-Asymmetric}
+
+## ECDLP (Elliptic Curve Discrete Logarithm Problem)
+
++ In here, we can simply define the ECDLP that $\text{log}_P(Q) = n$ when $nP = Q$ in $E(\mathbb{F_p})$
++ It turns out to be the ECDLP is also a hard problem. 
+
+## ECDH
+
+As nothing changes quite much, we can define ECDH as we have done with DH of modular arithmetic.
+
+![](/images/ecdh.png){fig-align="center"}
+
+After the process, Alice and Bob can use either $x$ or $y$ for their same secret.
+
+One other notable, finding a good generator for elliptic curve is **not easy**. So, Alice & Bob often use pre-computed curve, generator and prime.
+
+
+## Little conclusion
+
+Along with key sharing, Elliptic Curve can also be applied in building Public key cryptography and digital signature as RSA does. 
+
+However, this is not discussed pretty much, as:
++ The main purposes of new cryptographic schemes are sharing rather than encrypt, as other cryptography like AES can be done pretty well the encrypt/decrypt. 
+
++ Several PKC on Elliptic Curve requires 4-to-1 (4 ciphertext to 1 plaintext), because ECC goes with points, rather than plain numbers. 
+
+Right now, the theme is also shifting into `Lattice-based Cryptography`, which built on the problems on `Matrix in Integer Field`. 

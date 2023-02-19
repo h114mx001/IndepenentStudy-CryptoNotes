@@ -1,0 +1,129 @@
+# Hash functions {#sec-Hash}
+
+This chapter will give you an introduction to Hash functions, where and why apply them, and also a fun vulnerability: Hash Length Extension. 
+
+## Hash function
+
+In general, you can think the hash function as taking an arbitrary long data, and then 'compress' it into a much smaller (and fixed size) string. It appears in many data structures, string recognition and many others in computer science.
+
+With **Cryptographic Hash Function**, the function should be one-way: impossible to invert. Comparing with public key cryptography, this is a little bit different, as PKC processes could be invertible if some secrets is known. 
+Here is an example of SHA1:
+
+![](/images/SHA1.png)
+
+Cryptographic hash functions are used to validate messages, generate digital signatures, and store passwords securely in databases. 
+
+Hash functions are particularly helpful in asymmetric cryptography for compressing arbitrary length communications to a value with a smaller bit-length than the modulus when signing messages using RSA or protocols such as (EC)DSA or Elgamal. 
+
+Normally, the cryptographic hash functions must be resistant to this three forms of attacks:
+
++ Pre-image attack: Given $x = hash(m)$, it must be practically impossible to find $hash(m_0) = x$. (This can be interpreted as one-way function).
+
++ Second pre-image attack: given $m_1, hash(m_1)$, it must be impossible find $m_2$ that $hash(m_1) = hash(m_2)$.
+
++ Collision: It must be practically impossible to find any pair of messages $m_1, m_2$ that $hash(m_1) = hash(m_2)$. The main difference of collision and second pre-image is that, collision do not require a known $m_1$, but searching for a pair. 
+
+One remarkable think is: if a pre-image attack is known, then, it could lead to consequences as second pre-image attack and collision; but having a collision is not necessarily lead to other attacks. 
+
+In Python, `hashlib` works pretty well as a hash generator.
+
+```Python
+import hashlib
+h = hashlib.new('sha256')
+h.update(b"Nobody inspects the spammish repetition")
+h.hexdigest()
+```
+
+```{sagemath}
+import hashlib
+h = hashlib.new('sha256')
+h.update(b"Nobody inspects the spammish repetition")
+h.hexdigest()
+```
+
+You can look more deeply in the [`hashlib` documentation](https://docs.python.org/3/library/hashlib.html).
+
+## Merkle–Damgård construction
+
+Merkle–Damgård construction is a proven way to build a good hash function. 
+
+![](/images/MD.png)
+
+We can talk pretty much about this Construction, but I will write here several key points in it:
+
++ It is proven that, if the block $f$ is cryptographically secured, then the whole MD construction is secured. 
+
++ The padding is a must-have in cryptographic hash function. And it also needs to be done in a good way. 
+
+For example, if we pad the message with only `\x00` if it does not fit the block of MD construction, then this two message:
+
+```
+m1 = 'aaaaaaaaaaa'
+aaa|aaa|aaa|aa0|
+              |padding
+m2 = 'aaaaaaaaaaa0'
+aaa|aaa|aaa|aa0|
+```
+
+will have the same hash results. Normally, regardless of the size of message fits the required length for each block or not, the hash function will always pad it with some values. 
+
++ **Sad news** many algorithm built on Merkle–Damgård is not cryptographically safe anymore, one big example is MD5. 
+
+Computing the hash value of this two value raises the same hash:
+
+```Python
+a = 0xd131dd02c5e6eec4693d9a0698aff95c2fcab58712467eab4004583eb8fb7f8955ad340609f4b30283e488832571415a085125e8f7cdc99fd91dbdf280373c5bd8823e3156348f5bae6dacd436c919c6dd53e2b487da03fd02396306d248cda0e99f33420f577ee8ce54b67080a80d1ec69821bcb6a8839396f9652b6ff72a70
+a_faker = 0xd131dd02c5e6eec4693d9a0698aff95c2fcab50712467eab4004583eb8fb7f8955ad340609f4b30283e4888325f1415a085125e8f7cdc99fd91dbd7280373c5bd8823e3156348f5bae6dacd436c919c6dd53e23487da03fd02396306d248cda0e99f33420f577ee8ce54b67080280d1ec69821bcb6a8839396f965ab6ff72a70
+import hashlib
+hashMachine = MD5.new(a)
+print(hashMachine.hexdigest())
+hashMachine = MD5.new(a_faker)
+print(hashMachine.hexdigest())
+```
+
+```{sagemath}
+a = "4dc968ff0ee35c209572d4777b721587d36fa7b21bdc56b74a3dc0783e7b9518afbfa200a8284bf36e8e4b55b35f427593d849676da0d1555d8360fb5f07fea2"
+a_faker = "4dc968ff0ee35c209572d4777b721587d36fa7b21bdc56b74a3dc0783e7b9518afbfa200a8284bf36e8e4b55b35f427593d849676da0d1555d8360fb5f07fea2"
+from Crypto.Hash import MD5
+hashMachine = MD5.new(bytes.fromhex(a))
+print(hashMachine.hexdigest())
+hashMachine = MD5.new(bytes.fromhex(a_faker))
+print(hashMachine.hexdigest())
+```
+
+A very cool properties that hashes based on Merkle–Damgård construction is that, if a collision is found, if we append same bytes into the collision, it will continue to become a collision (You may can explain it by looking at MD construction).
+
+## Hash length extension
+
+With Merkle-Damgard construction-based hash, a very cool attack called `Hash length extension`. 
+
+Looking back into the MD construction, the hash resulted after a process is the hashes of the message $m$ and its padding $p$, let's name it $m || p$. 
+
+If an adversary have the $hash(m || p)$, and knowing length of $m$, he could compute a valid hash of $m || p || z$, with $z$ is his invalid data. 
+
+When the hash function needs to find $hash(m || p || z)$, with $m || p$ fits the block size ($len(m || p) = kn$), the next state will have IV as $hash(m || p)$!. For knowing this IV states, we can compute the continuous block. If attacker needs to forge a hash of $m || p || z || p'$, for $p'$ is the padding for $z$, he would use IV as $hash(m || p)$. 
+
+An example on [Wikipedia](https://en.wikipedia.org/wiki/Length_extension_attack):
+
+```
+Original Data: count=10&lat=37.351&user_id=1&long=-119.827&waffle=eggo
+Original Signature: 6d5f807e23db210bc254a28be2d6759a0f5f5d99
+```
+If the hacker needs to craft this message:
+```
+Desired New Data: count=10&lat=37.351&user_id=1&long=-119.827&waffle=eggo&waffle=liege
+```
+
+As we have known the signature of previous data, we can compute the hash value of the desired data, with IV = hash of original.
+
+It would be finding hash of something like this:
+
+```
+New Data: count=10&lat=37.351&user_id=1&long=-119.827&waffle=eggo\x80\x00\x00
+          \x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00
+          \x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00
+          \x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00
+          \x00\x00\x00\x02\x28&waffle=liege
+```
+
+You can try to make a hash length extension :D.

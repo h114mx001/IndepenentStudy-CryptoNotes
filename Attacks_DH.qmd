@@ -1,8 +1,0 @@
-# Some attacks on Diffie-Hellman {#sec-Asymmetric}
-
-In this chapter, we will cover the methods of breaking the Discrete Logarithm - the core of Diffie-Hellman. 
-
-For the uniform, in this chapter, we will try to solve the problem of Discrete Logarithm on $g^x \equiv h \pmod p$, with $p, g, h$ are given. 
-
-## Baby step, giant step 
-

@@ -1,0 +1,33 @@
+# Elliptic Curve over Finite Field {#sec-Asymmetric}
+
+In general, the elliptic curve over finite field is just a constraint over the coordinates of the points in curve to sit in a $\mathbb{F}_p$, for $p$ is a prime. 
+
+Therefore, an informal of EC over Finite Field could be like this:
+
+::: {.callout-note}
+## Elliptic Curve over Finite Field
+
+Let $p \ge 3$ be a prime. An elliptic curve over $\mathbb{F}_p$ is an equation of the form:
+
+$$
+\displaylines{E: Y^2 = X^3 + AX + B}
+$$
+
+Then, $E(\mathbb{F}_p) = \{{(x, y): x, y \in \mathbb{F}_p \text{ satisfy } E} \}$ $\cup$ $\{\mathcal{O}\}$.
+:::
+
+For example, we can find 
+
+$$
+E(\mathbb{F}_{13}): Y^2 = X^3 + 3X + 8
+$$
+
+by substituting all possible values $X \in [0, 12]$, and find the square root modulo of $Y^2$. 
+
+After the find, we can find the value:
+
+$$
+E(\mathbb{F_{13}}) = \{\mathcal{O}, (1, 5), (1, 8), (2, 3), (2, 10), (9, 6), (9, 7), (12, 2), (12, 11)\}
+$$
+
+The Addition works exactly same as the normal case. And this will make the $E(\mathbb{F_{13}})$ a finite group.
