@@ -1,0 +1,159 @@
+# Factorization Attack {#sec-Asymmetric}
+
+## Rainbow attack 
+
+[factordb.com](http://factordb.com/) is a database that records the number which were factorized by users around the world. If you are lucky enough, you can try on this database first. 
+
+Actually, the types of rainbow attack are not rare in InfoSec world. In the process of finding what data hashes a value, we can search the hash. As each hash is different (if it is well-designed), we can find the correct value, if the database has recorded the value.
+
+## Factorization via Difference of Squares 
+
+The first factorization method we will discuss is super-duper simple, based on a very simple method of squares. 
+
+Assuming that, for the semiprime $n$, we can have this property:
+
+$$
+n = a^2 - b^2 = (a - b)\cdot(a+b)
+$$
+
+With a pair of $a, b$. Indeed, $a-b$ and $a+b$ is the factors we want to searching for. 
+
+With the generation of prime; often, the size of primes are the same (for example, same 512-bit). If the different of two primes are not too much, we can find a solution by this method. 
+
+```Python
+def Fermat(n):
+    '''
+        Factoring of semiprime n = pq if p-q is small
+    '''
+    # As |p-q| is small, sqrt(n) is approximately equal either p or q.
+    # as n = a^2 - b^2, we can search these pairs iteratively.
+    a = ceil(sqrt(n))
+    b2 = a**2 - n
+    b = int(sqrt(b2))
+    while b**2 != b2:
+        a += 1
+        b2 = a**2 - n
+        b = int(sqrt(b2))
+    return a - b, a + b
+
+from Crypto.Util.number import getPrime, isPrime
+p = getPrime(512)
+q = p 
+while True: 
+    q += 1 
+    if isPrime(q):
+        break 
+print(Fermat(p*q))
+```
+```{sagemath}
+def Fermat(n):
+    '''
+        Factoring of semiprime n = pq if p-q is small
+    '''
+    # As |p-q| is small, sqrt(n) is approximately equal either p or q.
+    # as n = a^2 - b^2, we can search these pairs iteratively.
+    a = ceil(sqrt(n))
+    b2 = a**2 - n
+    b = int(sqrt(b2))
+    while b**2 != b2:
+        a += 1
+        b2 = a**2 - n
+        b = int(sqrt(b2))
+    return a - b, a + b
+
+from Crypto.Util.number import getPrime, isPrime
+p = getPrime(512)
+q = p 
+while True: 
+    q += 1 
+    if isPrime(q):
+        break 
+print(Fermat(p*q))
+```
+
+This attack has another enhances methods, that requires understanding of more mathematics about smooth numbers and sieve, so that I will only leave the address here:
+
+Chapter 3.6 - 3.7, An Introduction to Mathematical Cryptography (J. Hoffstein, J. Pipher, J. H. Silverman)
+
+## Pollard's p-1 Algorithm 
+
+We have $N = pq$. If we can find a number $L$ satisfies: $p - 1 | L$ and $q - 1 \nmid L$.
+
+In that case, we can rewrite $L$ as:
+
+$$
+\displaylines{L = i(p-1) \qquad and  \qquad L = j(q-1) + k}
+$$
+
+Choose a number $a$, which has a huge probability that $GCD(a, n) = 1$. From Fermat's Little Theorem:
+
+$$
+\displaylines{a^{L} \equiv a^{i(p-1)} \equiv 1 \pmod p \\ a^{L} \equiv a^{j(q-1) + k} \equiv a^k \pmod q}
+$$
+
+Then, it means $p | a^L - 1$, and $q \nmid a^L - 1$, for a huge probability. Then, we can find $p$ easily by computing: 
+
+$$
+p = GCD(a^L - 1, N)
+$$
+
+To build the number $L$, if the number $p-1$ has several small prime factors, then it may included in the factorial of $n!$, for $n$ is big enough. 
+
+The Pollard's $p-1$ algorithm is built on this idea. At each step, we will try to find the $GCD(a^{n!}, N)$, and increase to $n+1$. It is remarkable that, the exponent modulo is easier to compute rather than original modulo.
+
+```Python
+def PollardP_1(N, B=0):
+    '''
+        Find factoring of a semiprime n = pq, where at least p-1 or q-1 has some small prime factors.
+    '''
+    # If the bound is not applied, 
+    if not B: B = ceil(sqrt(N))
+    # try each a 
+    a = Integers(N).random_element()
+    b = a
+
+    for ell in primes(B):
+        q = 1
+        while q < N: 
+            q *= ell 
+        b = b^q     # computing the exponent with factorial modulo
+        if b == 1:  
+            return 0
+        d = gcd(b.lift()-1, N) # lift() function to make they in the same group for GCD. 
+        if d > 1: 
+            return d 
+    return 0
+n = 10028219737
+p = PollardP_1(n)
+assert n % p == 0
+print(p, n // p)
+```
+```{sagemath}
+def PollardP_1(N, B=0):
+    '''
+        Find factoring of a semiprime n = pq, where at least p-1 or q-1 has some small prime factors.
+    '''
+    # If the bound is not applied, 
+    if not B: B = ceil(sqrt(N))
+    # try each a 
+    a = Integers(N).random_element()
+    b = a
+
+    for ell in primes(B):
+        q = 1
+        while q < N: 
+            q *= ell 
+        b = b^q     # computing the exponent with factorial modulo
+        if b == 1:  
+            return 0
+        d = gcd(b.lift()-1, N) # lift() function to make they in the same group for GCD. 
+        if d > 1: 
+            return d 
+    return 0
+n = 10028219737
+p = PollardP_1(n)
+assert n % p == 0
+print(p, n // p)
+```
+
+In the later chapters, we will look at another factoring algorithm, that lies on the elliptic curve. For further factoring, I recommend you to have a look at the book: `The Joy of Factoring`, from Samuel S. Wagstaff and some chapters in the book `An Introduction to Mathematical Cryptography` I mentioned above. 

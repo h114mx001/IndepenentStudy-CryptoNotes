@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>CryptoBook – diffiehellman</title>
+<title>CryptoBook - 14&nbsp; Diffie-Hellman Key Exchange</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./Attacks_DH.html" rel="next">
-<link href="./Attacks_RSA.html" rel="prev">
+<link href="./RSA_Parameters.html" rel="prev">
 <link href="./cover.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -62,16 +62,17 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
-<body class="nav-sidebar floating fullcontent">
+<body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">CryptoBook</h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Diffie-Hellman Key Exchange</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -191,27 +192,62 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./UsefulMaths.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">UsefulMaths.html</span></a>
+  <a href="./UsefulMaths.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Toddlers’ Mathematics for PKC</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./RSA.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">RSA.html</span></a>
+  <a href="./RSA.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">RSA</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Attacks_RSA.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Attacks_RSA.html</span></a>
+  <a href="./Attacks_RSA.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Review several attacks on RSA</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./DiffieHellman.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">DiffieHellman.html</span></a>
+  <a href="./RSA_Factorization.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Factorization Attack</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Attacks_DH.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Attacks_DH.html</span></a>
+  <a href="./RSA_Parameters.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Bad choices of parameters &amp; Side-channel</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./DiffieHellman.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Diffie-Hellman Key Exchange</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Attacks_DH.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Attacks_DH.html</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Elliptic_Curve.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Elliptic_Curve.html</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ECC_ECDH.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">ECC_ECDH.html</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./Miscellaneous.html" class="sidebar-item-text sidebar-link">Miscellaneous.html</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./HashFunctions.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">HashFunctions.html</span></a>
   </div>
 </li>
       </ul>
@@ -220,14 +256,64 @@ ul.task-list li input[type="checkbox"] {
     </div>
 </nav>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#diffie-hellman-basic" id="toc-diffie-hellman-basic" class="nav-link active" data-scroll-target="#diffie-hellman-basic"><span class="toc-section-number">14.1</span>  Diffie-Hellman basic</a></li>
+  <li><a href="#cryptosystem-built-on-discrete-logarithm" id="toc-cryptosystem-built-on-discrete-logarithm" class="nav-link" data-scroll-target="#cryptosystem-built-on-discrete-logarithm"><span class="toc-section-number">14.2</span>  Cryptosystem built on Discrete Logarithm</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-Asymmetric" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Diffie-Hellman Key Exchange</span></span></h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
 
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>The motivation for a key exchange scheme could be sharing the same key over a insecure environment, to let both two parties have a same value to put their symmetric encryption on. Diffie-Hellman is one of the best (also the first) key exchange scheme could do well in this purpose, in both sense of security and application.</p>
+<section id="diffie-hellman-basic" class="level2" data-number="14.1">
+<h2 data-number="14.1" class="anchored" data-anchor-id="diffie-hellman-basic"><span class="header-section-number">14.1</span> Diffie-Hellman basic</h2>
+<p>Assuming that Alice and Bob want to have a same key for their AES encryption over the conversation.</p>
+<ul>
+<li><p>First, Alice (or Bob) will establish two numbers: a big prime <span class="math inline">\(p\)</span> and its generator <span class="math inline">\(g\)</span>.</p></li>
+<li><p>Next, Alice will choose a number <span class="math inline">\(a \in \mathbb{Z}_p\)</span>, which will act as her private key, while Bob also choose a number <span class="math inline">\(b \in \mathbb{Z}_p\)</span>.</p></li>
+<li><p>Then, both parties will compute their public number:</p></li>
+</ul>
+<p><span class="math display">\[
+\displaylines{A \equiv g^a \pmod p \\ B \equiv g^b \pmod p}
+\]</span></p>
+<p>Then, Alice and Bob will send <span class="math inline">\(A, B\)</span> to the other. Remember, other adversary can know this value too.</p>
+<ul>
+<li>When having <span class="math inline">\(B, A\)</span>, respectively, Alice and Bob is ready to have their common secret.</li>
+</ul>
+<p>From Alice’s side: <span class="math display">\[
+S \equiv B^a \equiv (g^b)^a \equiv g^{ba} \pmod p  
+\]</span></p>
+<p>In the same way, Bob will find <span class="math inline">\(A^b\)</span>. This two number is indeedly the same. Then, they have successfully find their common secret.</p>
+<p>The security of Diffie-Hellman lies in the hard problem of discrete logarithm. For the adversary, with a good choice of <span class="math inline">\(p\)</span>, they cannot find the private key of Alice &amp; Bob (i. e. finding either <span class="math inline">\(log_g(A) \pmod p\)</span> and <span class="math inline">\(log_g(B) \pmod p\)</span>. In the same sense, this hardness is applied on Alice and Bob if they want to know the other’s secret.</p>
+</section>
+<section id="cryptosystem-built-on-discrete-logarithm" class="level2" data-number="14.2">
+<h2 data-number="14.2" class="anchored" data-anchor-id="cryptosystem-built-on-discrete-logarithm"><span class="header-section-number">14.2</span> Cryptosystem built on Discrete Logarithm</h2>
+<p>There are some others cryptosystem (like RSA), that built on the Discrete Logarithm rather than the trapdoor function of factorization. One significant is <a href="https://en.wikipedia.org/wiki/ElGamal_encryption">ElGamal</a>.</p>
+
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -365,13 +451,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./Attacks_RSA.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Attacks_RSA.html</span></span>
+      <a href="./RSA_Parameters.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Bad choices of parameters &amp; Side-channel</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./Attacks_DH.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Attacks_DH.html</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Attacks_DH.html</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

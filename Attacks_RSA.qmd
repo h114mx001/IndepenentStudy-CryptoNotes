@@ -1,0 +1,18 @@
+# Review several attacks on RSA {#sec-Asymmetric}
+
+In general, we can say, before the quantum time, RSA is not doomed yet. The attacks on RSA right now, mostly come from the improper choices of parameters, or the implementations, or the side-channel attacks, rather than RSA itself. In here, we will have the review of several attacks in RSA, which can be classified into these sub-categories:
+
+## Factorizaion
+
+The first thing we may want to try is breaking RSA from its root: the semiprime $n$. With the factorization of $n$, we can break the RSA scheme anytimes. In here, we will talk, specifically, how to break the semiprime $n = p\cdot q$, rather than working in the factorization in general. 
+
+[Factorization](/RSA_Factorization.qmd)
+
+## Improper choices of parameters
+
+From the introduction chapter, we know that we need to chooses the public key and private key for every RSA. The wrong choices may lead into a quite severe attacks. Also, the process of generating primes may also lead to the problem. We will include one case here. 
+
+## Side-channel attack 
+
+Basically, encryption is just a calculation process. The side-channel attacks will look into some physical time series when performing the tasks of RSA, then tell us a way to break the cryptosystem by these data. 
+

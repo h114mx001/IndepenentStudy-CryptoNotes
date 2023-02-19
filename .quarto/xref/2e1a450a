@@ -1,1 +1,1 @@
-{"options":{"chapter-id":"sec-Asymmetric","chapters":true},"entries":[{"order":{"number":1,"section":[9,0,0,0,0,0,0]},"key":"sec-Asymmetric"}],"headings":["eulers-phi-totient","inverse-modulo","discrete-logarithm","some-abstract-algebra","group","sec-Asymmetric"]}
+{"headings":["eulers-phi-totient","inverse-modulo","fermats-little-theorem","discrete-logarithm","some-abstract-algebra","group","generator","order","sec-Asymmetric"],"entries":[{"order":{"number":1,"section":[9,0,0,0,0,0,0]},"key":"sec-Asymmetric"}],"options":{"chapter-id":"sec-Asymmetric","chapters":true}}

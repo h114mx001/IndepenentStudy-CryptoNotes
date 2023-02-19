@@ -1,1 +1,1 @@
-{"entries":[{"key":"sec-Symmetric","order":{"number":1,"section":[6,0,0,0,0,0,0]}}],"headings":["ofb","cfb","sec-Symmetric"],"options":{"chapters":true,"chapter-id":"sec-Symmetric"}}
+{"entries":[{"order":{"section":[6,0,0,0,0,0,0],"number":1},"key":"sec-Symmetric"}],"options":{"chapter-id":"sec-Symmetric","chapters":true},"headings":["ofb","cfb","sec-Symmetric"]}

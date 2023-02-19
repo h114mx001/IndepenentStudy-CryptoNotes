@@ -1,0 +1,7 @@
+/.quarto/
+*.tex
+*.pdf
+*.log
+*.toc
+*.aux
+*.py

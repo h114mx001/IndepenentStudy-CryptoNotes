@@ -1,0 +1,10 @@
+{
+  "hash": "385c3945bb8cc41ce64e7973f45be34e",
+  "result": {
+    "markdown": "# Mathematical Background {#sec-MathBG .unnumbered}\n\nWelcome to the start of our (actual) journey! Throughout the book, there will be more mathematical stuffs will be delivered, with many symbols and notations. Some of you may find it clear but if you not, a bookmark for this book (or any cheatsheet of SageMath) is my recommendation. \n\n## Note on code execution \n\nAs this book uses SageMath as its main environment, I suggest you start with installing the tool first. The complete guide is available in their [website](https://www.sagemath.org/).\n\nIf you are using Windows, you should install [Windows Subsystem Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/install), and then install inside your WSL system. As SageMath stops release the binary for Windows, your version of SageMath will not be updated if you choose this way.\n\nAs some limit of Quarto don't allow us to both execute the SageMath code and syntax highlighting them (or I have not figured how to do it), you can see this example:\n\n```Python\n\"\"\"\n    A test program on SageMath. NOTE: same syntax \n    with Python ;)\n\"\"\"\nprint(\"Hello World\")\nfor i in range(0, 10):\n    print(i)\n```\n\n::: {.cell execution_count=1}\n\n::: {.cell-output .cell-output-stdout}\n```\nHello World\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n```\n:::\n:::\n\n\nSome lines after the code are the output.\n\n## In this chapter\n\n1. [Mathematical Notations](/Maths_Notation.qmd)\n\n",
+    "supporting": [
+      "MathBackground_files/figure-pdf"
+    ],
+    "filters": []
+  }
+}

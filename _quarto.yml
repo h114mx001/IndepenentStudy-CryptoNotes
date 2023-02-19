@@ -27,6 +27,8 @@ book:
         - UsefulMaths.qmd
         - RSA.qmd 
         - Attacks_RSA.qmd
+        - RSA_Factorization.qmd
+        - RSA_Parameters.qmd
         - DiffieHellman.qmd
         - Attacks_DH.qmd
         - Elliptic_Curve.qmd
@@ -46,9 +48,9 @@ bibliography: references.bib
 
 format:
   html:
-    theme: cosmo
-  # pdf:
-  #   documentclass: scrreprt
+    theme: zephyr
+  pdf:
+    documentclass: scrreprt
 
 jupyter: 
   kernelspec: 

@@ -1,0 +1,35 @@
+# Diffie-Hellman Key Exchange {#sec-Asymmetric}
+
+The motivation for a key exchange scheme could be sharing the same key over a insecure environment, to let both two parties have a same value to put their symmetric encryption on. Diffie-Hellman is one of the best (also the first) key exchange scheme could do well in this purpose, in both sense of security and application. 
+
+## Diffie-Hellman basic
+
+Assuming that Alice and Bob want to have a same key for their AES encryption over the conversation. 
+
++ First, Alice (or Bob) will establish two numbers: a big prime $p$ and its generator $g$. 
+
++ Next, Alice will choose a number $a \in \mathbb{Z}_p$, which will act as her private key, while Bob also choose a number $b \in \mathbb{Z}_p$. 
+
++ Then, both parties will compute their public number:
+
+$$
+\displaylines{A \equiv g^a \pmod p \\ B \equiv g^b \pmod p}
+$$
+
+Then, Alice and Bob will send $A, B$ to the other. Remember, other adversary can know this value too. 
+
++ When having $B, A$, respectively, Alice and Bob is ready to have their common secret. 
+
+From Alice's side:
+$$
+S \equiv B^a \equiv (g^b)^a \equiv g^{ba} \pmod p  
+$$
+
+In the same way, Bob will find $A^b$. This two number is indeedly the same. Then, they have successfully find their common secret. 
+
+The security of Diffie-Hellman lies in the hard problem of discrete logarithm. For the adversary, with a good choice of $p$, they cannot find the private key of Alice & Bob (i. e. finding either $log_g(A) \pmod p$ and  $log_g(B) \pmod p$. In the same sense, this hardness is applied on Alice and Bob if they want to know the other's secret. 
+
+## Cryptosystem built on Discrete Logarithm 
+
+There are some others cryptosystem (like RSA), that built on the Discrete Logarithm rather than the trapdoor function of factorization. One significant is [ElGamal](https://en.wikipedia.org/wiki/ElGamal_encryption).
+

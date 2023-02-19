@@ -1,66 +1,38 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "CryptoBook",
-    "section": "",
-    "text": "Welcome\nThis ‘CryptoBook for n00b1es’ is a beginner guide, with the main purpose is for any beginners who want to poke around with Cryptography in a practical way. This book is released as a result of an Independent Study course about basic Cryptography, conducted by Nguyen Tuan Anh (h114mx001, supervised by Professor Wray Buntine); from College of Engineering and Computer Science, VinUniversity.\nThis book targets the newcomers to Cryptography field, from guiding you from basic implementation of some cryptography schemes, to some more advance and popular ones. From perspectives of a crypto learner, I included a lot of practical work (implementations, explanation, etc.) about how to work and/or break some usual cryptosystems. Also, you will find yourself more familiar with some most useful tools in your cryptography work (in this book, I choose Python and a CAS build on it, SageMath as main tools).\nThis website and book will always be free to access, licensed under the CC BY-NC-ND 3.0 license. Currently, the only way for you to get a physical copy of this document is print my website out.\nIndeed, this book will not end here, updated version will continue (based on my skills and your demands too!). After this (final) version, you can expect next versions of the document."
+    "objectID": "UsefulMaths.html#eulers-phi-totient",
+    "href": "UsefulMaths.html#eulers-phi-totient",
+    "title": "9  Toddlers’ Mathematics for PKC",
+    "section": "9.1 Euler’s Phi Totient",
+    "text": "9.1 Euler’s Phi Totient\n\n\n\n\n\n\nNote\n\n\n\nGiven a number \\(n\\), Euler’s Phi Totient number defines the numbers of natural numbers \\(i\\) (\\(1 \\le i \\lt n\\)) that \\(GCD(i, n) = 1\\)\nThis function is denoted as \\(\\phi(n)\\).\n\n\nExample:  \\(\\phi(20) = 8\\), \\(\\phi(4) = 2, \\phi(5) = 4\\)\nThis totient has some important properties that is useful with RSA:\n\n\n\n\n\n\nImportant Euler’s Phi Totient Properties:\n\n\n\n\nIf \\(p\\) is a prime, then \\(\\phi(p) = p - 1\\)\nIf \\(GCD(a, b) = 1\\), then \\(\\phi(a\\cdot b) = \\phi(a) \\cdot \\phi(b)\\)\nGiven two numbers \\(a, n\\) where \\(GCD(a, n) == 1\\), then: \\[\na^{\\phi(n)} \\equiv 1 \\pmod n\n\\]"
   },
   {
-    "objectID": "intro.html",
-    "href": "intro.html",
-    "title": "2  Introduction",
-    "section": "",
-    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+    "objectID": "UsefulMaths.html#inverse-modulo",
+    "href": "UsefulMaths.html#inverse-modulo",
+    "title": "9  Toddlers’ Mathematics for PKC",
+    "section": "9.2 Inverse modulo",
+    "text": "9.2 Inverse modulo\n\n\n\n\n\n\nInverse modulo n\n\n\n\nGiven a number \\(a\\), the inverse modulo \\(n\\) of \\(a\\) is the number \\(x\\) where:\n\\[\nax \\equiv 1 \\pmod{n}\n\\]\nThis inverse should exist if \\(GCD(a, n) = 1\\)"
   },
   {
-    "objectID": "summary.html",
-    "href": "summary.html",
-    "title": "2  Summary",
-    "section": "",
-    "text": "“Do you use Cryptography?” I have asked this question to several of my friends and some of them would say, no. But look around, the website you love has a way to secretly communicate with you everyday, through some web protocols with cryptography. You may reveal everything to the hacker with only one tap of your credit card when you do some shopping without the magic of Cryptography. Some latest trend, Blockchain: Cryptocurrency, NFTs, Distributed, etc.; have its cores are cryptographic protocols to preserve the integrity. Even somethings does not seems to need Cryptography, like AI, recently have some usage of it to preserve the privacy in training dataset."
+    "objectID": "UsefulMaths.html#fermats-little-theorem",
+    "href": "UsefulMaths.html#fermats-little-theorem",
+    "title": "9  Toddlers’ Mathematics for PKC",
+    "section": "9.3 Fermat’s Little Theorem",
+    "text": "9.3 Fermat’s Little Theorem\n\n\n\n\n\n\nFermat’s Little Theorem\n\n\n\nGiven two numbers \\(a, p\\) where \\(GCD(a, p) = 1\\), then \\(a^{p} \\equiv a \\pmod{p}\\). Consequently, \\(a^{p-1} \\equiv 1 \\pmod{p}\\)"
   },
   {
-    "objectID": "references.html",
-    "href": "references.html",
-    "title": "References",
-    "section": "",
-    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+    "objectID": "UsefulMaths.html#discrete-logarithm",
+    "href": "UsefulMaths.html#discrete-logarithm",
+    "title": "9  Toddlers’ Mathematics for PKC",
+    "section": "9.4 Discrete Logarithm",
+    "text": "9.4 Discrete Logarithm\nGiven \\(a, h, n\\) where there exists a number \\(x\\) that \\(a^x \\equiv h \\pmod{n}\\), the discrete logarithm problem is the process of finding the suitable number \\(x\\) in \\(\\mathbb{Z}_n\\)."
   },
   {
-    "objectID": "AboutThisVersion.html",
-    "href": "AboutThisVersion.html",
-    "title": "About this version",
-    "section": "",
-    "text": "This ‘CryptoBook for n00b1es’ is a beginner guide, with the main purpose is for any beginners who want to poke around with Cryptography in a practical way. This book is released as a result of an Independent Study course about basic Cryptography, conducted by Nguyen Tuan Anh, supervised by Professor Wray Buntine.\nFrom perspectives of a crypto learner, I included a lot of practical work (implementations, explanation, etc.) about how to work and/or break some usual cryptosystems. Also, you will find yourself more familiar with some most useful tools in your cryptography work (in this book, I choose Python and a CAS build on it, SageMath as main tools)."
-  },
-  {
-    "objectID": "AboutThisVersion.html#acknowledgements",
-    "href": "AboutThisVersion.html#acknowledgements",
-    "title": "About this version",
-    "section": "Acknowledgements",
-    "text": "Acknowledgements"
-  },
-  {
-    "objectID": "Preface.html",
-    "href": "Preface.html",
-    "title": "Summary",
-    "section": "",
-    "text": "“Do you use Cryptography?” I have asked this question to several of my friends and some of them would say, no. But look around, the website you love has a way to secretly communicate with you everyday, through some web protocols with cryptography. You may reveal everything to the hacker with only one tap of your credit card when you do some shopping without the magic of Cryptography. Some latest trend, Blockchain: Cryptocurrency, NFTs, Distributed stuffs, etc.; have its cores are cryptographic protocols to preserve the integrity. Even somethings does not seems to need Cryptography, like AI, recently have some usage of it to preserve the privacy in training dataset.\nA brief summary of the books:\n\n“Why crypto?”. Where I will try my best to ‘convince’ you to at least read some next chapters. How cryptography has been used along the time, what are the current challenges for cryptographers, etc. And most important, what are the most general catalogue for crypto fields (made by me).\n“Mathematical Background”. As any cross-field of Mathematics and Computer Science, you need some basic bricks to start building your Cryptography skills. In here, you will meet some secondary mathematics like modulo, to some crazy ‘variants’ of them.\n“Symmetric Cryptography”: As its name, we will have a walkthrough some fields of Symmetric Cryptography from the very historical (and completely) broken to the newest that are used in your daily Internet surfing.\n“Asymmetric Cryptography”: This part will look into the constructions of many famous cryptography scheme that is also the deliverer for your symmetric cryptography and validation. !!! Warning: Many Maths!\n“Hash functions”: Integrity will mostly mention in this field, and some examples of how to playing with some hacks to break the integrity!\n“Appendices”: Some other tools/guides for you to playing with the material of the book and also further games."
-  },
-  {
-    "objectID": "index.html#acknowledgements",
-    "href": "index.html#acknowledgements",
-    "title": "CryptoBook",
-    "section": "Acknowledgements",
-    "text": "Acknowledgements"
-  },
-  {
-    "objectID": "Preface.html#philosophy",
-    "href": "Preface.html#philosophy",
-    "title": "Summary",
-    "section": "Philosophy",
-    "text": "Philosophy\nThe aim of this book is guilding you to start with crypto, rather than a cheatsheet for you to copy the snipset into any cryptography challenges in CTFs. Therefore, the basics of SageMath/Python will be mentioned in the book, but not the all attacks’ implementations. I know that there are many available samples on GitHub; however, gaining experiences by playing around with debugging, ‘math’-ing, and programming is better, rights?\nHowever, do not afraid about the hard problems. At any point of this book, you will find some exercises (that I find it should work for gaining your skills) to practice with. Also, do not afraid to contact me via social medias 😎!\n\n\n\n\n\n\nTip\n\n\n\nLet’s write something (as clear as you can) about what you want to learn or love about Cryptography and what do you expect this book has. 100% I can give you all the stuff you need, but I am sure you will find them out if you REALLY want to finish (and extend) your checklist!\n\n\nThat’s enough for the text! Let’s gooooo!!!!."
+    "objectID": "UsefulMaths.html#some-abstract-algebra",
+    "href": "UsefulMaths.html#some-abstract-algebra",
+    "title": "9  Toddlers’ Mathematics for PKC",
+    "section": "9.5 Some Abstract Algebra",
+    "text": "9.5 Some Abstract Algebra\nIn here, I will introduce several simple concepts of group, generator, order of a group and order of a member of the group. Remember, these definitions are not formal, and it is written for more easily understanding.\n\n9.5.1 Group\nFor simplicity, a group \\(G\\) is a set of elements, that supports an operation \\(\\star\\). In the group, the operation has the following properties:\n\nIdentity: There is an element \\(e \\in G\\) such that: \\(e\\star a = a \\star e = a\\) for every \\(a \\in G\\). \\(e\\) is called as the identity element.\nInverse: For \\(\\forall a \\in G\\), there is a unique \\(a^{-1}\\) where: \\(a \\star a^{-1} = e\\). \\(a^{-1}\\) is called as inverse.\nAssociative: For every \\(a, b, c \\in G\\), \\(a \\star (b \\star c) = (a \\star b) \\star c\\).\nCommutative: \\(a \\star b = b \\star a\\). A commutative group is also called abelian group.\n\nDuring the RSA and Diffie-Hellman (DH), we will talk much about the group \\(\\mathbb{Z}_p\\). You can verify the properties yourself.\nA group with finite number of elements is called as a finite group.\n\n\n9.5.2 Generator\nTake the example of a group \\(\\mathbb{Z}_{13}\\). If we compute number \\(2^x\\) where \\(0 \\le x \\lt p - 1\\), we can have a set:\n\\[\n\\{2^x\\} = \\{1, 2, 4, 8, 3, 6, 12, 11, 9, 5, 10, 7\\}\n\\]\nThis set is \\(\\mathbb{Z}_{13}\\). However, if we take another number, for example, 5:\n\\[\n\\{5^x\\} = \\{1, 5, 12, 8\\}\n\\]\n\\(2\\) is the generator of group \\(G = \\mathbb{Z}_{13}\\), but \\(5\\) isn’t.\nThen, generator of a group is the element that can generate the group, with the process you see above (in this multiplicative group, it can be done via exponent).\n\n\n9.5.3 Order\nCome back to our example above, as \\(2\\) can generate the set of 12 elements, the order of \\(2\\) in the group \\(G\\) is \\(12\\). Indeed, the order of \\(5\\) is \\(4\\).\nDenoted the number \\(d\\) as the order of the group. In some group, we cannot find \\(d_a\\) for every \\(a\\) in group, then these \\(a\\) are called as having infinite order.\nAlso, the order of the generator is assigned to the order of the group.\nThere are some properties with the order, that will be mentioned in some attacks on the DH and RSA:\n\n\n\n\n\n\nProperties of order in finite group\n\n\n\nLet \\(G\\) be a finite group. It has the order \\(n = |G|\\). Let \\(a \\in G\\) and the order of \\(a\\) is \\(d\\).\n\nThen, every element of \\(G\\) has finite order.\nIf there exists a number \\(k\\) where \\(a^k \\equiv e\\), then \\(d | k\\).\n(Lagrange’s theorem). \\(d | n\\) and \\(a^n \\equiv e\\)."
   },
   {
     "objectID": "Preface.html#some-words-before-going",
@@ -77,60 +49,11 @@
     "text": "Brief summary\nA brief summary of the books:\n\n“Why crypto?”. Where I will try my best to ‘convince’ you to at least read some next chapters. How cryptography has been used along the time, what are the current challenges for cryptographers, etc. And most important, what are the most general catalogue for crypto fields (made by me).\n“Mathematical Background”. As any cross-field of Mathematics and Computer Science, you need some basic bricks to start building your Cryptography skills. In here, you will meet some secondary mathematics like modulo, to some crazy ‘variants’ of them.\n“Symmetric Cryptography”: As its name, we will have a walkthrough some fields of Symmetric Cryptography from the very historical (and completely) broken to the newest that are used in your daily Internet surfing.\n“Asymmetric Cryptography”: This part will look into the constructions of many famous cryptography scheme that is also the deliverer for your symmetric cryptography and validation. !!! Warning: Many Maths!\n“Hash functions”: Integrity will mostly mention in this field, and some examples of how to playing with some hacks to break the integrity!\n“Appendices”: Some other tools/guides for you to playing with the material of the book and also further games."
   },
   {
-    "objectID": "MathBackground.html#mathematical-objects",
-    "href": "MathBackground.html#mathematical-objects",
-    "title": "Mathematical Background",
-    "section": "Mathematical Objects",
-    "text": "Mathematical Objects\n\nSpecial sets\n\n\\(\\mathbb{C}\\): Complex numbers\n\\(\\mathbb{R}\\): Real numbers\n\\(\\mathbb{Z}\\): Integers\n\\(\\mathbb{Q}\\): Rational numbers\n\\(\\mathbb{N}\\): Natural numbers\n\\(\\mathbb{Z}/n\\mathbb{Z}\\): Set of integers mod \\(n\\)\n\nAn example of SageMath on these guys:\n\"\"\"\nThe following SageMath commands to call a set: \n\"\"\"\nCC # Complex numbers with 53-bit of precision.\nRR # Real numbers with 53-bit of precision.\nZZ # Integer Ring. \nQQ # Rational Field.\nNN # Non-negative integer semi-ring.\nZmod(11) # aka Integers(11) or `IntegerModRing(11)`: Ring of modulo 11"
-  },
-  {
-    "objectID": "Maths_Notation.html",
-    "href": "Maths_Notation.html",
-    "title": "1  Mathematical Notation",
-    "section": "",
-    "text": "1.0.1 Special sets\n\n\\(\\mathbb{C}\\): Complex numbers\n\\(\\mathbb{R}\\): Real numbers\n\\(\\mathbb{Z}\\): Integers\n\\(\\mathbb{Q}\\): Rational numbers\n\\(\\mathbb{N}\\): Natural numbers\n\\(\\mathbb{Z}/n\\mathbb{Z}\\): Set of integers mod \\(n\\)\n\nAn example of SageMath on these guys:\n\"\"\"\nThe following SageMath commands to call a set: \n\"\"\"\nCC # Complex numbers with 53-bit of precision.\nRR # Real numbers with 53-bit of precision.\nZZ # Integer Ring. \nQQ # Rational Field.\nNN # Non-negative integer semi-ring.\nZmod(11) # aka Integers(11) or `IntegerModRing(11)`: Ring of modulo 11"
-  },
-  {
-    "objectID": "Maths_Notation.html#special-sets",
-    "href": "Maths_Notation.html#special-sets",
-    "title": "1  Mathematical Notation",
-    "section": "1.1 Special sets",
-    "text": "1.1 Special sets\n\n\\(\\mathbb{C}\\): Complex numbers\n\\(\\mathbb{R}\\): Real numbers\n\\(\\mathbb{Z}\\): Integers\n\\(\\mathbb{Q}\\): Rational numbers\n\\(\\mathbb{N}\\): Natural numbers\n\\(\\mathbb{Z}/n\\mathbb{Z}\\): Set of integers mod \\(n\\)\n\nAn example of SageMath on these guys:\n\"\"\"\nThe following SageMath commands to call a set: \n\"\"\"\nCC # Complex numbers with 53-bit of precision.\nRR # Real numbers with 53-bit of precision.\nZZ # Integer Ring. \nQQ # Rational Field.\nNN # Non-negative integer semi-ring.\nZmod(11) # aka Integers(11) or `IntegerModRing(11)`: Ring of modulo 11\n\nThe unit groups: \\(R^{\\times}\\) or \\(R^{*}\\)\nFinite fields with \\(q\\) elements: \\(\\mathbb{F}_q\\)\nGeneral field: \\(k\\)\nAlgebraic closure of a field: \\(\\bar{k}\\)\n\nExample of SageMath codes:\nGF(11)\n\nGF(11)\n\nFinite Field of size 11\n\n\nGF(11).algebraic_closure()\n\nGF(11).algebraic_closure()\n\nAlgebraic closure of Finite Field of size 11\n\n\nSome interesting function for you to play with:\n\"\"\"\n`.parent()`: finding which field an element belongs to\n\"\"\"\nx = 7\nprint(x.parent())\n\nx = 3.5\nprint(x.parent())\n\nx = 7\nprint(x.parent())\n\nx = 3.5\nprint(x.parent())\n\nInteger Ring\nReal Field with 53 bits of precision\n\n\n\"\"\"\n`.lift()`: Lift an element from its parent to its... grandparent?\ne.g: from quotient ring Q (R/I) -> R\n\"\"\"\nR = ZZ \nRI = Zmod(11)\nx = RI(5)\n\nprint(x.parent())\n\ny = x.lift()\nprint(y.parent())\n\nprint(y in R)\n\nR = ZZ \nRI = Zmod(11)\nx = RI(5)\nprint(x.parent())\n\ny = x.lift()\nprint(y.parent())\nprint(y in R)\n\nRing of integers modulo 11\nInteger Ring\nTrue"
-  },
-  {
-    "objectID": "MathBackground.html",
-    "href": "MathBackground.html",
-    "title": "Mathematical Background",
-    "section": "",
-    "text": "Welcome to the start of our (actual) journey! Throughout the book, there will be more mathematical stuffs will be delivered, with many symbols and notations. Some of you may find it clear but if you not, a bookmark for this book (or any cheatsheet of SageMath) is my recommendation."
-  },
-  {
-    "objectID": "MathBackground.html#in-this-chapter",
-    "href": "MathBackground.html#in-this-chapter",
-    "title": "Mathematical Background",
-    "section": "In this chapter",
-    "text": "In this chapter\n\nMathematical Notations"
-  },
-  {
-    "objectID": "Maths_Notation.html#section",
-    "href": "Maths_Notation.html#section",
-    "title": "1  Mathematical Notation",
-    "section": "1.2 ",
-    "text": "1.2"
-  },
-  {
-    "objectID": "Maths_Notation.html#relation-operators",
-    "href": "Maths_Notation.html#relation-operators",
-    "title": "1  Mathematical Notation",
-    "section": "1.2 Relation operators",
-    "text": "1.2 Relation operators"
-  },
-  {
-    "objectID": "Maths_Notation.html#other-important-ones",
-    "href": "Maths_Notation.html#other-important-ones",
-    "title": "1  Mathematical Notation",
-    "section": "1.2 Other important ones",
-    "text": "1.2 Other important ones\n\n\\(Pr(A)\\) means the probability of an event \\(A\\) to happen. Sometimes, you may see the notation \\(Pr[A]\\) and \\(P(A)\\) also."
+    "objectID": "Preface.html#philosophy",
+    "href": "Preface.html#philosophy",
+    "title": "Summary",
+    "section": "Philosophy",
+    "text": "Philosophy\nThe aim of this book is guilding you to start with crypto, rather than a cheatsheet for you to copy the snipset into any cryptography challenges in CTFs. Therefore, the basics of SageMath/Python will be mentioned in the book, but not the all attacks’ implementations. I know that there are many available samples on GitHub; however, gaining experiences by playing around with debugging, ‘math’-ing, and programming is better, rights?\nHowever, do not afraid about the hard problems. At any point of this book, you will find some exercises (that I find it should work for gaining your skills) to practice with. Also, do not afraid to contact me via social medias 😎!\n\n\n\n\n\n\nTip\n\n\n\nLet’s write something (as clear as you can) about what you want to learn or love about Cryptography and what do you expect this book has. 100% I can give you all the stuff you need, but I am sure you will find them out if you REALLY want to finish (and extend) your checklist!\n\n\nThat’s enough for the text! Let’s gooooo!!!!."
   },
   {
     "objectID": "MathBackground.html#note-on-code-execution",
@@ -140,39 +63,25 @@
     "text": "Note on code execution\nAs this book uses SageMath as its main environment, I suggest you start with installing the tool first. The complete guide is available in their website.\nIf you are using Windows, you should install Windows Subsystem Linux (WSL), and then install inside your WSL system. As SageMath stops release the binary for Windows, your version of SageMath will not be updated if you choose this way.\nAs some limit of Quarto don’t allow us to both execute the SageMath code and syntax highlighting them (or I have not figured how to do it), you can see this example:\n\"\"\"\n    A test program on SageMath. NOTE: same syntax \n    with Python ;)\n\"\"\"\nprint(\"Hello World\")\nfor i in range(0, 10):\n    print(i)\n\n\nHello World\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n\n\nSome lines after the code are the output."
   },
   {
-    "objectID": "NumberTheory.html#introduction",
-    "href": "NumberTheory.html#introduction",
-    "title": "2  Number Theory",
-    "section": "2.1 Introduction",
-    "text": "2.1 Introduction\nWhen playing with ciphertext, most of the times, crypto guys would want to make it digital version: with numbers, computations, etc. Then, you need to face with number theory stuffs most of the time.\nThis chapter expects you could have a shot of basic number theory. Of course, this cannot replace a whole course about the topic. Discrete Mathematics from professor Wray Buntine is my suggestion.\n\n\n\n\n\n\nTip\n\n\n\nDon’t worry if something makes you struggle with. Take a step back and take it slow to understand the concepts."
+    "objectID": "MathBackground.html#in-this-chapter",
+    "href": "MathBackground.html#in-this-chapter",
+    "title": "Mathematical Background",
+    "section": "In this chapter",
+    "text": "In this chapter\n\nMathematical Notations"
   },
   {
-    "objectID": "NumberTheory.html#division",
-    "href": "NumberTheory.html#division",
-    "title": "2  Number Theory",
-    "section": "2.2 Division",
-    "text": "2.2 Division\nLet \\(\\mathbb{Z}\\) be the integers \\(\\{\\ldots, -1, 0, 1, 2, \\ldots \\}\\)\n\n\n\n\n\n\nDefinition - Divisibility\n\n\n\n\nFor \\(a, b \\in \\mathbb{Z}\\), we say that \\(a\\) divides \\(b\\) if there is a \\(k \\in \\mathbb{Z}\\) such that \\(a \\cdot k = b\\).\nNotation: \\(a \\mid b\\).\n\n\n\nExample: \\(2 \\mid 6\\), as \\(2 \\cdot 3 = 6\\).\nThere are some important properties:\n\n\n\n\n\n\nProperties\n\n\n\n\n\\(a \\mid a\\), \\(1 \\mid a\\), \\(a \\mid 0\\)\n\\(a \\mid b\\), \\(b \\mid c \\rightarrow a \\mid (bu+cv) \\quad \\forall u, v \\in \\mathbb{Z}\\)\n\\(a \\mid b\\), \\(b \\mid c \\rightarrow a \\mid c\\)\n\n\n\n\n\n\n\n\n\nDefinition - Division with remainder\n\n\n\nLet \\(a, b \\in \\mathbb{Z}\\), \\(b \\geq 1\\) Then, there exists unique \\(q, r \\in \\mathbb{Z}\\) such that \\(a = bq + r\\) and \\(0 \\le r \\lt b\\).\n\\(q\\) is quotient and \\(b\\) is remainder.\n\n\nTo find quotients and remainder in Python, you can use either // and % for div and mod, or divmod().\nq, r = divmod(6, 2)\nprint(q, r)\nq = 11 // 3\nr = 11 % 3\nprint(q, r)\n\n\n3 0\n3 2"
+    "objectID": "Maths_Notation.html#special-sets",
+    "href": "Maths_Notation.html#special-sets",
+    "title": "1  Mathematical Notation",
+    "section": "1.1 Special sets",
+    "text": "1.1 Special sets\n\n\\(\\mathbb{C}\\): Complex numbers\n\\(\\mathbb{R}\\): Real numbers\n\\(\\mathbb{Z}\\): Integers\n\\(\\mathbb{Q}\\): Rational numbers\n\\(\\mathbb{N}\\): Natural numbers\n\\(\\mathbb{Z}/n\\mathbb{Z}\\): Set of integers mod \\(n\\)\n\nAn example of SageMath on these guys:\n\"\"\"\nThe following SageMath commands to call a set: \n\"\"\"\nCC # Complex numbers with 53-bit of precision.\nRR # Real numbers with 53-bit of precision.\nZZ # Integer Ring. \nQQ # Rational Field.\nNN # Non-negative integer semi-ring.\nZmod(11) # aka Integers(11) or `IntegerModRing(11)`: Ring of modulo 11\n\nThe unit groups: \\(R^{\\times}\\) or \\(R^{*}\\)\nFinite fields with \\(q\\) elements: \\(\\mathbb{F}_q\\)\nGeneral field: \\(k\\)\nAlgebraic closure of a field: \\(\\bar{k}\\)\n\nExample of SageMath codes:\nGF(11)\n\nGF(11)\n\nFinite Field of size 11\n\n\nGF(11).algebraic_closure()\n\nGF(11).algebraic_closure()\n\nAlgebraic closure of Finite Field of size 11\n\n\nSome interesting function for you to play with:\n\"\"\"\n`.parent()`: finding which field an element belongs to\n\"\"\"\nx = 7\nprint(x.parent())\n\nx = 3.5\nprint(x.parent())\n\nx = 7\nprint(x.parent())\n\nx = 3.5\nprint(x.parent())\n\nInteger Ring\nReal Field with 53 bits of precision\n\n\n\"\"\"\n`.lift()`: Lift an element from its parent to its... grandparent?\ne.g: from quotient ring Q (R/I) -> R\n\"\"\"\nR = ZZ \nRI = Zmod(11)\nx = RI(5)\n\nprint(x.parent())\n\ny = x.lift()\nprint(y.parent())\n\nprint(y in R)\n\nR = ZZ \nRI = Zmod(11)\nx = RI(5)\nprint(x.parent())\n\ny = x.lift()\nprint(y.parent())\nprint(y in R)\n\nRing of integers modulo 11\nInteger Ring\nTrue"
   },
   {
-    "objectID": "NumberTheory.html",
-    "href": "NumberTheory.html",
-    "title": "2  Number Theory",
-    "section": "",
-    "text": "2.0.1 Introduction\nWhen playing with ciphertext, most of the times, crypto guys would want to make it digital version: with numbers, computations, etc. Then, you need to face with number theory stuffs most of the time.\nThis chapter expects you could have a shot of basic number theory. Of course, this cannot replace a whole course about the topic. Discrete Mathematics from professor Wray Buntine is my suggestion.\n\n\n\n\n\n\nTip\n\n\n\nDon’t worry if something makes you struggle with. Take a step back and take it slow to understand the concepts.\n\n\n\n\n2.0.2 Division\nLet \\(\\mathbb{Z}\\) be the integers \\(\\{\\ldots, -1, 0, 1, 2, \\ldots \\}\\)\n\n\n\n\n\n\nDefinition - Divisibility\n\n\n\n\nFor \\(a, b \\in \\mathbb{Z}\\), we say that \\(a\\) divides \\(b\\) if there is a \\(k \\in \\mathbb{Z}\\) such that \\(a \\cdot k = b\\).\nNotation: \\(a \\mid b\\).\n\n\n\nExample: \\(2 \\mid 6\\), as \\(2 \\cdot 3 = 6\\).\nThere are some important properties:\n\n\n\n\n\n\nProperties\n\n\n\n\n\\(a \\mid a\\), \\(1 \\mid a\\), \\(a \\mid 0\\)\n\\(a \\mid b\\), \\(b \\mid c \\rightarrow a \\mid (bu+cv) \\quad \\forall u, v \\in \\mathbb{Z}\\)\n\\(a \\mid b\\), \\(b \\mid c \\rightarrow a \\mid c\\)\n\n\n\n\n\n\n\n\n\nDefinition - Division with remainder\n\n\n\nLet \\(a, b \\in \\mathbb{Z}\\), \\(b \\geq 1\\) Then, there exists unique \\(q, r \\in \\mathbb{Z}\\) such that \\(a = bq + r\\) and \\(0 \\le r \\lt b\\).\n\\(q\\) is quotient and \\(b\\) is remainder.\n\n\nTo find quotients and remainder in Python, you can use either // and % for div and mod, or divmod().\nq, r = divmod(6, 2)\nprint(q, r)\nq = 11 // 3\nr = 11 % 3\nprint(q, r)\n\n\n3 0\n3 2"
-  },
-  {
-    "objectID": "Guide_On_Source.html#introduction",
-    "href": "Guide_On_Source.html#introduction",
-    "title": "2  Guide on Mathematics sources",
-    "section": "2.1 Introduction",
-    "text": "2.1 Introduction\nAs you are working with computations of ciphering and deciphering, being comfortable with the Maths here is the best!"
-  },
-  {
-    "objectID": "Guide_On_Source.html#division",
-    "href": "Guide_On_Source.html#division",
-    "title": "2  Guide on Mathematics sources",
-    "section": "2.2 Division",
-    "text": "2.2 Division\nLet \\(\\mathbb{Z}\\) be the integers \\(\\{\\ldots, -1, 0, 1, 2, \\ldots \\}\\)\n\n\n\n\n\n\nDefinition - Divisibility\n\n\n\n\nFor \\(a, b \\in \\mathbb{Z}\\), we say that \\(a\\) divides \\(b\\) if there is a \\(k \\in \\mathbb{Z}\\) such that \\(a \\cdot k = b\\).\nNotation: \\(a \\mid b\\).\n\n\n\nExample: \\(2 \\mid 6\\), as \\(2 \\cdot 3 = 6\\).\nThere are some important properties:\n\n\n\n\n\n\nProperties\n\n\n\n\n\\(a \\mid a\\), \\(1 \\mid a\\), \\(a \\mid 0\\)\n\\(a \\mid b\\), \\(b \\mid c \\rightarrow a \\mid (bu+cv) \\quad \\forall u, v \\in \\mathbb{Z}\\)\n\\(a \\mid b\\), \\(b \\mid c \\rightarrow a \\mid c\\)\n\n\n\n\n\n\n\n\n\nDefinition - Division with remainder\n\n\n\nLet \\(a, b \\in \\mathbb{Z}\\), \\(b \\geq 1\\) Then, there exists unique \\(q, r \\in \\mathbb{Z}\\) such that \\(a = bq + r\\) and \\(0 \\le r \\lt b\\).\n\\(q\\) is quotient and \\(b\\) is remainder.\n\n\nTo find quotients and remainder in Python, you can use either // and % for div and mod, or divmod().\nq, r = divmod(6, 2)\nprint(q, r)\nq = 11 // 3\nr = 11 % 3\nprint(q, r)\n\n\n3 0\n3 2"
+    "objectID": "Maths_Notation.html#other-important-ones",
+    "href": "Maths_Notation.html#other-important-ones",
+    "title": "1  Mathematical Notation",
+    "section": "1.2 Other important ones",
+    "text": "1.2 Other important ones\n\n\\(Pr(A)\\) means the probability of an event \\(A\\) to happen. Sometimes, you may see the notation \\(Pr[A]\\) and \\(P(A)\\) also."
   },
   {
     "objectID": "GuideOnSource.html#introduction",
@@ -182,25 +91,18 @@
     "text": "2.1 Introduction\nAs you are working with computations of ciphering and deciphering, being comfortable with the Maths here is the best! In terms of the purpose of this document, we will not go too deep in any Mathematics here. However, here are some books that I think may help you a lot when studying some first cryptos:\nAlso, before working with the few next chapters, you should be comfortable with: - Modular Arithmetic (Concepts of modulo, GCD, etc.)"
   },
   {
-    "objectID": "Encoding.html#introductions",
-    "href": "Encoding.html#introductions",
-    "title": "3  Encoding",
-    "section": "3.1 Introductions",
-    "text": "3.1 Introductions\nAs a two-year (or more) CTF players, I have not see any challenges that works too much on the encoding (As they are standardized). Some may appear in challenges of Web or Pwn, where the format of the data matters. In this section, I will introduce several common types of encoding for you!"
-  },
-  {
-    "objectID": "Encoding.html#base64",
-    "href": "Encoding.html#base64",
-    "title": "3  Encoding",
-    "section": "3.4 Base64",
-    "text": "3.4 Base64\nUsing Base64 encoding, you can represent binary data as ASCII string, with an alphabet of 64 characters. Some other versions of Base64, like Base58 (Using in Bitcoin, remove some ‘look-the-same’ character like l (normalcase l) and I (uppercase i)) are alse used widely.\nIn Python, you can use the library base64 for working with this encoding.\ns = \"Hello World\"\nimport base64\nb64enc = base64.b64encode(s)\nprint(b64enc)\nprint(base64.b64decode(b64enc))\n\n\nb'SGVsbG8gV29ybGQ='\nb'Hello World'"
-  },
-  {
     "objectID": "Foundations.html",
     "href": "Foundations.html",
     "title": "Foundations",
     "section": "",
     "text": "Most of the cases, you do not want to look at a piece where every single letters are abstract digits and numbers but images, videos or at least readable text. However, cryptography does not work quite well with the ordinary letters themselves; therefore, we need encoding to change our letter to some computable forms (like binary, decimal, etc.)\nIn this part, we will have a look at some topics:"
+  },
+  {
+    "objectID": "Encoding.html#introductions",
+    "href": "Encoding.html#introductions",
+    "title": "3  Encoding",
+    "section": "3.1 Introductions",
+    "text": "3.1 Introductions\nAs a two-year (or more) CTF players, I have not see any challenges that works too much on the encoding (As they are standardized). Some may appear in challenges of Web or Pwn, where the format of the data matters. In this section, I will introduce several common types of encoding for you!"
   },
   {
     "objectID": "Encoding.html#ascii",
@@ -217,6 +119,13 @@
     "text": "3.3 Hex\nHex stands for Hexadecimal, i.e. base 16. Basically, you can understand Hex as a version of ASCII but in hexadecimal rather than decimal.\ns = \"Hello World\"\nprint([hex(ord(c)) for c in s])\nprint(bytes(s, encoding='utf-8').hex())\n\n\n['0x48', '0x65', '0x6c', '0x6c', '0x6f', '0x20', '0x57', '0x6f', '0x72', '0x6c', '0x64']\n48656c6c6f20576f726c64"
   },
   {
+    "objectID": "Encoding.html#base64",
+    "href": "Encoding.html#base64",
+    "title": "3  Encoding",
+    "section": "3.4 Base64",
+    "text": "3.4 Base64\nUsing Base64 encoding, you can represent binary data as ASCII string, with an alphabet of 64 characters. Some other versions of Base64, like Base58 (Using in Bitcoin, remove some ‘look-the-same’ character like l (normalcase l) and I (uppercase i)) are alse used widely.\nIn Python, you can use the library base64 for working with this encoding.\ns = \"Hello World\"\nimport base64\nb64enc = base64.b64encode(s)\nprint(b64enc)\nprint(base64.b64decode(b64enc))\n\n\nb'SGVsbG8gV29ybGQ='\nb'Hello World'"
+  },
+  {
     "objectID": "Encoding.html#bignum-and-bytes",
     "href": "Encoding.html#bignum-and-bytes",
     "title": "3  Encoding",
@@ -224,53 +133,11 @@
     "text": "3.5 Bignum and Bytes\nIf you want to encrypt a word (“HELLO”, for example); most of the case, you can’t apply encryption directly on it. A solution is that: concatenate the hex value of each characters. For example:\nmessage: HELLO\nascii bytes: [72, 69, 76, 76, 79]\nhex bytes: [0x48, 0x45, 0x4c, 0x4c, 0x4f]\nbase-16: 0x48454c4c4f\nbase-10: 310400273487 \nWhen working with these bignums, a Python library PyCryptodome provides two functions to convert back and forth:\ns = b\"Hello World\"\nprint(s.hex())\nfrom Crypto.Util.number import long_to_bytes, bytes_to_long\n# The usage of command\nprint(bytes_to_long(s))\n\n# Compare with the hex value\nprint(hex(bytes_to_long(s)))\n\n# Decoding\nprint(long_to_bytes(bytes_to_long(s)))\n\n\n48656c6c6f20576f726c64\n87521618088882533792115812\n0x48656c6c6f20576f726c64\nb'Hello World'\n\n\nAlso, there are some forms of encoding like URL Encoding, which uses a lot in our hyperlinks. You can always search them, when you need it xD."
   },
   {
-    "objectID": "Symmetric.html",
-    "href": "Symmetric.html",
-    "title": "Symmetric Cryptography",
-    "section": "",
-    "text": "Welcome to the first part of real crypto stuffs! I hope you are familiar with all previous materials!\nAs its name, Symmetric Cryptography is the types of cryptography where the key for both encryption & decryption process is the same.\n\n\n\nSymmetric Cryptography\n\n\nIn this section, we will cover mainly one of the most advanced symmetric-key algorithm: AES (Advanced Encryption Standard), and some modes of operation around them. There will be some extra resources for you to read some older (and doomed) algorithms, like DES."
-  },
-  {
-    "objectID": "AESBasic.html#introduction",
-    "href": "AESBasic.html#introduction",
-    "title": "8  Basics about AES",
-    "section": "8.1 Introduction",
-    "text": "8.1 Introduction\nIn some decades ago, the needs of encryption in both governmental, military and also basic data arose around the world. Therefore, many algorithms have been developed. Some among them survive until today and we have AES.\nFor a clear introduction about AES, I would refer you to read it in the Wikipedia page of AES."
-  },
-  {
-    "objectID": "AESBasic.html#algorithms.",
-    "href": "AESBasic.html#algorithms.",
-    "title": "4  Basics about AES",
-    "section": "4.2 Algorithms.",
-    "text": "4.2 Algorithms."
-  },
-  {
-    "objectID": "AESBasic.html#algorithms",
-    "href": "AESBasic.html#algorithms",
-    "title": "8  Basics about AES",
-    "section": "8.2 Algorithms",
-    "text": "8.2 Algorithms\nThe encryption of AES can be broken into two parts, the Key Schedule and the Encryption. Based on your mode (AES-256, for example), your key will be required to have this length. At right now, AES-256 is still super good for any of your normal encryption.\n\n8.2.1 Key Schedule\nThe Key Schedule process is required to break the key into small sub-keys, which will be used in each round of AES. The Key Schedule’s implementation is worked by the operations under Galois Field \\(GF(2^8)\\). Explaining this process would take lots of time because of the Abstract Algebra it’s related, so I would give a link if you really want to learn about it:\nAES Key Schedule"
-  },
-  {
-    "objectID": "ModesOfOperations.html",
-    "href": "ModesOfOperations.html",
-    "title": "4  Modes of operations",
-    "section": "",
-    "text": "In cryptography, the mode of operation of the block cipher allows encryption of more than one block of data using the same packet cipher key. The block cipher itself can only encrypt a single block of data whose length is equal to the length of the cipher block. To encrypt longer data, the data must ﬁrst be divided into several separate chunks. Usually, the last block of data needs to be expanded to match the block size using appropriate padding. The mode of operation describes the process of encrypting each data block and is often randomized using an additional initiali- zation vector (IV) to ensure security. The study of modes of operations used to include data integrity protection, i.e., the error propagation characteristics of the cipher, if some byte is modiﬁed. Subse- quent research has treated integrity protection as an entirely different cryptosystem- independent goal of cryptography. Some modern modes of operations combine encryption (conﬁdentiality) and authentication in an efﬁcient way, which is called authentication encryption."
-  },
-  {
     "objectID": "Symmetric.html#block-cipher",
     "href": "Symmetric.html#block-cipher",
     "title": "Symmetric Cryptography",
     "section": "Block cipher",
     "text": "Block cipher\nIn Cryptography, Block Cipher is a symmetric cryptographic algorithm that divides a plaintext into multiple blocks of equal length, and encrypts/decrypts each block separately. This pretty much same as some classical ciphers you may hear about, like Caesar, except a whole block is substituted rather than a single character.\nWith supports of some modes of operations, we could have different ways of encrypt/decrypt, and also even change the block cipher into stream cipher, where each characters are substituted."
-  },
-  {
-    "objectID": "ModesOfOperations.html#ecb",
-    "href": "ModesOfOperations.html#ecb",
-    "title": "4  Modes of operations",
-    "section": "4.1 ECB",
-    "text": "4.1 ECB\nElectronic Code Book is the simplest mode of operation, where each block of plaintext is independently encrypted/decrypted.\n\n\n\nECB\n\n\nIndeed, besides its simplicity, ECB can bring lots of hazards. According to the independent process between each block, the data pattern is not well-hidden with ECB, with this example below:\n\n\n\nTux_ECB\n\n\nYou can try ECB encryption process with the library PyCryptodome with this example:"
   },
   {
     "objectID": "ECB.html#ecb",
@@ -308,6 +175,20 @@
     "text": "The final mode of operation we will introduce will have a little bit different. While every other mode will have a fixed ciphertext for each plaintext, CTR will provide a different one every time we create new ciphers. This can be done because of the mechanism of nonce and counter (the name Counter Mode of CTR said it all).\nIn CTR, the nonce acts the same as IV in other modes, while the counter will be altered each time new message is required."
   },
   {
+    "objectID": "AESBasic.html#introduction",
+    "href": "AESBasic.html#introduction",
+    "title": "8  Basics about AES",
+    "section": "8.1 Introduction",
+    "text": "8.1 Introduction\nIn some decades ago, the needs of encryption in both governmental, military and also basic data arose around the world. Therefore, many algorithms have been developed. Some among them survive until today and we have AES.\nFor a clear introduction about AES, I would refer you to read it in the Wikipedia page of AES."
+  },
+  {
+    "objectID": "AESBasic.html#algorithms",
+    "href": "AESBasic.html#algorithms",
+    "title": "8  Basics about AES",
+    "section": "8.2 Algorithms",
+    "text": "8.2 Algorithms\nThe encryption of AES can be broken into two parts, the Key Schedule and the Encryption. Based on your mode (AES-256, for example), your key will be required to have this length. At right now, AES-256 is still super good for any of your normal encryption.\n\n8.2.1 Key Schedule\nThe Key Schedule process is required to break the key into small sub-keys, which will be used in each round of AES. The Key Schedule’s implementation is worked by the operations under Galois Field \\(GF(2^8)\\). Explaining this process would take lots of time because of the Abstract Algebra it’s related, so I would give a link if you really want to learn about it:\nAES Key Schedule"
+  },
+  {
     "objectID": "AESBasic.html#processes-of-an-aes",
     "href": "AESBasic.html#processes-of-an-aes",
     "title": "8  Basics about AES",
@@ -322,45 +203,171 @@
     "text": "Welcome to the second part of this guide! With the previous part, we have a quick walkthrough for every part of symmetric cryptography. As you may recognize, the main uncomfortable thing of symmetric cryptography is that both party need to have an agreement on a same key. During the 1970s, some first attempts to remove this barrier has been successful. Since then, two party can use secured protection over their conversations.\nTwo main applications of asymmetric cryptography is:\n\nPublic key encryption: where Alice will use a public key to allow other people send messages to her, and another private key for her to read the ciphertext.\n\n\n\n\n\n\n\nDigital signature: when Alice create some document, she can ‘sign’ into the document to verify her as the true owner. Any other people can verify it easily, just by some simple calculations.\n\n\n\n\n\n\nMore than that, Asymmetric cryptography can be used as a key sharing scheme (like Diffie-Hellman) that can be used in sharing the common key for the Symmetric Cryptography.\n\n\n\n\n\nThe anatomy of Asymmetric Cryptography is just like that. During this part, three significants cryptosystem will be demonstrated: RSA, Diffie-Hellman Key Exchange and a little bit on simple digital signature.\nIn the last chapters, the mechanism of Elliptic Curve Cryptography will also be included."
   },
   {
-    "objectID": "UsefulMaths.html",
-    "href": "UsefulMaths.html",
-    "title": "9  Toddlers’ Mathematics for PKC",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "CryptoBook",
     "section": "",
-    "text": "In this chapter, we will have a small walkthrough on some simple concepts of modular arithmetic that we needs for RSA and Diffie-Hellman.\n\n\n\n\n\n\nAssumption\n\n\n\nThe material here will assume that you have basic knowledge about modular arithmetic, how to do GCD and Extended GCD (via Euclidean and Extended Euclidean algorithm)"
+    "text": "Welcome\nThis ‘CryptoBook for n00b1es’ is a beginner guide, with the main purpose is for any beginners who want to poke around with Cryptography in a practical way. This book is released as a result of an Independent Study course about basic Cryptography, conducted by Nguyen Tuan Anh (h114mx001, supervised by Professor Wray Buntine); from College of Engineering and Computer Science, VinUniversity.\nThis book targets the newcomers to Cryptography field, from guiding you from basic implementation of some cryptography schemes, to some more advance and popular ones. From perspectives of a crypto learner, I included a lot of practical work (implementations, explanation, etc.) about how to work and/or break some usual cryptosystems. Also, you will find yourself more familiar with some most useful tools in your cryptography work (in this book, I choose Python and a CAS build on it, SageMath as main tools).\nThis website and book will always be free to access, licensed under the CC BY-NC-ND 3.0 license. Currently, the only way for you to get a physical copy of this document is print my website out.\nIndeed, this book will not end here, updated version will continue (based on my skills and your demands too!). After this (final) version, you can expect next versions of the document."
   },
   {
-    "objectID": "UsefulMaths.html#eulers-phi-totient",
-    "href": "UsefulMaths.html#eulers-phi-totient",
-    "title": "9  Toddlers’ Mathematics for PKC",
-    "section": "9.1 Euler’s Phi Totient",
-    "text": "9.1 Euler’s Phi Totient\n\n\n\n\n\n\nNote\n\n\n\nGiven a number \\(n\\), Euler’s Phi Totient number defines the numbers of natural numbers \\(i\\) (\\(1 \\le i \\lt n\\)) that \\(GCD(i, n) = 1\\)\nThis function is denoted as \\(\\phi(n)\\).\n\n\nExample:  \\(\\phi(20) = 8\\), \\(\\phi(4) = 2, \\phi(5) = 4\\)\nThis totient has some important properties that is useful with RSA:\n\n\n\n\n\n\nImportant Euler’s Phi Totient Properties:\n\n\n\n\nIf \\(p\\) is a prime, then \\(\\phi(p) = p - 1\\)\nIf \\(GCD(a, b) = 1\\), then \\(\\phi(a\\cdot b) = \\phi(a) \\cdot \\phi(b)\\)\nGiven two numbers \\(a, n\\) where \\(GCD(a, n) == 1\\), then: \\[\na^{\\phi(n)} \\equiv 1 \\pmod n\n\\]"
+    "objectID": "index.html#acknowledgements",
+    "href": "index.html#acknowledgements",
+    "title": "CryptoBook",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements"
   },
   {
-    "objectID": "UsefulMaths.html#important-eulers-phi-totient-properties",
-    "href": "UsefulMaths.html#important-eulers-phi-totient-properties",
-    "title": "9  Toddlers’ Mathematics for PKC",
-    "section": "9.2 Important Euler’s Phi Totient Properties:",
-    "text": "9.2 Important Euler’s Phi Totient Properties:\n\nIf \\(p\\) is a prime, then \\(\\phi(p) = p - 1\\)"
+    "objectID": "RSA.html",
+    "href": "RSA.html",
+    "title": "10  RSA",
+    "section": "",
+    "text": "Let’s go into the first cryptosystem in this section! RSA, named after its three inventors, is probably one of the most popular cryptosystem we are using.\nThe RSA algorithm is easy to understand.\nAssuming that, our Alice, want to establish a secure way to talk to the outsiders. She will choose her two prime numbers: \\(p\\), \\(q\\), based on the length of ciphertext she want. For example, in RSA-512, the \\(p\\) and \\(q\\) is 512-bit long.\nThen, she compute her \\(n = p\\cdot q\\). Then, the Euler’s totient for this number is \\[\n\\phi(n) = (p-1)\\cdot (q-1)\n\\]\nNext, she will choose a number \\(e\\), in a way that \\(GCD(e, \\phi(n)) = 1\\). The pair \\((e, n)\\) will be her public key.\nThen, she will compute a number \\(d = e^{-1} \\pmod{\\phi(n)}\\). Then, the public-key will be \\((e, n)\\) and private-key be \\((d, n)\\).\nFor anyone who want to send Alice something, they would compute the ciphertext: \\[\nc \\equiv m^{e} \\pmod n\n\\]\nWith this ciphertext, Alice will use her private key, \\(d\\) to decrypt:\n\\[\nc^d \\equiv (m^e)^d \\equiv m^{ed} \\pmod n\n\\]\nAs we know, \\(ed \\equiv 1 \\pmod{\\phi(n)}\\), then, we can rewrite it as \\(ed = k\\phi(n)+1\\)\nAlso, if \\(GCD(m, n) = 1\\) (almost 100% as the two only factors of \\(n\\) are \\(p, q\\)), then \\(m^{\\phi(n)} \\equiv 1 \\pmod n\\), we can rewrite as:\n\\[\nm^{ed} \\equiv m^{k\\phi(n)+1} \\equiv m^{k\\phi(n)} \\cdot m \\equiv 1 \\cdot m \\equiv m \\pmod{n}\n\\]\nThe security of RSA, come from the trapdoor function of factorizing the large semiprime \\(n\\), from its two huge factors \\(p, q\\). The direct attacks on RSA is on this public key, then finding back the private key for the plaintext.\nNormal, in CTF, the target for us is to find the backdoor in the cryptosystem, and from the given ciphertext, find back the answer.\nThe next chapter will talk about some beginner-intermediate level of attack RSA.\n\n\n\n\n\n\nRSA in real cases\n\n\n\nBreaking the RSA in both real life and in CTFs required more than these attacks. According to the structures of cryptosystem, there will be more vulnerabilities than listed ones in this documentation."
   },
   {
-    "objectID": "UsefulMaths.html#inverse-modulo",
-    "href": "UsefulMaths.html#inverse-modulo",
-    "title": "9  Toddlers’ Mathematics for PKC",
-    "section": "9.2 Inverse modulo",
-    "text": "9.2 Inverse modulo\n\n\n\n\n\n\nInverse modulo n\n\n\n\nGiven a number \\(a\\), the inverse modulo \\(n\\) of \\(a\\) is the number \\(x\\) where:\n\\[\nax \\equiv 1 \\pmod{n}\n\\]\nThis inverse should exist if \\(GCD(a, n) = 1\\)"
+    "objectID": "Attacks_RSA.html#factorizaion",
+    "href": "Attacks_RSA.html#factorizaion",
+    "title": "11  Review several attacks on RSA",
+    "section": "11.1 Factorizaion",
+    "text": "11.1 Factorizaion\nThe first thing we may want to try is breaking RSA from its root: the semiprime \\(n\\). With the factorization of \\(n\\), we can break the RSA scheme anytimes. In here, we will talk, specifically, how to break the semiprime \\(n = p\\cdot q\\), rather than working in the factorization in general.\nFactorization"
   },
   {
-    "objectID": "UsefulMaths.html#discrete-logarithm",
-    "href": "UsefulMaths.html#discrete-logarithm",
-    "title": "9  Toddlers’ Mathematics for PKC",
-    "section": "9.3 Discrete Logarithm",
-    "text": "9.3 Discrete Logarithm\nGiven \\(a, h, n\\) where there exists a number \\(x\\) that \\(a^x \\equiv h \\pmod{n}\\), the discrete logarithm problem is the process of finding the suitable number \\(x\\) in \\(\\mathbb{Z}_n\\)."
+    "objectID": "Attacks_RSA.html#improper-choices-of-parameters",
+    "href": "Attacks_RSA.html#improper-choices-of-parameters",
+    "title": "11  Review several attacks on RSA",
+    "section": "11.2 Improper choices of parameters",
+    "text": "11.2 Improper choices of parameters\nFrom the introduction chapter, we know that we need to chooses the public key and private key for every RSA. The wrong choices may lead into a quite severe attacks. Also, the process of generating primes may also lead to the problem. We will include one case here."
   },
   {
-    "objectID": "UsefulMaths.html#some-abstract-algebra",
-    "href": "UsefulMaths.html#some-abstract-algebra",
-    "title": "9  Toddlers’ Mathematics for PKC",
-    "section": "9.4 Some Abstract Algebra",
-    "text": "9.4 Some Abstract Algebra\nIn here, I will introduce several simple concepts of group, generator, order of a group and order of a member of the group.\n\n9.4.1 Group"
+    "objectID": "Attacks_RSA.html#side-channel-attack",
+    "href": "Attacks_RSA.html#side-channel-attack",
+    "title": "11  Review several attacks on RSA",
+    "section": "11.3 Side-channel attack",
+    "text": "11.3 Side-channel attack\nBasically, encryption is just a calculation process. The side-channel attacks will look into some physical time series when performing the tasks of RSA, then tell us a way to break the cryptosystem by these data."
+  },
+  {
+    "objectID": "RSA.html#digital-signature-by-rsa",
+    "href": "RSA.html#digital-signature-by-rsa",
+    "title": "10  RSA",
+    "section": "10.1 Digital Signature by RSA",
+    "text": "10.1 Digital Signature by RSA\nFrom RSA, we can build a digital signature scheme, which is not too different from our original RSA.\nFor example, we need to sign a data with value of \\(m\\). With the same public-private key as in RSA, we can compute our signature as:\n\\[\ns \\equiv m^d \\pmod n\n\\]\nIf someone want to verify \\(s\\), they only needs to calculate:\n\\[\ns' \\equiv s^e \\equiv m^{ed} \\equiv m \\pmod n\n\\]\nSome adversary can only hijack us, if they can control the private key \\(d\\), which is impractical in current theme of RSA."
+  },
+  {
+    "objectID": "RSA_Factorization.html#rainbow-attack",
+    "href": "RSA_Factorization.html#rainbow-attack",
+    "title": "12  Factorization Attack",
+    "section": "12.1 Rainbow attack",
+    "text": "12.1 Rainbow attack\nfactordb.com is a database that records the number which were factorized by users around the world. If you are lucky enough, you can try on this database first.\nActually, the types of rainbow attack are not rare in InfoSec world. In the process of finding what data hashes a value, we can search the hash. As each hash is different (if it is well-designed), we can find the correct value, if the database has recorded the value."
+  },
+  {
+    "objectID": "RSA_Factorization.html#factorization-via-difference-of-squares",
+    "href": "RSA_Factorization.html#factorization-via-difference-of-squares",
+    "title": "12  Factorization Attack",
+    "section": "12.2 Factorization via Difference of Squares",
+    "text": "12.2 Factorization via Difference of Squares\nThe first factorization method we will discuss is super-duper simple, based on a very simple method of squares.\nAssuming that, for the semiprime \\(n\\), we can have this property:\n\\[\nn = a^2 - b^2 = (a - b)\\cdot(a+b)\n\\]\nWith a pair of \\(a, b\\). Indeed, \\(a-b\\) and \\(a+b\\) is the factors we want to searching for.\nWith the generation of prime; often, the size of primes are the same (for example, same 512-bit). If the different of two primes are not too much, we can find a solution by this method.\ndef Fermat(n):\n    '''\n        Factoring of semiprime n = pq if p-q is small\n    '''\n    # As |p-q| is small, sqrt(n) is approximately equal either p or q.\n    # as n = a^2 - b^2, we can search these pairs iteratively.\n    a = ceil(sqrt(n))\n    b2 = a**2 - n\n    b = int(sqrt(b2))\n    while b**2 != b2:\n        a += 1\n        b2 = a**2 - n\n        b = int(sqrt(b2))\n    return a - b, a + b\n\nfrom Crypto.Util.number import getPrime, isPrime\np = getPrime(512)\nq = p \nwhile True: \n    q += 1 \n    if isPrime(q):\n        break \nprint(Fermat(p*q))\n\n\n(8063893325433185023797813861938389954124963938827260055890167264220182164332393160011516880879407387195283160843060271734485538182105778197812557684160431, 8063893325433185023797813861938389954124963938827260055890167264220182164332393160011516880879407387195283160843060271734485538182105778197812557684160719)\n\n\nThis attack has another enhances methods, that requires understanding of more mathematics about smooth numbers and sieve, so that I will only leave the address here:\nChapter 3.6 - 3.7, An Introduction to Mathematical Cryptography (J. Hoffstein, J. Pipher, J. H. Silverman)"
+  },
+  {
+    "objectID": "RSA_Factorization.html#pollards-p-1-algorithm",
+    "href": "RSA_Factorization.html#pollards-p-1-algorithm",
+    "title": "12  Factorization Attack",
+    "section": "12.3 Pollard’s p-1 Algorithm",
+    "text": "12.3 Pollard’s p-1 Algorithm\nWe have \\(N = pq\\). If we can find a number \\(L\\) satisfies: \\(p - 1 | L\\) and \\(q - 1 \\nmid L\\).\nIn that case, we can rewrite \\(L\\) as:\n\\[\n\\displaylines{L = i(p-1) \\qquad and  \\qquad L = j(q-1) + k}\n\\]\nChoose a number \\(a\\), which has a huge probability that \\(GCD(a, n) = 1\\). From Fermat’s Little Theorem:\n\\[\n\\displaylines{a^{L} \\equiv a^{i(p-1)} \\equiv 1 \\pmod p \\\\ a^{L} \\equiv a^{j(q-1) + k} \\equiv a^k \\pmod q}\n\\]\nThen, it means \\(p | a^L - 1\\), and \\(q \\nmid a^L - 1\\), for a huge probability. Then, we can find \\(p\\) easily by computing:\n\\[\np = GCD(a^L - 1, N)\n\\]\nTo build the number \\(L\\), if the number \\(p-1\\) has several small prime factors, then it may included in the factorial of \\(n!\\), for \\(n\\) is big enough.\nThe Pollard’s \\(p-1\\) algorithm is built on this idea. At each step, we will try to find the \\(GCD(a^{n!}, N)\\), and increase to \\(n+1\\). It is remarkable that, the exponent modulo is easier to compute rather than original modulo.\ndef PollardP_1(N, B=0):\n    '''\n        Find factoring of a semiprime n = pq, where at least p-1 or q-1 has some small prime factors.\n    '''\n    # If the bound is not applied, \n    if not B: B = ceil(sqrt(N))\n    # try each a \n    a = Integers(N).random_element()\n    b = a\n\n    for ell in primes(B):\n        q = 1\n        while q < N: \n            q *= ell \n        b = b^q     # computing the exponent with factorial modulo\n        if b == 1:  \n            return 0\n        d = gcd(b.lift()-1, N) # lift() function to make they in the same group for GCD. \n        if d > 1: \n            return d \n    return 0\nn = 10028219737\np = PollardP_1(n)\nassert n % p == 0\nprint(p, n // p)\n\n\n100153 100129\n\n\nIn the later chapters, we will look at another factoring algorithm, that lies on the elliptic curve. For further factoring, I recommend you to have a look at the book: The Joy of Factoring, from Samuel S. Wagstaff and some chapters in the book An Introduction to Mathematical Cryptography I mentioned above."
+  },
+  {
+    "objectID": "RSA_Parameters.html",
+    "href": "RSA_Parameters.html",
+    "title": "13  Bad choices of parameters",
+    "section": "",
+    "text": "The bad choice of parameters in RSA can come in many variants: low public, low private, etc. and also in the implementations of the RSA and also the prime generator.\n\n14 Low public exponent\nA popular choice of \\(e\\) is \\(3\\), as it will reduce the time to encrypt. However, with a big choice of public exponent, this may make the ciphertext in danger, as \\(3\\) times of exponent may do not change the value under the modulo. The root can be computed quickly, via the library gmpy2 of Python.\nfrom gmpy2 import iroot\nfrom Crypto.Util.number import *\np, q = getPrime(512), getPrime(512)\nn = p*q \nphiN = (p - 1)*(q - 1)\ne = 3\nd = inverse(e, n)\nm = getRandomNBitInteger(256)\nc = pow(m, e, n)\nm_break = iroot(int(c), int(e))\nprint(m_break)\nassert m_break[0] == m \nprint(m)\n\n\n(mpz(66318096938064539812055470481101268837694168391016765092562961494909009680309), True)\n66318096938064539812055470481101268837694168391016765092562961494909009680309"
+  },
+  {
+    "objectID": "RSA_Parameters.html#low-public-exponent",
+    "href": "RSA_Parameters.html#low-public-exponent",
+    "title": "13  Bad choices of parameters & Side-channel",
+    "section": "13.2 Low public exponent",
+    "text": "13.2 Low public exponent\nA popular choice of \\(e\\) is \\(3\\), as it will reduce the time to encrypt. However, with a big choice of public exponent, this may make the ciphertext in danger, as \\(3\\) times of exponent may do not change the value under the modulo. The root can be computed quickly, via the library gmpy2 of Python.\nfrom gmpy2 import iroot\nfrom Crypto.Util.number import *\np, q = getPrime(512), getPrime(512)\nn = p*q \nphiN = (p - 1)*(q - 1)\ne = 3\nd = inverse(e, n)\nm = getRandomNBitInteger(256)\nc = pow(m, e, n)\nm_break = iroot(int(c), int(e))\nprint(m_break)\nassert m_break[0] == m \nprint(m)\n\n\n(mpz(85466728970802496052231641309227590688461946610431708918707661868612928527412), True)\n85466728970802496052231641309227590688461946610431708918707661868612928527412"
+  },
+  {
+    "objectID": "RSA_Parameters.html#low-private-exponent",
+    "href": "RSA_Parameters.html#low-private-exponent",
+    "title": "13  Bad choices of parameters & Side-channel",
+    "section": "13.3 Low private exponent",
+    "text": "13.3 Low private exponent\nIn another way, a small choice of private exponent (can be created by a too huge public exponent), also can leak the ciphertext. In here, we will look at the Wiener’s attack.\nAs we know, the \\(ed \\equiv 1 \\pmod{\\phi(n)}\\), in another words, \\(ed - k\\phi(n) = 1\\). Divide both side with \\(d\\phi(n)\\):\n\\[\n\\bigg | \\frac{e}{\\phi(n)} - \\frac{k}{d} \\bigg | = \\frac{1}{d\\phi(n)}\n\\]\nWith a huge \\(d\\phi(n)\\), we will have a negligible \\(\\frac{1}{d\\phi(n)}\\). Therefore, \\(\\frac{e}{\\phi(n)}\\) could be used as an approximation of \\(\\frac{k}{d}\\), or vice versa. Although we know \\(e\\), we don’t know \\(\\phi(n)\\).\nHowever, there is a theorem, from M. Wiener, that can help us a little bit:\n\n\n\n\n\n\nWiener’s theorem\n\n\n\nLet \\(n = pq\\) \\((q \\lt p \\lt 2q)\\), If the private exponent \\(d < \\frac{1}{3}N^{1/4}\\), then an advisery can recover \\(d\\).\n\n\nThe proof can be found in Wikipedia page of Wiener’s theorem.\nThe core of the algorithm is that, we can use \\(n\\) as \\(\\phi(n)\\) in the context of Wiener’s attack. Then, as we has stated \\(\\frac{e}{\\phi(n)}\\) could be used as an approximation of \\(\\frac{k}{d}\\), then either \\(\\frac{e}{n}\\) (in the context of this attack). We use a method of Continued Fraction on \\(\\frac{e}{n}\\), then consequently find convergents of its and check if we can find the right \\(\\frac{k}{d}\\). Once we know this, we could find back \\(d\\) via an quadratic equation. Consequently, we could find back the factorization of \\(n\\).\ndef wiener(n, e, c):\n    '''\n    Solve for d in c = m^e mod n using the Wiener attack.\n    '''\n    # Calculate continued fraction expansion of e/n\n    frac = continued_fraction(e / n)\n    convergents = [[x.numerator(), x.denominator()] for x in frac.convergents()]\n    # Iterate over convergents\n    for (k, d) in convergents:\n        # Check if d is actually an integer\n        if k == 0 or d%2 == 0 or e*d % k != 1:\n            continue\n        phi = (e*d - 1)/k\n        # Create the polynomial\n        x = PolynomialRing(RationalField(), 'x').gen()\n        f = x^2 - (n-phi+1)*x + n\n        roots = f.roots()\n        # Check if polynomial as two roots\n        if len(roots) != 2:\n            continue\n        # Check if roots of the polynomial are p and q\n        p,q = int(roots[0][0]), int(roots[1][0])\n        if p*q == n:\n            return d, k\n    # No solution found\n    return None\n\nn = 6727075990400738687345725133831068548505159909089226909308151105405617384093373931141833301653602476784414065504536979164089581789354173719785815972324079\ne = 4805054278857670490961232238450763248932257077920876363791536503861155274352289134505009741863918247921515546177391127175463544741368225721957798416107743\nc = 5928120944877154092488159606792758283490469364444892167942345801713373962617628757053412232636219967675256510422984948872954949616521392542703915478027634\nd, k = wiener(n, e, c)\nphiN = (e*d - 1) // k\nprint(phiN)\n# solve for the prime factorization \nx = var('x')\nf = n - n/x - x + 1 - phiN\np, q = [x[0] for x in f.roots()]\nassert p*q == n\nprint(f\"n = {p}*{q}\")\n\n\n6727075990400738687345725133831068548505159909089226909308151105405617384093204788307013638609485547090121764648347578045648962637915516010740917782550840\n\n\nn = 63949859459297920725542167940404754256294386312715512490347273751054137071981*105192975360365123391387526351896101933106732127903638948310435293844052701259"
+  },
+  {
+    "objectID": "RSA_Parameters.html#hastads-broadcast-attack",
+    "href": "RSA_Parameters.html#hastads-broadcast-attack",
+    "title": "13  Bad choices of parameters & Side-channel",
+    "section": "13.4 Hastad’s Broadcast Attack",
+    "text": "13.4 Hastad’s Broadcast Attack\nIf someone send same message over and over again, without any padding; someone could read the messages, from the Hastad’s Broadcast Attack.\nAssume that the adversary collected \\(i\\) ciphertexts (\\(i \\gt e\\)), then we can have a system of modular equation:\n\\[\n\\left\\{\\begin{matrix}\nc_1 &\\equiv m^e \\pmod{n_1} \\\\\nc_2 &\\equiv m^e \\pmod{n_2} \\\\\n...\\\\\nc_i &\\equiv m^e \\pmod{n_i}\n\\end{matrix}\\right.\n\\]\nFrom Chinese Remainder Theorem, we could find a number \\(C \\equiv m^e \\pmod{\\Pi_{j=1}^i n_j}\\). As the multiplication of \\(n_i\\) is really big, we can sure that taking \\(e^{th}\\)-root of \\(m^e\\) could help us get the ciphertext.\n# Implementation of Hastad's Broadcast attack, normal version\ndef Hastad(ciphertext, n):\n    x = crt(ciphertext, n)\n    return real_nth_root(x, e)\n\nn1 = 15531155256715702473857617704486808708718149144340218293989572553\nn2 = 4665876664449238167503227140673941051177208287344383452644505383\nn3 = 21183715744016961916768204882841616031088804561756503460509763179\ne = 3\nm = 23333333333333333333333333333333333333333333\nc1 = 3545246357420027751080801513596354805792507454079198980994208613\nc2 = 2707010410568402623621857261477803260225040847370109587024036966\nc3 = 9988366267699268191504634643058847989157961583452909799090445547\n\nn = [n1, n2, n3]\nc = [c1, c2, c3]\nmessage = Hastad(c, n)\nassert pow(message, e, n1) == c1\nprint(message)\n\n\n23333333333333333333333333333333333333333333\n\n\nWith some more sophisticated padding (but fixed), the attack still can be applied via the Coppersmith’s method. The clearer explaination could be found via Wikipedia page of this attack."
+  },
+  {
+    "objectID": "RSA_Parameters.html#common-modulus",
+    "href": "RSA_Parameters.html#common-modulus",
+    "title": "13  Bad choices of parameters & Side-channel",
+    "section": "13.1 Common modulus",
+    "text": "13.1 Common modulus\nIf lucky enough, we capture two messages with two semiprimes \\(n_1\\) and \\(n_2\\) that share a same prime factor, indeed we can find the prime factorization of both, via finding \\(GCD(n_1, n_2)\\).\nAlthough this attack seems impractical, a research paper has found out that about 3-5% of public key on the Internet (that they can find out), share the prime factorization. With the method of rainbow attack which has been introduced in the previous chapter, many more could be broken."
+  },
+  {
+    "objectID": "RSA_Parameters.html#side-channel-attack-example",
+    "href": "RSA_Parameters.html#side-channel-attack-example",
+    "title": "13  Bad choices of parameters & Side-channel",
+    "section": "13.5 Side-channel attack example",
+    "text": "13.5 Side-channel attack example\nThe side-channel attack is a big class of attack, so in here we just have a look at a small mechanism of it: the square-and-multiply algorithm. Most of modular arithmetic implementation for exponentation is something like this:\ndef exponent(a, b, n): \n    '''\n        Computing a^b mod n\n    '''\n    res = 1\n    while (b > 0):\n        if (b % 2 == 1):\n            res = ((res % n) * (a % n)) % n \n        a = ((res % n) * (res % n)) % n\n        b //= 2\n    return res \nAs you may notice, if the current bit of \\(b\\) in the above process is 1, it will execute the multiplication twice, rather than in case the bit is 0. With big number of RSA, this could require a noticeable amount of time.\nTherefore, if someone can attach the power clock on the decryption device; and looking for the pattern of ‘decryption’:\n\nThen, this could reveal the bit of \\(d\\)."
+  },
+  {
+    "objectID": "RSA_Parameters.html#a-very-quick-introduction-to-coppersmiths-method",
+    "href": "RSA_Parameters.html#a-very-quick-introduction-to-coppersmiths-method",
+    "title": "13  Bad choices of parameters & Side-channel",
+    "section": "13.6 A very quick introduction to Coppersmith’s method",
+    "text": "13.6 A very quick introduction to Coppersmith’s method\nDon Coppersmith, a mathematician, has introduced a method of solving modular polynomials in polynomial time. Basically, his method will convert the modular polynomials under a modulo to a normal polynomial in \\(\\mathbb{Z}\\), then we can apply the numerical analysis method on the new polynomial. This conversion is supported by an algorithm called LLL lattice basis reduction\nTo provide a quick example, we will examine if a RSA process using a fixed padding scheme.\nAssume we have two guys is sharing their AES-256 key. As they know RSA without padding is vulnerable, they used this padding scheme:\n\\[\nm = 2^{1024} - 2^{128} + k\n\\]\nFor \\(k\\) is their key. \\(m\\) is the padded-key.\nTherefore, the ciphertext will be sent can be written as:\n\\[\nc \\equiv (2^{1024} - 2^{128} + k)^e \\pmod n\n\\]\nThen, we could have a polynomial \\(f(x) = (2^{1024} - 2^{128} + k)^e - c = 0\\) under the \\(\\mathbb{Z}_n\\).\nWith the Coppersmith’s method, we can solve this polynomial for \\(k\\):\nfrom Crypto.Util.number import *\n\ne = 3\np, q = getPrime(512), getPrime(512)\nn = p*q \nkey = getRandomNBitInteger(128)\n# print(key)\nm = 2**1024 - 2**128 + key\nc = pow(m, e, n)\nprint(c)\n\nK = Zmod(n)\nP.<x> = PolynomialRing(K, implementation = 'NTL')\nf = (2^1024 - 2^128 + x)^e - c \nkeyBroken = f.small_roots()[0]\nassert keyBroken == key\nprint(keyBroken)\n\n\n82633033845796004747549573332791642419336976223134503191365351063499016327870528606411650067623106729110435236002973001108860823873209355855425694267378772683429911986067425672621927056108387620153618400631818657150449693722782685126044287318464943689078280311043761541667438647198552521827816508055402758969\n\n\n\n\n\n286929976551044907179886525566763542034\n\n\nThe Coppersmith’s method is applied in a very wide range of attacks if there is a fixed relationship between the components of RSA. A very noticable case is the ROCA attack, that have leaked more than hundred thousands of ID cards in Estonian."
+  },
+  {
+    "objectID": "RSA_Parameters.html#conclusion",
+    "href": "RSA_Parameters.html#conclusion",
+    "title": "13  Bad choices of parameters & Side-channel",
+    "section": "13.7 Conclusion",
+    "text": "13.7 Conclusion\nRSA attacks is in a wide range, and different methods that this document can not cover it all. For a general knowledge of RSA, I recommend you to spend time on this paper of professor Dan Boneh: Twenty years of Attacks on RSA Cryptosystem. Also, there are some compiled version of many RSA attacks on GitHub, like this one: [RsaCtfTool][(https://github.com/RsaCtfTool/RsaCtfTool)."
+  },
+  {
+    "objectID": "DiffieHellman.html",
+    "href": "DiffieHellman.html",
+    "title": "14  Diffie-Hellman Key Exchange",
+    "section": "",
+    "text": "The motivation for a key exchange scheme could be sharing the same key over a insecure environment, to let both two parties have a same value to put their symmetric encryption on. Diffie-Hellman is one of the best (also the first) key exchange scheme could do well in this purpose, in both sense of security and application."
+  },
+  {
+    "objectID": "DiffieHellman.html#diffie-hellman-basic",
+    "href": "DiffieHellman.html#diffie-hellman-basic",
+    "title": "14  Diffie-Hellman Key Exchange",
+    "section": "14.1 Diffie-Hellman basic",
+    "text": "14.1 Diffie-Hellman basic\nAssuming that Alice and Bob want to have a same key for their AES encryption over the conversation.\n\nFirst, Alice (or Bob) will establish two numbers: a big prime \\(p\\) and its generator \\(g\\).\nNext, Alice will choose a number \\(a \\in \\mathbb{Z}_p\\), which will act as her private key, while Bob also choose a number \\(b \\in \\mathbb{Z}_p\\).\nThen, both parties will compute their public number:\n\n\\[\n\\displaylines{A \\equiv g^a \\pmod p \\\\ B \\equiv g^b \\pmod p}\n\\]\nThen, Alice and Bob will send \\(A, B\\) to the other. Remember, other adversary can know this value too.\n\nWhen having \\(B, A\\), respectively, Alice and Bob is ready to have their common secret.\n\nFrom Alice’s side: \\[\nS \\equiv B^a \\equiv (g^b)^a \\equiv g^{ba} \\pmod p  \n\\]\nIn the same way, Bob will find \\(A^b\\). This two number is indeedly the same. Then, they have successfully find their common secret.\nThe security of Diffie-Hellman lies in the hard problem of discrete logarithm. For the adversary, with a good choice of \\(p\\), they cannot find the private key of Alice & Bob (i. e. finding either \\(log_g(A) \\pmod p\\) and \\(log_g(B) \\pmod p\\). In the same sense, this hardness is applied on Alice and Bob if they want to know the other’s secret."
+  },
+  {
+    "objectID": "DiffieHellman.html#cryptosystem-built-on-discrete-logarithm",
+    "href": "DiffieHellman.html#cryptosystem-built-on-discrete-logarithm",
+    "title": "14  Diffie-Hellman Key Exchange",
+    "section": "14.2 Cryptosystem built on Discrete Logarithm",
+    "text": "14.2 Cryptosystem built on Discrete Logarithm\nThere are some others cryptosystem (like RSA), that built on the Discrete Logarithm rather than the trapdoor function of factorization. One significant is ElGamal."
+  },
+  {
+    "objectID": "Attacks_DH.html",
+    "href": "Attacks_DH.html",
+    "title": "15  Some attacks on Diffie-Hellman",
+    "section": "",
+    "text": "In this chapter, we will cover the methods of breaking the Discrete Logarithm - the core of Diffie-Hellman."
+  },
+  {
+    "objectID": "Attacks_DH.html#baby-step-giant-step-algorithm",
+    "href": "Attacks_DH.html#baby-step-giant-step-algorithm",
+    "title": "15  Some attacks on Diffie-Hellman",
+    "section": "15.1 Baby step, giant step algorithm",
+    "text": "15.1 Baby step, giant step algorithm"
+  },
+  {
+    "objectID": "Attacks_DH.html#baby-step-giant-step",
+    "href": "Attacks_DH.html#baby-step-giant-step",
+    "title": "15  Some attacks on Diffie-Hellman",
+    "section": "15.1 Baby step, giant step",
+    "text": "15.1 Baby step, giant step"
   }
 ]

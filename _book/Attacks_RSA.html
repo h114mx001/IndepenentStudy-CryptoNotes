@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>CryptoBook – attacks_rsa</title>
+<title>CryptoBook - 11&nbsp; Review several attacks on RSA</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -62,16 +62,17 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
-<body class="nav-sidebar floating fullcontent">
+<body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">CryptoBook</h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Review several attacks on RSA</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -191,17 +192,17 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./UsefulMaths.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">UsefulMaths.html</span></a>
+  <a href="./UsefulMaths.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Toddlers’ Mathematics for PKC</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./RSA.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">RSA.html</span></a>
+  <a href="./RSA.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">RSA</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Attacks_RSA.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Attacks_RSA.html</span></a>
+  <a href="./Attacks_RSA.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Review several attacks on RSA</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -214,20 +215,84 @@ ul.task-list li input[type="checkbox"] {
   <a href="./Attacks_DH.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Attacks_DH.html</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Elliptic_Curve.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Elliptic_Curve.html</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ECC_ECDH.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">ECC_ECDH.html</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./Miscellaneous.html" class="sidebar-item-text sidebar-link">Miscellaneous.html</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./HashFunctions.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">HashFunctions.html</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
     </div>
 </nav>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#factorizaion" id="toc-factorizaion" class="nav-link active" data-scroll-target="#factorizaion"><span class="toc-section-number">11.1</span>  Factorizaion</a></li>
+  <li><a href="#improper-choices-of-parameters" id="toc-improper-choices-of-parameters" class="nav-link" data-scroll-target="#improper-choices-of-parameters"><span class="toc-section-number">11.2</span>  Improper choices of parameters</a></li>
+  <li><a href="#side-channel-attack" id="toc-side-channel-attack" class="nav-link" data-scroll-target="#side-channel-attack"><span class="toc-section-number">11.3</span>  Side-channel attack</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-Asymmetric" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Review several attacks on RSA</span></span></h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
 
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>In general, we can say, before the quantum time, RSA is not doomed yet. The attacks on RSA right now, mostly come from the improper choices of parameters, or the implementations, or the side-channel attacks, rather than RSA itself. In here, we will have the review of several attacks in RSA, which can be classified into these sub-categories:</p>
+<section id="factorizaion" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="factorizaion"><span class="header-section-number">11.1</span> Factorizaion</h2>
+<p>The first thing we may want to try is breaking RSA from its root: the semiprime <span class="math inline">\(n\)</span>. With the factorization of <span class="math inline">\(n\)</span>, we can break the RSA scheme anytimes. In here, we will talk, specifically, how to break the semiprime <span class="math inline">\(n = p\cdot q\)</span>, rather than working in the factorization in general.</p>
+<p><a href="./RSA_Factorization.qmd">Factorization</a></p>
+</section>
+<section id="improper-choices-of-parameters" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="improper-choices-of-parameters"><span class="header-section-number">11.2</span> Improper choices of parameters</h2>
+<p>From the introduction chapter, we know that we need to chooses the public key and private key for every RSA. The wrong choices may lead into a quite severe attacks. Also, the process of generating primes may also lead to the problem. We will include one case here.</p>
+</section>
+<section id="side-channel-attack" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="side-channel-attack"><span class="header-section-number">11.3</span> Side-channel attack</h2>
+<p>Basically, encryption is just a calculation process. The side-channel attacks will look into some physical time series when performing the tasks of RSA, then tell us a way to break the cryptosystem by these data.</p>
+
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -366,7 +431,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./RSA.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">RSA.html</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">RSA</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

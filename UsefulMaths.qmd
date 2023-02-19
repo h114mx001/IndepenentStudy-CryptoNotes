@@ -50,6 +50,14 @@ $$
 This inverse should exist if $GCD(a, n) = 1$
 :::
 
+## Fermat's Little Theorem
+
+::: {.callout-note}
+## Fermat's Little Theorem
+Given two numbers $a, p$ where $GCD(a, p) = 1$, then $a^{p} \equiv a \pmod{p}$. 
+Consequently, $a^{p-1} \equiv 1 \pmod{p}$
+:::
+
 ## Discrete Logarithm 
 
 Given $a, h, n$ where there exists a number $x$ that $a^x \equiv h \pmod{n}$, the discrete logarithm problem is the process of finding the suitable number $x$ in $\mathbb{Z}_n$.
@@ -60,3 +68,56 @@ In here, I will introduce several simple concepts of group, generator, order of 
 
 ### Group
 
+For simplicity, a group $G$ is a set of elements, that supports an operation $\star$. In the group, the operation has the following properties:
+
++ **Identity**: There is an element $e \in G$ such that: $e\star a = a \star e = a$ for every $a \in G$. $e$ is called as the `identity element`.
+
++ **Inverse**: For $\forall a \in G$, there is a unique $a^{-1}$ where: $a \star a^{-1} = e$. $a^{-1}$ is called as `inverse`.
+
++ **Associative**: For every $a, b, c \in G$, $a \star (b \star c) = (a \star b) \star c$.
+
++ **Commutative**: $a \star b = b \star a$. A commutative group is also called `abelian group`. 
+
+During the RSA and Diffie-Hellman (DH), we will talk much about the group $\mathbb{Z}_p$. You can verify the properties yourself. 
+
+A group with finite number of elements is called as a `finite group`.
+
+### Generator
+
+Take the example of a group $\mathbb{Z}_{13}$. If we compute number $2^x$ where $0 \le x \lt p - 1$, we can have a set: 
+
+$$
+\{2^x\} = \{1, 2, 4, 8, 3, 6, 12, 11, 9, 5, 10, 7\}
+$$
+
+This set is $\mathbb{Z}_{13}$. However, if we take another number, for example, 5: 
+
+$$
+\{5^x\} = \{1, 5, 12, 8\}
+$$
+
+$2$ is the generator of group $G = \mathbb{Z}_{13}$, but $5$ isn't.
+
+Then, **generator** of a group is the element that can generate the group, with the process you see above (in this multiplicative group, it can be done via exponent).
+
+### Order
+
+Come back to our example above, as $2$ can generate the set of 12 elements, the order of $2$ in the group $G$ is $12$. Indeed, the order of $5$ is $4$. 
+
+Denoted the number $d$ as the order of the group. In some group, we cannot find $d_a$ for every $a$ in group, then these $a$ are called as having `infinite order`.
+
+Also, the order of the generator is assigned to the `order of the group`. 
+
+There are some properties with the order, that will be mentioned in some attacks on the DH and RSA:
+
+::: {.callout-note}
+
+## Properties of order in finite group
+
+Let $G$ be a finite group. It has the order $n = |G|$. Let $a \in G$ and the order of $a$ is $d$.
+
++ Then, every element of $G$ has finite order. 
++ If there exists a number $k$ where $a^k \equiv e$, then $d | k$.
++ **(Lagrange's theorem)**. $d | n$ and $a^n \equiv e$. 
+
+:::

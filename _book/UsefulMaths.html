@@ -253,10 +253,13 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#eulers-phi-totient" id="toc-eulers-phi-totient" class="nav-link active" data-scroll-target="#eulers-phi-totient"><span class="toc-section-number">9.1</span>  Euler’s Phi Totient</a></li>
   <li><a href="#inverse-modulo" id="toc-inverse-modulo" class="nav-link" data-scroll-target="#inverse-modulo"><span class="toc-section-number">9.2</span>  Inverse modulo</a></li>
-  <li><a href="#discrete-logarithm" id="toc-discrete-logarithm" class="nav-link" data-scroll-target="#discrete-logarithm"><span class="toc-section-number">9.3</span>  Discrete Logarithm</a></li>
-  <li><a href="#some-abstract-algebra" id="toc-some-abstract-algebra" class="nav-link" data-scroll-target="#some-abstract-algebra"><span class="toc-section-number">9.4</span>  Some Abstract Algebra</a>
+  <li><a href="#fermats-little-theorem" id="toc-fermats-little-theorem" class="nav-link" data-scroll-target="#fermats-little-theorem"><span class="toc-section-number">9.3</span>  Fermat’s Little Theorem</a></li>
+  <li><a href="#discrete-logarithm" id="toc-discrete-logarithm" class="nav-link" data-scroll-target="#discrete-logarithm"><span class="toc-section-number">9.4</span>  Discrete Logarithm</a></li>
+  <li><a href="#some-abstract-algebra" id="toc-some-abstract-algebra" class="nav-link" data-scroll-target="#some-abstract-algebra"><span class="toc-section-number">9.5</span>  Some Abstract Algebra</a>
   <ul class="collapse">
-  <li><a href="#group" id="toc-group" class="nav-link" data-scroll-target="#group"><span class="toc-section-number">9.4.1</span>  Group</a></li>
+  <li><a href="#group" id="toc-group" class="nav-link" data-scroll-target="#group"><span class="toc-section-number">9.5.1</span>  Group</a></li>
+  <li><a href="#generator" id="toc-generator" class="nav-link" data-scroll-target="#generator"><span class="toc-section-number">9.5.2</span>  Generator</a></li>
+  <li><a href="#order" id="toc-order" class="nav-link" data-scroll-target="#order"><span class="toc-section-number">9.5.3</span>  Order</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -281,7 +284,7 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>In this chapter, we will have a small walkthrough on some simple concepts of modular arithmetic that we needs for RSA and Diffie-Hellman.</p>
+<p>In this chapter, we will have a small walkthrough on some simple concepts of modular arithmetic that we needs for RSA and Diffie-Hellman. If you are good with these, feel free to continue.</p>
 <div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -353,15 +356,78 @@ ax \equiv 1 \pmod{n}
 </div>
 </div>
 </section>
-<section id="discrete-logarithm" class="level2" data-number="9.3">
-<h2 data-number="9.3" class="anchored" data-anchor-id="discrete-logarithm"><span class="header-section-number">9.3</span> Discrete Logarithm</h2>
+<section id="fermats-little-theorem" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="fermats-little-theorem"><span class="header-section-number">9.3</span> Fermat’s Little Theorem</h2>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Fermat’s Little Theorem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Given two numbers <span class="math inline">\(a, p\)</span> where <span class="math inline">\(GCD(a, p) = 1\)</span>, then <span class="math inline">\(a^{p} \equiv a \pmod{p}\)</span>. Consequently, <span class="math inline">\(a^{p-1} \equiv 1 \pmod{p}\)</span></p>
+</div>
+</div>
+</section>
+<section id="discrete-logarithm" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="discrete-logarithm"><span class="header-section-number">9.4</span> Discrete Logarithm</h2>
 <p>Given <span class="math inline">\(a, h, n\)</span> where there exists a number <span class="math inline">\(x\)</span> that <span class="math inline">\(a^x \equiv h \pmod{n}\)</span>, the discrete logarithm problem is the process of finding the suitable number <span class="math inline">\(x\)</span> in <span class="math inline">\(\mathbb{Z}_n\)</span>.</p>
 </section>
-<section id="some-abstract-algebra" class="level2" data-number="9.4">
-<h2 data-number="9.4" class="anchored" data-anchor-id="some-abstract-algebra"><span class="header-section-number">9.4</span> Some Abstract Algebra</h2>
-<p>In here, I will introduce several simple concepts of group, generator, order of a group and order of a member of the group.</p>
-<section id="group" class="level3" data-number="9.4.1">
-<h3 data-number="9.4.1" class="anchored" data-anchor-id="group"><span class="header-section-number">9.4.1</span> Group</h3>
+<section id="some-abstract-algebra" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="some-abstract-algebra"><span class="header-section-number">9.5</span> Some Abstract Algebra</h2>
+<p>In here, I will introduce several simple concepts of group, generator, order of a group and order of a member of the group. Remember, these definitions are not formal, and it is written for more easily understanding.</p>
+<section id="group" class="level3" data-number="9.5.1">
+<h3 data-number="9.5.1" class="anchored" data-anchor-id="group"><span class="header-section-number">9.5.1</span> Group</h3>
+<p>For simplicity, a group <span class="math inline">\(G\)</span> is a set of elements, that supports an operation <span class="math inline">\(\star\)</span>. In the group, the operation has the following properties:</p>
+<ul>
+<li><p><strong>Identity</strong>: There is an element <span class="math inline">\(e \in G\)</span> such that: <span class="math inline">\(e\star a = a \star e = a\)</span> for every <span class="math inline">\(a \in G\)</span>. <span class="math inline">\(e\)</span> is called as the <code>identity element</code>.</p></li>
+<li><p><strong>Inverse</strong>: For <span class="math inline">\(\forall a \in G\)</span>, there is a unique <span class="math inline">\(a^{-1}\)</span> where: <span class="math inline">\(a \star a^{-1} = e\)</span>. <span class="math inline">\(a^{-1}\)</span> is called as <code>inverse</code>.</p></li>
+<li><p><strong>Associative</strong>: For every <span class="math inline">\(a, b, c \in G\)</span>, <span class="math inline">\(a \star (b \star c) = (a \star b) \star c\)</span>.</p></li>
+<li><p><strong>Commutative</strong>: <span class="math inline">\(a \star b = b \star a\)</span>. A commutative group is also called <code>abelian group</code>.</p></li>
+</ul>
+<p>During the RSA and Diffie-Hellman (DH), we will talk much about the group <span class="math inline">\(\mathbb{Z}_p\)</span>. You can verify the properties yourself.</p>
+<p>A group with finite number of elements is called as a <code>finite group</code>.</p>
+</section>
+<section id="generator" class="level3" data-number="9.5.2">
+<h3 data-number="9.5.2" class="anchored" data-anchor-id="generator"><span class="header-section-number">9.5.2</span> Generator</h3>
+<p>Take the example of a group <span class="math inline">\(\mathbb{Z}_{13}\)</span>. If we compute number <span class="math inline">\(2^x\)</span> where <span class="math inline">\(0 \le x \lt p - 1\)</span>, we can have a set:</p>
+<p><span class="math display">\[
+\{2^x\} = \{1, 2, 4, 8, 3, 6, 12, 11, 9, 5, 10, 7\}
+\]</span></p>
+<p>This set is <span class="math inline">\(\mathbb{Z}_{13}\)</span>. However, if we take another number, for example, 5:</p>
+<p><span class="math display">\[
+\{5^x\} = \{1, 5, 12, 8\}
+\]</span></p>
+<p><span class="math inline">\(2\)</span> is the generator of group <span class="math inline">\(G = \mathbb{Z}_{13}\)</span>, but <span class="math inline">\(5\)</span> isn’t.</p>
+<p>Then, <strong>generator</strong> of a group is the element that can generate the group, with the process you see above (in this multiplicative group, it can be done via exponent).</p>
+</section>
+<section id="order" class="level3" data-number="9.5.3">
+<h3 data-number="9.5.3" class="anchored" data-anchor-id="order"><span class="header-section-number">9.5.3</span> Order</h3>
+<p>Come back to our example above, as <span class="math inline">\(2\)</span> can generate the set of 12 elements, the order of <span class="math inline">\(2\)</span> in the group <span class="math inline">\(G\)</span> is <span class="math inline">\(12\)</span>. Indeed, the order of <span class="math inline">\(5\)</span> is <span class="math inline">\(4\)</span>.</p>
+<p>Denoted the number <span class="math inline">\(d\)</span> as the order of the group. In some group, we cannot find <span class="math inline">\(d_a\)</span> for every <span class="math inline">\(a\)</span> in group, then these <span class="math inline">\(a\)</span> are called as having <code>infinite order</code>.</p>
+<p>Also, the order of the generator is assigned to the <code>order of the group</code>.</p>
+<p>There are some properties with the order, that will be mentioned in some attacks on the DH and RSA:</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Properties of order in finite group
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(G\)</span> be a finite group. It has the order <span class="math inline">\(n = |G|\)</span>. Let <span class="math inline">\(a \in G\)</span> and the order of <span class="math inline">\(a\)</span> is <span class="math inline">\(d\)</span>.</p>
+<ul>
+<li>Then, every element of <span class="math inline">\(G\)</span> has finite order.</li>
+<li>If there exists a number <span class="math inline">\(k\)</span> where <span class="math inline">\(a^k \equiv e\)</span>, then <span class="math inline">\(d | k\)</span>.</li>
+<li><strong>(Lagrange’s theorem)</strong>. <span class="math inline">\(d | n\)</span> and <span class="math inline">\(a^n \equiv e\)</span>.</li>
+</ul>
+</div>
+</div>
 
 
 </section>

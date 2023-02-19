@@ -1,0 +1,65 @@
+# RSA {#sec-Asymmetric}
+
+Let's go into the first cryptosystem in this section! RSA, named after its three inventors, is probably one of the most popular cryptosystem we are using. 
+
+The RSA algorithm is easy to understand. 
+
+Assuming that, our Alice, want to establish a secure way to talk to the outsiders. She will choose her two prime numbers: $p$, $q$, based on the length of ciphertext she want. For example, in RSA-512, the $p$ and $q$ is 512-bit long. 
+
+Then, she compute her $n = p\cdot q$. Then, the Euler's totient for this number is 
+$$
+\phi(n) = (p-1)\cdot (q-1)
+$$
+
+Next, she will choose a number $e$, in a way that $GCD(e, \phi(n)) = 1$. The pair $(e, n)$ will be her **public key**.
+
+Then, she will compute a number $d = e^{-1} \pmod{\phi(n)}$. Then, the public-key will be $(e, n)$ and private-key be $(d, n)$. 
+
+For anyone who want to send Alice something, they would compute the ciphertext:
+$$
+c \equiv m^{e} \pmod n
+$$
+
+With this ciphertext, Alice will use her private key, $d$ to decrypt:
+
+$$
+c^d \equiv (m^e)^d \equiv m^{ed} \pmod n
+$$
+
+As we know, $ed \equiv 1 \pmod{\phi(n)}$, then, we can rewrite it as $ed = k\phi(n)+1$
+
+Also, if $GCD(m, n) = 1$ (almost 100% as the two only factors of $n$ are $p, q$), then $m^{\phi(n)} \equiv 1 \pmod n$, we can rewrite as:
+
+$$
+m^{ed} \equiv m^{k\phi(n)+1} \equiv m^{k\phi(n)} \cdot m \equiv 1 \cdot m \equiv m \pmod{n}
+$$
+
+The security of RSA, come from the `trapdoor function` of factorizing the large semiprime $n$, from its two huge factors $p, q$. The direct attacks on RSA is on this public key, then finding back the private key for the plaintext. 
+
+Normal, in CTF, the target for us is to find the backdoor in the cryptosystem, and from the given ciphertext, find back the answer. 
+
+The next chapter will talk about some beginner-intermediate level of attack RSA. 
+
+::: {.callout-warning}
+## RSA in real cases
+
+Breaking the RSA in both real life and in CTFs required more than these attacks. According to the structures of cryptosystem, there will be more vulnerabilities than listed ones in this documentation. 
+:::
+
+## Digital Signature by RSA
+
+From RSA, we can build a digital signature scheme, which is not too different from our original RSA. 
+
+For example, we need to sign a data with value of $m$. With the same public-private key as in RSA, we can compute our signature as: 
+
+$$
+s \equiv m^d \pmod n
+$$
+
+If someone want to verify $s$, they only needs to calculate:
+
+$$
+s' \equiv s^e \equiv m^{ed} \equiv m \pmod n
+$$
+
+Some adversary can only hijack us, if they can control the private key $d$, which is impractical in current theme of RSA. 
