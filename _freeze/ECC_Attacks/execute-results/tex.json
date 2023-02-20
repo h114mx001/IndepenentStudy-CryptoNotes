@@ -1,0 +1,10 @@
+{
+  "hash": "5600aea671c7e8f25578930f37790671",
+  "result": {
+    "markdown": "# ECDH Attacks \n\nIn the last chapter of PKC, we will revisit the Pohlig-Hellman Algorithm, but in the theme of Elliptic Curve. \n\n## Pohlig-Hellman in ECC \n\nIn elliptic curve, we know that we need to choose a finite field $\\mathbb{F}_p$. If this prime $p$ is smooth, we can sure that the discrete logarithm on the curve is also vulnerable. As in Pohlig-Hellman chapter for Diffie-Hellman, the discrete logarithm on the curve could be computed on each curve with the finite field of prime factorization. \n\nAlso, SageMath comes with the function `discrete_log()` for computing this one:\n\n```Python\ndef discreteLogarithm(p, a, b, G, B, A):\n    '''\n        Discrete Logarithm for a curve that its parameter is smooth. \n        p: prime number \n        a, b: parameters of the curve\n        G: generator point\n        B: Bob's public key\n        A: Alice's public key\n    '''\n    E = EllipticCurve(GF(p), [a, b])\n    G = E(G)\n    B = E(B)\n    A = E(A)\n    b = G.discrete_log(B)\n    sharedSecret = (A*b).xy()[0]\n    return sharedSecret\n\np = 310717010502520989590157367261876774703\na = 2 \nb = 3\nG = [179210853392303317793440285562762725654, 105268671499942631758568591033409611165]\nB = [272640099140026426377756188075937988094, 51062462309521034358726608268084433317]\nA = [280810182131414898730378982766101210916, 291506490768054478159835604632710368904]\nprint(discreteLogarithm(p, a, b, G, B, A))\n```\n\n::: {.cell execution_count=1}\n\n::: {.cell-output .cell-output-stdout}\n```\n171172176587165701252669133307091694084\n```\n:::\n:::\n\n\nThere are several other methods for solving DLP in EC, but requires some specific properties of curve. \n\n",
+    "supporting": [
+      "ECC_Attacks_files"
+    ],
+    "filters": []
+  }
+}

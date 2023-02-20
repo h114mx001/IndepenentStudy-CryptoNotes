@@ -2,6 +2,8 @@
 
 Let's go into the first cryptosystem in this section! RSA, named after its three inventors, is probably one of the most popular cryptosystem we are using. 
 
+## RSA Basic
+
 The RSA algorithm is easy to understand. 
 
 Assuming that, our Alice, want to establish a secure way to talk to the outsiders. She will choose her two prime numbers: $p$, $q$, based on the length of ciphertext she want. For example, in RSA-512, the $p$ and $q$ is 512-bit long. 

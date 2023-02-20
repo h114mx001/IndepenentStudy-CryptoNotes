@@ -1,0 +1,4 @@
+- source: project
+  netlify:
+    - id: b6709842-031d-47de-8bca-f38f27b8f416
+      url: 'https://h114mx001-cryptonotes.netlify.app'

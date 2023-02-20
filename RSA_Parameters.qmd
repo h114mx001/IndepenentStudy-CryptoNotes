@@ -61,7 +61,7 @@ However, there is a theorem, from M. Wiener, that can help us a little bit:
 ::: {.callout-tip}
 ## Wiener's theorem
 
-Let $n = pq$ $(q \lt p \lt 2q)$, If the private exponent $d < \frac{1}{3}N^{1/4}$, then an advisery can recover $d$.
+Let $n = pq$, If the private exponent $d < \frac{1}{3}N^{1/4}$, then an advisery can recover $d$.
 
 :::
 
@@ -158,7 +158,7 @@ print(f"n = {p}*{q}")
 
 If someone send same message over and over again, without any padding; someone could read the messages, from the Hastad's Broadcast Attack.
 
-Assume that the adversary collected $i$ ciphertexts ($i \gt e$), then we can have a system of modular equation: 
+Assume that the adversary collected $i$ ciphertexts ($i > e$), then we can have a system of modular equation: 
 
 $$
 \left\{\begin{matrix}

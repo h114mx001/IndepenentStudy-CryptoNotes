@@ -55,9 +55,9 @@ where the slope $\lambda = \frac{y_2-y_1}{x_2-x_1}$
 
 As $Y^2 = X^3 + AX + B$, we can find the slope $\frac{dY}{dX}$ by taking its implicit derivative.
 $$
-\begin{equation}
+\displaylines{
 2Y\cdot \frac{dY}{dX} = 3X^2 - 15 \qquad \frac{dY}{dX} = \frac{3X^2 - 15}{2Y}
-\end{equation}
+}
 $$
 With same method as the previous case, we can find the value of $R'$
 

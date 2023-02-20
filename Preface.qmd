@@ -22,7 +22,7 @@ A brief summary of the books:
 
 The aim of this book is **guilding** you to start with crypto, rather than a cheatsheet for you to copy the snipset into any cryptography challenges in CTFs. Therefore, the basics of SageMath/Python will be mentioned in the book, but not the all attacks' implementations. I know that there are many available samples on GitHub; however, gaining experiences by playing around with debugging, 'math'-ing, and programming is better, rights?
 
-However, do not afraid about the hard problems. At any point of this book, you will find some exercises (that I find it should work for gaining your skills) to practice with. Also, do not afraid to contact me via social medias 😎!
+However, do not afraid about the hard problems. At any point of this book, you will find some exercises (that I find it should work for gaining your skills) to practice with. Also, do not afraid to contact me via social medias!
 
 ::: {.callout-tip}
 

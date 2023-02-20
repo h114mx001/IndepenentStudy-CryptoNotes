@@ -8,7 +8,7 @@ For the uniform, in this chapter, we will try to solve the problem of Discrete L
 
 This algorithm would be able to break the Discrete Logarithm in the complexity $O(\sqrt{n})$, for $n$ is the bit-size of $x$. 
 
-Let's give $x$ a bound, $0 \lt x \le 2^{40}$. 
+Let's give $x$ a bound, $0 < x \le 2^{40}$. 
 
 Let $B = 2^{20}$. $x < B^2$, then we can write down $x$ as:
 
@@ -25,7 +25,7 @@ $$
 Then, if we divide both side with $g^{x_1}$: 
 
 $$
-\frac{h}{g^{x_1}} \equiv (g^B)^{x_0} \pmod p$
+\frac{h}{g^{x_1}} \equiv (g^B)^{x_0} \pmod p
 $$
 
 From here, we can find the logarithm by building the hash table of every value $\frac{h}{g^x_1}$; then, finding if we have a collision of $(g^B)^{x_0}$ for both $x_0, x_1 \in \mathbb{Z}_p$

@@ -1,11 +1,11 @@
-# Toddlers' Mathematics for PKC {#sec-Asymmetric}
+# Toddlers' Mathematics for PKC 
 
 In this chapter, we will have a small walkthrough on some simple concepts of modular arithmetic that we needs for RSA and Diffie-Hellman. If you are good with these, feel free to continue. 
-
 
 :::{.callout-note}
 
 ## Assumption
+
 The material here will assume that you have basic knowledge about modular arithmetic, how to do GCD and Extended GCD (via Euclidean and Extended Euclidean algorithm)
 
 :::
@@ -14,9 +14,10 @@ The material here will assume that you have basic knowledge about modular arithm
 
 ::: {.callout-note}
 
-Given a number $n$, Euler's Phi Totient number defines the numbers of natural numbers $i$ ($1 \le i \lt n$) that $GCD(i, n) = 1$
+## Test
 
-This function is denoted as $\phi(n)$.
+Given a number $n$, Euler's Phi Totient number defines the numbers of natural numbers $i \in [1, n)$ that its greatest common divisor with $n$ is $1$. This function is denoted as $\phi(n)$.
+
 :::  
 
 **Example: ** $\phi(20) = 8$, $\phi(4) = 2, \phi(5) = 4$
@@ -33,6 +34,7 @@ This totient has some important properties that is useful with RSA:
 $$
 a^{\phi(n)} \equiv 1 \pmod n
 $$
+
 :::
 
 ## Inverse modulo 
@@ -48,14 +50,17 @@ ax \equiv 1 \pmod{n}
 $$
 
 This inverse should exist if $GCD(a, n) = 1$
+
 :::
 
 ## Fermat's Little Theorem
 
 ::: {.callout-note}
+
 ## Fermat's Little Theorem
 Given two numbers $a, p$ where $GCD(a, p) = 1$, then $a^{p} \equiv a \pmod{p}$. 
 Consequently, $a^{p-1} \equiv 1 \pmod{p}$
+
 :::
 
 ## Discrete Logarithm 
@@ -84,7 +89,7 @@ A group with finite number of elements is called as a `finite group`.
 
 ### Generator
 
-Take the example of a group $\mathbb{Z}_{13}$. If we compute number $2^x$ where $0 \le x \lt p - 1$, we can have a set: 
+Take the example of a group $\mathbb{Z}_{13}$. If we compute number $2^x$ where $0 \le x < p - 1$, we can have a set: 
 
 $$
 \{2^x\} = \{1, 2, 4, 8, 3, 6, 12, 11, 9, 5, 10, 7\}

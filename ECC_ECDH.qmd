@@ -1,4 +1,4 @@
-# Elliptic Curve Cryptography and Elliptic Curve Diffie-Hellman {#sec-Asymmetric}
+# Elliptic Curve Cryptography and Elliptic Curve Diffie-Hellman 
 
 ## ECDLP (Elliptic Curve Discrete Logarithm Problem)
 
