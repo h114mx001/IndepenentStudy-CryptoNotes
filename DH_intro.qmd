@@ -1,0 +1,7 @@
+# Diffie-Hellman Key Exchange
+
+Diffie-Hellman Key Exchange (DHKE) is one of the first asymmetric key exchange that has been invented, by Martin Hellman and Whitfield Diffie, in 1976. Up to know, it is still one of the most popular method to achieve a shared secret between two parties. 
+
+In this chapter, we will have a look on how DKHE works, and several attacks related to DKHE. It is really good if you can hold the essence of DKHE, as there are several other variants of D-H on other group, notably Elliptic Curve Diffie-Hellman.
+
+Now, let's go!

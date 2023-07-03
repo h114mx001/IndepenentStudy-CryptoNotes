@@ -1,0 +1,4 @@
+# Elliptic Curve Cryptography
+
+First proposed in the late 90s of previous century and started to widely use in 2004, Elliptic Curve Cryptography is now an essential part of many connections around the Internet. From TLS to Bitcoin wallet, you can find you are using ECC everywhere. This chapter will help you to have a gentle guide to the mathematics of Elliptic Curve Cryptography, and some further guide on learn this interesting but very challenging of cryptography. 
+

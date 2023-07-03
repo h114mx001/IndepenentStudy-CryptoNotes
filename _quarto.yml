@@ -13,6 +13,7 @@ book:
       chapters:
         - Maths_Notation.qmd
         - GuideOnSource.qmd
+        - Groups.qmd
     - part: Foundations.qmd
       chapters:
         - Encoding.qmd
@@ -23,22 +24,27 @@ book:
         - OFB_CFB.qmd
         - CTR.qmd
         - AESBasic.qmd
-    - part: Asymmetric.qmd
+    - part: RSA_intro.qmd
       chapters:
         - UsefulMaths.qmd
         - RSA.qmd 
         - Attacks_RSA.qmd
         - RSA_Factorization.qmd
         - RSA_Parameters.qmd
+    - part: DH_intro.qmd
+      chapters:
         - DiffieHellman.qmd
         - BreakingDLP.qmd
+    - part: EC_intro.qmd
+      chapters:
         - Elliptic_Curve.qmd
         - EC_FiniteField.qmd
         - ECC_ECDH.qmd
         - ECC_Attacks.qmd
     - part: Miscellaneous
       chapters:
-        - HashFunctions.qmd    
+        - HashFunctions.qmd   
+        - Shamir.qmd
     - FinalWords.qmd
   reader-mode: true 
   page-footer:
@@ -68,6 +74,3 @@ execute:
   output: true
   freeze: true
   echo: false 
-  
-editor:
-  render-on-save: true

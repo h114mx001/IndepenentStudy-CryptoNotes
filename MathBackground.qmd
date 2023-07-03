@@ -31,4 +31,3 @@ Some lines after the code are the output.
 ## In this chapter
 
 1. [Mathematical Notations](/Maths_Notation.qmd)
-

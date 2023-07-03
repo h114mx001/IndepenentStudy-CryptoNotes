@@ -1,1 +1,1 @@
-{"entries":[{"key":"sec-Foundations","order":{"number":1,"section":[3,0,0,0,0,0,0]}}],"options":{"chapters":true,"chapter-id":"sec-Foundations"},"headings":["introductions","ascii","hex","base64","bignum-and-bytes","sec-Foundations"]}
+{"headings":["introductions","ascii","hex","base64","bignum-and-bytes","sec-Foundations"],"entries":[{"key":"sec-Foundations","order":{"number":1,"section":[4,0,0,0,0,0,0]}}],"options":{"chapter-id":"sec-Foundations","chapters":true}}

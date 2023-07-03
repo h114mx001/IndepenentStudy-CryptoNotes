@@ -1,1 +1,1 @@
-{"entries":[{"key":"sec-Asymmetric","order":{"section":[16,0,0,0,0,0,0],"number":1}}],"headings":["elliptic-curve","addition-rules","multiplication","sec-Asymmetric"],"options":{"chapters":true,"chapter-id":"sec-Asymmetric"}}
+{"headings":["elliptic-curve","addition-rules","multiplication","sec-Asymmetric"],"options":{"chapter-id":"sec-Asymmetric","chapters":true},"entries":[{"key":"sec-Asymmetric","order":{"number":1,"section":[17,0,0,0,0,0,0]}}]}

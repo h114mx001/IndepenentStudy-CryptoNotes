@@ -1,4 +1,4 @@
-# ECDH Attacks 
+# ECDLP Attacks 
 
 In the last chapter of PKC, we will revisit the Pohlig-Hellman Algorithm, but in the theme of Elliptic Curve. 
 
@@ -61,4 +61,134 @@ A = [280810182131414898730378982766101210916, 2915064907680544781598356046327103
 print(discreteLogarithm(p, a, b, G, B, A))
 ```
 
-There are several other methods for solving DLP in EC, but requires some specific properties of curve. 
+## Group isomorphism for ECDLP attack
+
+Let's first recall about group isomorphism. 
+
+With two group $(G, \cdot)$ and $(H, \odot)$, a group isomorphism $\phi: G \leftarrow H$ is a bijective mapping such that the group operation is preserved; that is:
+
+$$
+\phi(a \cdot b) = \phi(a) \odot \phi(b)
+$$
+
+for all $a, b \in G$. The left-hand side operation exists in $G$, while the right-hand side operation exists in $H$. 
+
+Group isomorphism is a very powerful tool to solve ECDLP (and any other cryptography based on algebraic group). The key idea is that we can find a mapping $\phi$ from the harder group $G$ to an easier group $H$, then solve the discrete logarithm here. With the context of elliptic curve cryptography, we often want to transfer the curve back to the modulo operation, as the elliptic curve often use smaller primes compared to RSA, and sometimes the prime itself is smooth too, which helps us a lot in solving the DLP in here. 
+
+Let's have an example! Suppose we want to attack the ECDLP on the curve $Y^2 = X^3 + Ax + B$ under the $\mathbb{F}_p$ where a, b, p, generator $G$ is: 
+
+```Python
+p = 0xa15c4fb663a578d8b2496d3151a946119ee42695e18e13e90600192b1d0abdbb6f787f90c8d102ff88e284dd4526f5f6b6c980bf88f1d0490714b67e8a2a2b77
+a = 0x5e009506fcc7eff573bc960d88638fe25e76a9b6c7caeea072a27dcd1fa46abb15b7b6210cf90caba982893ee2779669bac06e267013486b22ff3e24abae2d42
+b = 0x2ce7d1ca4493b0977f088f6d30d9241f8048fdea112cc385b793bce953998caae680864a7d3aa437ea3ffd1441ca3fb352b0b710bb3f053e980e503be9a7fece
+E = EllipticCurve(GF(p), [a, b]) # Define the curve 
+G = E(0x39f15e024d44228fd11c58a71c312fd64167c7d249d5677da0dfb4b9c3ed0f90701837a5e77b5a2b74433d7fbe027cd0c73b5aa7b300f7384521af0dc283dc6d,
+      0x5f3636a89167a6fbb7b7d1ad97d11c70756835b5f1273e20c06d9e022d74648ec22a3f92c378196d137c3f2027a67381be79e1c0d65cd9b61211a77a3842c8b2)
+```
+```{sagemath}
+p = 0xa15c4fb663a578d8b2496d3151a946119ee42695e18e13e90600192b1d0abdbb6f787f90c8d102ff88e284dd4526f5f6b6c980bf88f1d0490714b67e8a2a2b77
+a = 0x5e009506fcc7eff573bc960d88638fe25e76a9b6c7caeea072a27dcd1fa46abb15b7b6210cf90caba982893ee2779669bac06e267013486b22ff3e24abae2d42
+b = 0x2ce7d1ca4493b0977f088f6d30d9241f8048fdea112cc385b793bce953998caae680864a7d3aa437ea3ffd1441ca3fb352b0b710bb3f053e980e503be9a7fece
+E = EllipticCurve(GF(p), [a, b]) # Define the curve 
+G = E(0x39f15e024d44228fd11c58a71c312fd64167c7d249d5677da0dfb4b9c3ed0f90701837a5e77b5a2b74433d7fbe027cd0c73b5aa7b300f7384521af0dc283dc6d,
+      0x5f3636a89167a6fbb7b7d1ad97d11c70756835b5f1273e20c06d9e022d74648ec22a3f92c378196d137c3f2027a67381be79e1c0d65cd9b61211a77a3842c8b2)
+```
+
+Suppose that we have collected Alice's public key in ECDH key exchange is:
+
+```Python
+A = E(0x5aa8b5cf3124c552881ba67c14c863bb2ff30d960fe41b61123d2025cdddf0ea75e92d76326be9fb09b9a32373fc278ac8d5cf5ca83b9e517ce347c6879bef51,
+      0x2e3ddec1b35930b1039351b2814252186b30ce27ce15eda4351428868ae8593ab8c61c034ba10041cce205d7f7102c292f30ac5f3d2a2c2f3a463d837df070cd)
+```
+```{sagemath}
+A = E(0x5aa8b5cf3124c552881ba67c14c863bb2ff30d960fe41b61123d2025cdddf0ea75e92d76326be9fb09b9a32373fc278ac8d5cf5ca83b9e517ce347c6879bef51,
+      0x2e3ddec1b35930b1039351b2814252186b30ce27ce15eda4351428868ae8593ab8c61c034ba10041cce205d7f7102c292f30ac5f3d2a2c2f3a463d837df070cd)
+```
+That means, we need to find a number $k$ such that $A = kG$ under the curve $E(\mathbb{F}_p)$. You can first, try implement the solution by `discrete_log()` function in SageMath. But I am pretty sure you will fail `:)`. 
+
+Let's try something differently. 
+
+### Anomalous curve 
+
+If you notice a little bit, you may find out that the order of this curve is exactly the same with the prime $p$!. 
+
+```Python
+q = E.cardinality()
+assert(p == q)
+print(p == q)
+```
+
+```{sagemath}
+q = E.cardinality()
+assert(p == q)
+print(p == q)
+``` 
+
+This hints us that we can find a group isomorphism from curve to the $\mathbb{Z}_p$. Now, let me introduce a little new concept. 
+
+This method attempts to provide a group isomorphism $\phi: E \rightarrow \mathbb{F}_p$, via a concept of **Augmented Point Addition**
+
+We will assign a point $P \in E$ with a value $\alpha \in \mathbb{F}_p$: $[P, \alpha]$. We introduce the augment addition as: 
+$$
+[P, \alpha] + [Q, \beta] = [P + Q, \alpha + \beta + f(P, Q)]
+$$
+Where $P + Q$ is normal elliptic curve addition; and $f(P, Q)$ return the slope of line $PQ$ if $P \neq Q$ and the tangent if $P = P$. The function returns 0 for any other cases.
+
+### Transfering to normal (weak) DLP
+
+We can define a function $\phi(P)$ as finding a number $p$ such: 
+
+$$
+p[P, 0] = [\mathcal{O}, \alpha]
+$$
+
+It turns out we always can find this value $p$ for every point $P$. We can define the subgroup generated by $P$ in the curve $E$ as all points satisfied $nP \in E$. In here, $p$ will be equal to the order of the subgroup, as it is closed under the group addition. Even more interesting, we can also prove that the augmented point addition is an homomorphism. 
+
+Back to our original problem. We are given Alice public key $A = kG$ where $k$ is private key and $G$ is the generator of the curve. We need to solve this ECDLP. 
+
+Assumming $\alpha = \phi(A), \gamma = \phi(G)$
+We know that $\phi$ is a group isomorphism. Then, it must follow:
+
+$$
+\alpha = \phi(A) = \phi(kG) = k\phi(G) = k \gamma
+$$
+
+As $\alpha = k\gamma$, we can find:
+$$
+k = \alpha \gamma^{-1}
+$$
+
+Can you implement the algorithm? Let's have a check! If you do thing correctly, the result of $k$ should be `2200911270816846838022388357422161552282496835763864725672800875786994850585872907705630132325051034876291845289429009837283760741160188885749171857285407`.
+
+```Python
+def f(P, Q): 
+    if P[2] == 0 or Q[2] == 0 or P == -Q: 
+        return 0 
+    if P == Q: 
+        a = P.curve().a4() 
+        return (3*P[0]^2+a)/(2*P[1]) 
+    return (P[1]-Q[1])/(P[0]-Q[0]) 
+
+def add_augmented(PP, QQ):
+    (P, u), (Q, v) = PP, QQ
+    return [P+Q, u + v + f(P,Q)]
+
+def scalar_mult(n, PP):
+    t = n.nbits()
+    TT = PP.copy()
+    for i in range(1,t):
+        bit = (n >> (t-i-1)) & 1
+        TT = add_augmented(TT, TT)
+        if bit == 1:
+            TT = add_augmented(TT, PP)
+    return TT
+
+def solve_ecdlp(P,Q,p):
+    R1, alpha = scalar_mult(p, [P,0])
+    R2, beta  = scalar_mult(p, [Q,0])
+    return ZZ(beta*alpha^(-1))
+```
+
+::: {.callout-tip}
+Finding an isomorphism can help you a lot :D. In CTF competition, you may research them on scientific journal. With right keywords, you can have the isomorphism in your hand! 
+:::

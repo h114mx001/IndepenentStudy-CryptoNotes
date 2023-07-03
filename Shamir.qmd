@@ -1,0 +1,77 @@
+# Shamir Secret Sharing Scheme 
+
+Assume you want to share a key among group of 5 peoples. However, in order not to make everyone has a copy of the key or you must have 5 different keys & sessions when connecting to you, you want any group of 3 peoples can form the secret key, but 2 or 1, not.
+
+In this section, we will have a look on Shamir Secret Sharing Scheme, which is named after Adi Shamir (the A in RSA) in 1979. But first, let's see some mathematical tools that help Shamir build his secret sharing. 
+
+## Lagrange Interpolation 
+
+In simple words, we can explain the Lagrange Interpolation as, given a $k$-degree polynomial, we must have $k$ separated points belongs to the polynomial to construct the ordinary one. For example, you need two points on an parabola to reconstruct the quadratic equations that builds it. Now, assume that you have $n \ge k$ points, any combinations of $k$ points of this n-point set will return you the polynomial, right? 
+
+![](images/Lagrange_Interpolation.png)
+
+As you can see in this image, the ordinary cubic curve $L(x)$ has 4 points on it. We must gather 3 in these 4 to regenerate the function. 
+
+The calculation of Lagrange Interpolation is in this [Wikipedia](https://en.wikipedia.org/wiki/Lagrange_polynomial), I think you should have a look on and try to implement them by yourself first before moving on xD. 
+
+## Construction 
+
+From the idea of Lagrange interpolation, Adi Shamir has built the scheme as below: 
+
++ Step 1: Preparation
+  + Assume there is a server, want to share a secret number $s$ among a group of $n$ people. Only when $k$ people in this group of $n$ is gathered, the secret $s$ can be re-computed. 
+  + The server chooses a secret polynomial $f(x) = s + a_1x + a_2x^2 + \cdots + a_{k-1}x^{k-1}$. Next, the server generates $n$ different number $y_i$, where $f(x_i) = y_i$ for random $x_i$. The number $y_i$ are sent to $n$ people.
+
++ Step 2: Regenerate 
+  + Whenever the group needs the secret, they will gather and using Lagrange Interpolation to regenerate $f(x)$, then the secret $s$ can be extracted. 
+  + But for an adversary who wants to take over the secret? The only thing they could do is stealing $k$ different secrets among the group, or simpler, someone in the group send them the secret after being revealed... xD.
+
+However, choosing an arbitrary large numbers may affect the computing speed. One very interesting of Lagrange Interpolation is that it also works in prime finite field $\mathbb{F}_p$! Therefore, choosing a polynomial over a prime number is enough for this. Polynomial over primes are not quite different in normal natural/real numbers, except every coefficient are modulo under the prime $p$. 
+
+Here, I have an implementation in Python.
+
+```Python
+def Shamir_Secret_Sharing(minimum, parties, secret, prime):
+    # Create a polynomial ring over GF(prime) 
+    R = PolynomialRing(GF(prime), 'x')
+    # Generate the coefficient of the polynomial, with secret is the leading coefficient
+    coefs = [secret] + [random.randint(0, prime-1) for i in range(minimum-1)]
+    print(coefs)
+    # Generate the original polynomial
+    f = R(coefs)
+    # Generate 'parties' points. 
+    share_points = []
+    for _ in range(parties):
+        x = random.randint(0, prime-1)
+        # print(x, f(x))
+        share_points.append((x, f(x)))
+    return share_points
+
+def Shamir_Secret_Reconstruct(share_points, minimum, prime):
+    if len(share_points) < minimum:
+        raise ValueError("Not enough points to reconstruct the secret")
+    # Create a polynomial ring over GF(prime)
+    R = PolynomialRing(GF(prime), 'x')
+    # Generate the Lagrange polynomial
+    lagrange_polynomial = R.lagrange_polynomial(share_points)
+    # Return the leading coefficient of the Lagrange polynomial
+    print(lagrange_polynomial)
+    return lagrange_polynomial[0]
+secret = 123 
+minimum = 3
+parties = 5
+prime = 1000000007
+share_points = Shamir_Secret_Sharing(minimum, parties, secret, prime)
+print(share_points)
+reconstructed_secret = Shamir_Secret_Reconstruct(share_points, minimum, prime)
+print(reconstructed_secret)
+assert secret == reconstructed_secret
+```
+
+## Takeaway
+
+Shamir Secret Sharing is a secure (even perfectly secure), minimal and extensible scheme. However, it has no verification! Assume that an adversary can mimic a person in a group and join the sharing. There are no ways for other people to know they are imposters. Also, Shamir Secret Sharing is also a centralized scheme, that must require a party to deliver the secret and do the computation among people. 
+
+However, SSS is still a good tool, for example sharing the passphrase to recreate master that will help a lot in securing cryptowallet. A thief cannot access the wallet if they do not know enough required passphrases. 
+
+To learn more about SSS and polynomial ring applications in crypto, you can find other sources :D.

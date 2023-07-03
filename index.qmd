@@ -5,3 +5,31 @@ This **'CryptoBook for n00b1es'** is a beginner guide, with the main purpose is 
 This book targets the newcomers to Cryptography field, from guiding you from basic implementation of some cryptography schemes, to some more advance and popular ones. From perspectives of a crypto learner, I included a lot of practical work (implementations, explanation, etc.) about how to work and/or break some usual cryptosystems. Also, you will find yourself more familiar with some most useful tools in your cryptography work (in this book, I choose Python and a CAS build on it, SageMath as main tools). 
 
 Indeed, this book will not end here, updated version will continue (based on my skills and your demands too!). After this (final) version, you can expect next versions of the document. 
+
+## Changelog
+
+### v1.1
+
+For the update of this Spring 2023 Semester, I have updated: 
+
+#### Chapters:
+
++ **Mathematical Background** - Introduction topics about Abstract Algebra. 
+  + Group, Subgroup, Group Homomorphism & Isomorphism.
++ **Symmetric Cryptography**: No change (yet).
++ **Asymmetric Cryptography**: Breakdown into smaller topics for easy keep track. 
+  + RSA & Diffie-Hellman Key Exchange: **Additional part about RSA signature, guide on solving DLP with specific software**
+  + Elliptic Curve Cryptography: **Additional part for attacking ECC & CVEs related to ECC**
+  + Lattice-based Cryptography (Haven't updated yet, as I need to learn more about this)
++ **Misc**: Some interesting topics I have covered throughout the Independent Study course: 
+  + Shamir's Secret Sharing Scheme
+  + PRNGs
++ **Real world crypto**: **New part**! Discussing about real applications of cryptography in online transactions: JWT, TLS, etc.
+  + JSON Web Token (JWT): **Introductory posts** 
++ **CTF Writeup**: New chapter, where I will regularly update the writeup for CTF challenges I have played. 
+
+#### References: 
+
++ Additional references that some readers may want to dig deeper. 
+
+ 

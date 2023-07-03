@@ -67,43 +67,9 @@ Consequently, $a^{p-1} \equiv 1 \pmod{p}$
 
 Given $a, h, n$ where there exists a number $x$ that $a^x \equiv h \pmod{n}$, the discrete logarithm problem is the process of finding the suitable number $x$ in $\mathbb{Z}_n$.
 
-## Some Abstract Algebra
+## Some (additional) Abstract Algebra
 
 In here, I will introduce several simple concepts of group, generator, order of a group and order of a member of the group. Remember, these definitions are not formal, and it is written for more easily understanding. 
-
-### Group
-
-For simplicity, a group $G$ is a set of elements, that supports an operation $\star$. In the group, the operation has the following properties:
-
-+ **Identity**: There is an element $e \in G$ such that: $e\star a = a \star e = a$ for every $a \in G$. $e$ is called as the `identity element`.
-
-+ **Inverse**: For $\forall a \in G$, there is a unique $a^{-1}$ where: $a \star a^{-1} = e$. $a^{-1}$ is called as `inverse`.
-
-+ **Associative**: For every $a, b, c \in G$, $a \star (b \star c) = (a \star b) \star c$.
-
-+ **Commutative**: $a \star b = b \star a$. A commutative group is also called `abelian group`. 
-
-During the RSA and Diffie-Hellman (DH), we will talk much about the group $\mathbb{Z}_p$. You can verify the properties yourself. 
-
-A group with finite number of elements is called as a `finite group`.
-
-### Generator
-
-Take the example of a group $\mathbb{Z}_{13}$. If we compute number $2^x$ where $0 \le x < p - 1$, we can have a set: 
-
-$$
-\{2^x\} = \{1, 2, 4, 8, 3, 6, 12, 11, 9, 5, 10, 7\}
-$$
-
-This set is $\mathbb{Z}_{13}$. However, if we take another number, for example, 5: 
-
-$$
-\{5^x\} = \{1, 5, 12, 8\}
-$$
-
-$2$ is the generator of group $G = \mathbb{Z}_{13}$, but $5$ isn't.
-
-Then, **generator** of a group is the element that can generate the group, with the process you see above (in this multiplicative group, it can be done via exponent).
 
 ### Order
 

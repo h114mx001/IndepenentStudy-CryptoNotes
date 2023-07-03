@@ -106,5 +106,20 @@
   },
   "FinalWords.qmd": {
     "FinalWords.html": "a76d5e93"
+  },
+  "Groups.qmd": {
+    "Groups.html": "698db6f4"
+  },
+  "RSA_intro.qmd": {
+    "RSA_intro.html": "84c99346"
+  },
+  "DH_intro.qmd": {
+    "DH_intro.html": "f3375142"
+  },
+  "EC_intro.qmd": {
+    "EC_intro.html": "5b8a34f7"
+  },
+  "Shamir.qmd": {
+    "Shamir.html": "9999eaab"
   }
 }
